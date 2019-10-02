@@ -1,0 +1,6 @@
+framework module Pods_VeganRecipe {
+  umbrella header "Pods-VeganRecipe-umbrella.h"
+
+  export *
+  module * { export * }
+}

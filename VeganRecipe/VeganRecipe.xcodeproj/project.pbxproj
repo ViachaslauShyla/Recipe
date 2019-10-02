@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E5725908E041A51FF8EB331 /* Pods_VeganRecipe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99068C48BDEE06D3E0474A01 /* Pods_VeganRecipe.framework */; };
+		F9FAA08E233D5D8D00FAC497 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9FAA08D233D5D8D00FAC497 /* CoreData.framework */; };
 		F9FD9BC9231DB4FF00E31C0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FD9BC8231DB4FF00E31C0A /* AppDelegate.swift */; };
 		F9FD9BCB231DB4FF00E31C0A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FD9BCA231DB4FF00E31C0A /* ViewController.swift */; };
 		F9FD9BCE231DB4FF00E31C0A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9FD9BCC231DB4FF00E31C0A /* Main.storyboard */; };
@@ -15,6 +17,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		99068C48BDEE06D3E0474A01 /* Pods_VeganRecipe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VeganRecipe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9CADF60C0BE41050326E8B35 /* Pods-VeganRecipe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VeganRecipe.release.xcconfig"; path = "Target Support Files/Pods-VeganRecipe/Pods-VeganRecipe.release.xcconfig"; sourceTree = "<group>"; };
+		ED2F7836DB716ADE4E52AD61 /* Pods-VeganRecipe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VeganRecipe.debug.xcconfig"; path = "Target Support Files/Pods-VeganRecipe/Pods-VeganRecipe.debug.xcconfig"; sourceTree = "<group>"; };
+		F96DD8A72336F230005A69A9 /* Api-Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Api-Bridge.h"; sourceTree = "<group>"; };
+		F9FAA08D233D5D8D00FAC497 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		F9FD9BC5231DB4FF00E31C0A /* VeganRecipe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VeganRecipe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9FD9BC8231DB4FF00E31C0A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F9FD9BCA231DB4FF00E31C0A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,17 +36,39 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9FAA08E233D5D8D00FAC497 /* CoreData.framework in Frameworks */,
+				5E5725908E041A51FF8EB331 /* Pods_VeganRecipe.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		54ED143538A5AE650A67D1B5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				ED2F7836DB716ADE4E52AD61 /* Pods-VeganRecipe.debug.xcconfig */,
+				9CADF60C0BE41050326E8B35 /* Pods-VeganRecipe.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		A70E102A0C4D8651282A42C0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F9FAA08D233D5D8D00FAC497 /* CoreData.framework */,
+				99068C48BDEE06D3E0474A01 /* Pods_VeganRecipe.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F9FD9BBC231DB4FF00E31C0A = {
 			isa = PBXGroup;
 			children = (
 				F9FD9BC7231DB4FF00E31C0A /* VeganRecipe */,
 				F9FD9BC6231DB4FF00E31C0A /* Products */,
+				54ED143538A5AE650A67D1B5 /* Pods */,
+				A70E102A0C4D8651282A42C0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,6 +89,7 @@
 				F9FD9BCF231DB50100E31C0A /* Assets.xcassets */,
 				F9FD9BD1231DB50100E31C0A /* LaunchScreen.storyboard */,
 				F9FD9BD4231DB50100E31C0A /* Info.plist */,
+				F96DD8A72336F230005A69A9 /* Api-Bridge.h */,
 			);
 			path = VeganRecipe;
 			sourceTree = "<group>";
@@ -71,9 +101,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F9FD9BD7231DB50100E31C0A /* Build configuration list for PBXNativeTarget "VeganRecipe" */;
 			buildPhases = (
+				6559DC84237AB357DB459613 /* [CP] Check Pods Manifest.lock */,
 				F9FD9BC1231DB4FF00E31C0A /* Sources */,
 				F9FD9BC2231DB4FF00E31C0A /* Frameworks */,
 				F9FD9BC3231DB4FF00E31C0A /* Resources */,
+				07AB31682B6B11B4BD90E366 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -129,6 +161,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		07AB31682B6B11B4BD90E366 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VeganRecipe/Pods-VeganRecipe-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VeganRecipe/Pods-VeganRecipe-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VeganRecipe/Pods-VeganRecipe-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6559DC84237AB357DB459613 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VeganRecipe-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F9FD9BC1231DB4FF00E31C0A /* Sources */ = {
@@ -197,6 +271,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -258,6 +333,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -280,6 +356,7 @@
 		};
 		F9FD9BD8231DB50100E31C0A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED2F7836DB716ADE4E52AD61 /* Pods-VeganRecipe.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -289,7 +366,9 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = slava.VeganRecipe;
+				PRODUCT_MODULE_NAME = VeganRecipe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "VeganRecipe/Api-Bridge.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -297,6 +376,7 @@
 		};
 		F9FD9BD9231DB50100E31C0A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9CADF60C0BE41050326E8B35 /* Pods-VeganRecipe.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -306,7 +386,9 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = slava.VeganRecipe;
+				PRODUCT_MODULE_NAME = VeganRecipe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "VeganRecipe/Api-Bridge.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

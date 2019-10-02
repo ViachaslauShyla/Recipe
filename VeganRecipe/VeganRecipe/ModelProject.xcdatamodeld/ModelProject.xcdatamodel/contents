@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14490.99" systemVersion="18E226" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CookTime" representedClassName="CookTime" syncable="YES" codeGenerationType="class">
+        <attribute name="cook" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="prep" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="readyIn" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="recipe" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Recipe" inverseName="cookTime" inverseEntity="Recipe" syncable="YES"/>
+    </entity>
+    <entity name="Day" representedClassName="Day" syncable="YES" codeGenerationType="class">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="dayItems" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DayItems" inverseName="day" inverseEntity="DayItems" syncable="YES"/>
+        <relationship name="mealPlanner" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MealPlanner" inverseName="days" inverseEntity="MealPlanner" syncable="YES"/>
+    </entity>
+    <entity name="DayItems" representedClassName="DayItems" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="day" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Day" inverseName="dayItems" inverseEntity="Day" syncable="YES"/>
+        <relationship name="ingredients" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Ingredient" inverseName="dayItems" inverseEntity="Ingredient" syncable="YES"/>
+        <relationship name="recipes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Recipe" inverseName="dayItems" inverseEntity="Recipe" syncable="YES"/>
+    </entity>
+    <entity name="Equipment" representedClassName="Equipment" syncable="YES" codeGenerationType="class">
+        <attribute name="imageUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="recipe" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Recipe" inverseName="equipments" inverseEntity="Recipe" syncable="YES"/>
+    </entity>
+    <entity name="Ingredient" representedClassName="Ingredient" syncable="YES" codeGenerationType="class">
+        <attribute name="imageUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="dayItems" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DayItems" inverseName="ingredients" inverseEntity="DayItems" syncable="YES"/>
+        <relationship name="nutrition" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Nutrition" inverseName="ingredient" inverseEntity="Nutrition" syncable="YES"/>
+        <relationship name="recipe" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Recipe" inverseName="ingredients" inverseEntity="Recipe" syncable="YES"/>
+        <relationship name="shoppingList" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ShoppingList" inverseName="ingredients" inverseEntity="ShoppingList" syncable="YES"/>
+    </entity>
+    <entity name="MealPlanner" representedClassName="MealPlanner" syncable="YES" codeGenerationType="class">
+        <relationship name="days" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Day" inverseName="mealPlanner" inverseEntity="Day" syncable="YES"/>
+    </entity>
+    <entity name="MyRecipe" representedClassName="MyRecipe" syncable="YES" codeGenerationType="class">
+        <relationship name="recipe" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Recipe" inverseName="myRecipe" inverseEntity="Recipe" syncable="YES"/>
+    </entity>
+    <entity name="Nutrition" representedClassName="Nutrition" syncable="YES" codeGenerationType="class">
+        <relationship name="ingredient" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Ingredient" inverseName="nutrition" inverseEntity="Ingredient" syncable="YES"/>
+        <relationship name="recipe" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Recipe" inverseName="nutrition" inverseEntity="Recipe" syncable="YES"/>
+    </entity>
+    <entity name="PopularRecipe" representedClassName="PopularRecipe" syncable="YES" codeGenerationType="class">
+        <relationship name="recipe" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Recipe" inverseName="popularRecipe" inverseEntity="Recipe" syncable="YES"/>
+    </entity>
+    <entity name="Recipe" representedClassName="Recipe" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="imageUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="reting" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="serving" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="cookTime" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CookTime" inverseName="recipe" inverseEntity="CookTime" syncable="YES"/>
+        <relationship name="dayItems" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DayItems" inverseName="recipes" inverseEntity="DayItems" syncable="YES"/>
+        <relationship name="equipments" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Equipment" inverseName="recipe" inverseEntity="Equipment" syncable="YES"/>
+        <relationship name="ingredients" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Ingredient" inverseName="recipe" inverseEntity="Ingredient" syncable="YES"/>
+        <relationship name="myRecipe" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MyRecipe" inverseName="recipe" inverseEntity="MyRecipe" syncable="YES"/>
+        <relationship name="nutrition" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Nutrition" inverseName="recipe" inverseEntity="Nutrition" syncable="YES"/>
+        <relationship name="popularRecipe" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PopularRecipe" inverseName="recipe" inverseEntity="PopularRecipe" syncable="YES"/>
+        <relationship name="steps" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Step" inverseName="recipe" inverseEntity="Step" syncable="YES"/>
+        <relationship name="type" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Type" inverseName="recipes" inverseEntity="Type" syncable="YES"/>
+    </entity>
+    <entity name="ShoppingList" representedClassName="ShoppingList" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="ingredients" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Ingredient" inverseName="shoppingList" inverseEntity="Ingredient" syncable="YES"/>
+    </entity>
+    <entity name="Step" representedClassName="Step" syncable="YES" codeGenerationType="class">
+        <attribute name="number" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="recipe" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Recipe" inverseName="steps" inverseEntity="Recipe" syncable="YES"/>
+    </entity>
+    <entity name="Type" representedClassName="Type" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="recipes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Recipe" inverseName="type" inverseEntity="Recipe" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Recipe" positionX="-65.484375" positionY="-175.2578125" width="128" height="253"/>
+        <element name="Ingredient" positionX="284.6015625" positionY="-34.37890625" width="128" height="133"/>
+        <element name="Step" positionX="-366" positionY="39.28125" width="128" height="88"/>
+        <element name="Nutrition" positionX="91.34765625" positionY="108.27734375" width="128" height="73"/>
+        <element name="CookTime" positionX="117.1328125" positionY="-287.09765625" width="128" height="105"/>
+        <element name="Equipment" positionX="-252.41015625" positionY="-180.16015625" width="128" height="88"/>
+        <element name="Type" positionX="-314.8828125" positionY="135.265625" width="128" height="73"/>
+        <element name="MyRecipe" positionX="-409.328125" positionY="-100.38671875" width="128" height="60"/>
+        <element name="PopularRecipe" positionX="-410.3984375" positionY="-28.31640625" width="128" height="60"/>
+        <element name="ShoppingList" positionX="466.09765625" positionY="80.8515625" width="128" height="73"/>
+        <element name="Day" positionX="285.578125" positionY="-193.47265625" width="128" height="88"/>
+        <element name="DayItems" positionX="463.6328125" positionY="-158.06640625" width="128" height="103"/>
+        <element name="MealPlanner" positionX="114.421875" positionY="-163.48046875" width="128" height="60"/>
+    </elements>
+</model>
