@@ -22,9 +22,16 @@
 #import <OpenAPIClient/OAIInlineObject7.h>
 #import <OpenAPIClient/OAIInlineObject8.h>
 #import <OpenAPIClient/OAIInlineObject9.h>
+
 // load API classes for accessing endpoints
 #import <OpenAPIClient/OAIDefaultApi.h>
 
-
+#import <OpenAPIClient/CoreDataManager.h>
+#import <OpenAPIClient/RecipeModel.h>
+#import <OpenAPIClient/StepsModel.h>
+#import <OpenAPIClient/EquipmentModel.h>
+#import <OpenAPIClient/IngredientModel.h>
+#import <OpenAPIClient/CookTimeModel.h>
+#import <OpenAPIClient/NutritionModel.h>
 
 #endif /* Api_Bridge_h */

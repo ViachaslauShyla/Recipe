@@ -139,6 +139,21 @@
 		F93FA8DC2343724800B50F8E /* OAIInlineObject1.md in Resources */ = {isa = PBXBuildFile; fileRef = F93FA8D12343724800B50F8E /* OAIInlineObject1.md */; };
 		F93FA8DD2343724800B50F8E /* OAIInlineObject2.md in Resources */ = {isa = PBXBuildFile; fileRef = F93FA8D22343724800B50F8E /* OAIInlineObject2.md */; };
 		F93FA8DE2343724800B50F8E /* OAIDefaultApi.md in Resources */ = {isa = PBXBuildFile; fileRef = F93FA8D32343724800B50F8E /* OAIDefaultApi.md */; };
+		F9FB36A82357A4CA00D03604 /* EquipmentModel.h in Headers */ = {isa = PBXBuildFile; fileRef = F9FB36A62357A4CA00D03604 /* EquipmentModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F9FB36A92357A4CA00D03604 /* EquipmentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F9FB36A72357A4CA00D03604 /* EquipmentModel.m */; };
+		F9FB36AC2357A62400D03604 /* IngredientModel.h in Headers */ = {isa = PBXBuildFile; fileRef = F9FB36AA2357A62400D03604 /* IngredientModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F9FB36AD2357A62400D03604 /* IngredientModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F9FB36AB2357A62400D03604 /* IngredientModel.m */; };
+		F9FB36B02357ABE400D03604 /* CookTimeModel.h in Headers */ = {isa = PBXBuildFile; fileRef = F9FB36AE2357ABE400D03604 /* CookTimeModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F9FB36B12357ABE400D03604 /* CookTimeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F9FB36AF2357ABE400D03604 /* CookTimeModel.m */; };
+		F9FB36B42357AC6400D03604 /* NutritionModel.h in Headers */ = {isa = PBXBuildFile; fileRef = F9FB36B22357AC6400D03604 /* NutritionModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F9FB36B52357AC6400D03604 /* NutritionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F9FB36B32357AC6400D03604 /* NutritionModel.m */; };
+		F9FBDDD82355C6AB0095C5BD /* RecipeModel.h in Headers */ = {isa = PBXBuildFile; fileRef = F9FBDDD62355C6AB0095C5BD /* RecipeModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F9FBDDD92355C6AB0095C5BD /* RecipeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F9FBDDD72355C6AB0095C5BD /* RecipeModel.m */; };
+		F9FC980723472CD8000B76C5 /* CoreDataManager.h in Headers */ = {isa = PBXBuildFile; fileRef = F9FC980523472CD8000B76C5 /* CoreDataManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F9FC980823472CD8000B76C5 /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F9FC980623472CD8000B76C5 /* CoreDataManager.m */; };
+		F9FC981323476F76000B76C5 /* Model.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = F9FC981223476F5F000B76C5 /* Model.xcdatamodeld */; };
+		F9FDDEA423565E0100A0153A /* StepsModel.h in Headers */ = {isa = PBXBuildFile; fileRef = F9FDDEA223565E0100A0153A /* StepsModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F9FDDEA523565E0100A0153A /* StepsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F9FDDEA323565E0100A0153A /* StepsModel.m */; };
 		FCBEB83F4D7DD4DEDCCDB2F184C353E9 /* OAIInlineObject1.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DAAD3339401E72A470674FE5F3A48F4 /* OAIInlineObject1.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FD42569341073F898AAA9394594DFC6A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA2DFB6C50277B6ABF268771377AFA36 /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
@@ -354,6 +369,21 @@
 		F93FA8D22343724800B50F8E /* OAIInlineObject2.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = OAIInlineObject2.md; sourceTree = "<group>"; };
 		F93FA8D32343724800B50F8E /* OAIDefaultApi.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = OAIDefaultApi.md; sourceTree = "<group>"; };
 		F946E4562A775B9991E77DD650F21DAE /* OpenAPIClient.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = OpenAPIClient.modulemap; sourceTree = "<group>"; };
+		F9FB36A62357A4CA00D03604 /* EquipmentModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EquipmentModel.h; sourceTree = "<group>"; };
+		F9FB36A72357A4CA00D03604 /* EquipmentModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EquipmentModel.m; sourceTree = "<group>"; };
+		F9FB36AA2357A62400D03604 /* IngredientModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IngredientModel.h; sourceTree = "<group>"; };
+		F9FB36AB2357A62400D03604 /* IngredientModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IngredientModel.m; sourceTree = "<group>"; };
+		F9FB36AE2357ABE400D03604 /* CookTimeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CookTimeModel.h; sourceTree = "<group>"; };
+		F9FB36AF2357ABE400D03604 /* CookTimeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CookTimeModel.m; sourceTree = "<group>"; };
+		F9FB36B22357AC6400D03604 /* NutritionModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NutritionModel.h; sourceTree = "<group>"; };
+		F9FB36B32357AC6400D03604 /* NutritionModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NutritionModel.m; sourceTree = "<group>"; };
+		F9FBDDD62355C6AB0095C5BD /* RecipeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecipeModel.h; sourceTree = "<group>"; };
+		F9FBDDD72355C6AB0095C5BD /* RecipeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecipeModel.m; sourceTree = "<group>"; };
+		F9FC980523472CD8000B76C5 /* CoreDataManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataManager.h; sourceTree = "<group>"; };
+		F9FC980623472CD8000B76C5 /* CoreDataManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreDataManager.m; sourceTree = "<group>"; };
+		F9FC981123476F5F000B76C5 /* Model1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model1.xcdatamodel; sourceTree = "<group>"; };
+		F9FDDEA223565E0100A0153A /* StepsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StepsModel.h; sourceTree = "<group>"; };
+		F9FDDEA323565E0100A0153A /* StepsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StepsModel.m; sourceTree = "<group>"; };
 		FAB5037A66D30077A8C077F82E24F435 /* ISO8601-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ISO8601-dummy.m"; sourceTree = "<group>"; };
 		FB99E04477623D90441FA1506CB395AD /* AFNetworking-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AFNetworking-prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -522,6 +552,18 @@
 				D98CD6E9D824AF6A0E01EA07C759332D /* OAIInlineObject8.m */,
 				D7B509D38BD79B5212C706F126DFFD5C /* OAIInlineObject9.h */,
 				6829047ACD067E3B388BF5122E539620 /* OAIInlineObject9.m */,
+				F9FBDDD62355C6AB0095C5BD /* RecipeModel.h */,
+				F9FBDDD72355C6AB0095C5BD /* RecipeModel.m */,
+				F9FDDEA223565E0100A0153A /* StepsModel.h */,
+				F9FDDEA323565E0100A0153A /* StepsModel.m */,
+				F9FB36A62357A4CA00D03604 /* EquipmentModel.h */,
+				F9FB36A72357A4CA00D03604 /* EquipmentModel.m */,
+				F9FB36AA2357A62400D03604 /* IngredientModel.h */,
+				F9FB36AB2357A62400D03604 /* IngredientModel.m */,
+				F9FB36AE2357ABE400D03604 /* CookTimeModel.h */,
+				F9FB36AF2357ABE400D03604 /* CookTimeModel.m */,
+				F9FB36B22357AC6400D03604 /* NutritionModel.h */,
+				F9FB36B32357AC6400D03604 /* NutritionModel.m */,
 			);
 			name = Model;
 			path = OpenAPIClient/Model;
@@ -682,6 +724,7 @@
 				F93FA8B22343719000B50F8E /* docs */,
 				FC9B57DCB88F16E78B786AA1143C21A5 /* Api */,
 				1B34B36967EEC37D3E0F03007C027815 /* Core */,
+				F9FB482A23583FE300AEF78A /* CoreDataManager */,
 				455713540468BC362B3CDC846F895F17 /* Model */,
 				F564C7241B2D3E7DAAE48CECFFC3A96D /* Pod */,
 				33C5DB0B7B6C659C33EBE750DBF939CE /* Support Files */,
@@ -775,6 +818,16 @@
 			path = docs;
 			sourceTree = "<group>";
 		};
+		F9FB482A23583FE300AEF78A /* CoreDataManager */ = {
+			isa = PBXGroup;
+			children = (
+				F9FC981223476F5F000B76C5 /* Model.xcdatamodeld */,
+				F9FC980523472CD8000B76C5 /* CoreDataManager.h */,
+				F9FC980623472CD8000B76C5 /* CoreDataManager.m */,
+			);
+			path = CoreDataManager;
+			sourceTree = "<group>";
+		};
 		FC9B57DCB88F16E78B786AA1143C21A5 /* Api */ = {
 			isa = PBXGroup;
 			children = (
@@ -806,6 +859,7 @@
 				A6FC001A16302AFD8324E22BAB152963 /* JSONValueTransformer+ISO8601.h in Headers */,
 				A257E091B61186733C988BEAA5458136 /* OAIApi.h in Headers */,
 				82B1BD39BCAC9EC892620BD5B13968F4 /* OAIApiClient.h in Headers */,
+				F9FB36B42357AC6400D03604 /* NutritionModel.h in Headers */,
 				A768E1C4E56F6FFF8FFE1918974101E4 /* OAIBasicAuthTokenProvider.h in Headers */,
 				46158B76D03BE905B0224234CAC5580F /* OAIConfiguration.h in Headers */,
 				ADBD35C9571CFCBF71CFC2298B31A0CA /* OAIDefaultApi.h in Headers */,
@@ -814,15 +868,21 @@
 				FCBEB83F4D7DD4DEDCCDB2F184C353E9 /* OAIInlineObject1.h in Headers */,
 				5047FB416FC4FE8D1EAD668E98FC736C /* OAIInlineObject2.h in Headers */,
 				C15F20CDFD4996B7A03C14F73B2DD2CE /* OAIInlineObject3.h in Headers */,
+				F9FB36A82357A4CA00D03604 /* EquipmentModel.h in Headers */,
 				56670D7975DA23939FA5FC86949E57C5 /* OAIInlineObject4.h in Headers */,
+				F9FC980723472CD8000B76C5 /* CoreDataManager.h in Headers */,
 				810381F00761DD9FB3AD1C64999EABAD /* OAIInlineObject5.h in Headers */,
+				F9FDDEA423565E0100A0153A /* StepsModel.h in Headers */,
 				07AD3BECCC7F0892575269DC02CC97E1 /* OAIInlineObject6.h in Headers */,
 				4602590B8CC970E66CA8572112605EF6 /* OAIInlineObject7.h in Headers */,
+				F9FBDDD82355C6AB0095C5BD /* RecipeModel.h in Headers */,
 				427E065DEE0CA9C1BEAD5BA12CCB2ED8 /* OAIInlineObject8.h in Headers */,
 				8C746D5C20135920E9848EE3A8F9234A /* OAIInlineObject9.h in Headers */,
 				3F0C6EC06C70AB8DEDCB2A81D9DF4B84 /* OAIJSONRequestSerializer.h in Headers */,
+				F9FB36AC2357A62400D03604 /* IngredientModel.h in Headers */,
 				1D00642C4CBB99F43766C46290F25D59 /* OAILogger.h in Headers */,
 				9151FBCF97D1513CEC3671B0A1F5E11B /* OAIObject.h in Headers */,
+				F9FB36B02357ABE400D03604 /* CookTimeModel.h in Headers */,
 				6824FAFE45B61EE13E348F1199DCE9A6 /* OAIQueryParamCollection.h in Headers */,
 				55AF8FB3094D874EDED23813832A8EC3 /* OAIResponseDeserializer.h in Headers */,
 				6FC8F1E1284378E54CB5E6D005E09FBC /* OAISanitizer.h in Headers */,
@@ -1017,6 +1077,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9FC981323476F76000B76C5 /* Model.xcdatamodeld in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1113,7 +1174,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9FB36B52357AC6400D03604 /* NutritionModel.m in Sources */,
 				10FE31C2798429BDC5BE135C043BC916 /* JSONValueTransformer+ISO8601.m in Sources */,
+				F9FBDDD92355C6AB0095C5BD /* RecipeModel.m in Sources */,
 				69BB69B2A58CC8B52AFFB9DA1A4A617A /* OAIApiClient.m in Sources */,
 				ECE7A9D8EE472AA77E1882CE370FD059 /* OAIBasicAuthTokenProvider.m in Sources */,
 				5BE804F967080AE4F4FBBE08D56C706B /* OAIDefaultApi.m in Sources */,
@@ -1122,18 +1185,23 @@
 				BE2CE817938A38B21F52BBACFA00B6B9 /* OAIInlineObject1.m in Sources */,
 				5A6EF00AAB26F4F6872EA786CCA37563 /* OAIInlineObject2.m in Sources */,
 				3206FBD5CA545EFF764BEF73604E3E13 /* OAIInlineObject3.m in Sources */,
+				F9FB36A92357A4CA00D03604 /* EquipmentModel.m in Sources */,
 				5B1F3F580705378089FEB393EA669AFD /* OAIInlineObject4.m in Sources */,
 				4892F099D3B6298847A2C15E1CEA2B4E /* OAIInlineObject5.m in Sources */,
 				9145471F023535793E64211D380B6A57 /* OAIInlineObject6.m in Sources */,
+				F9FB36AD2357A62400D03604 /* IngredientModel.m in Sources */,
+				F9FC980823472CD8000B76C5 /* CoreDataManager.m in Sources */,
 				37BF9581CEA71F5A30BCD756E6174673 /* OAIInlineObject7.m in Sources */,
 				3460B027E146433D456BBE1666DA76B8 /* OAIInlineObject8.m in Sources */,
 				C503CFD7E4F0AA3B985A954B152B28FB /* OAIInlineObject9.m in Sources */,
 				743378B337C7EA4F258E9D7EE759FEE3 /* OAIJSONRequestSerializer.m in Sources */,
 				D84270CDE3F3D72CA9763B8AB1AAA1DB /* OAILogger.m in Sources */,
 				D791CD1E7085DFA31CCB7CE476DE13CB /* OAIObject.m in Sources */,
+				F9FB36B12357ABE400D03604 /* CookTimeModel.m in Sources */,
 				5898B7C6F21E66BED173CB2619150D15 /* OAIQueryParamCollection.m in Sources */,
 				F653B2EACD348C9BF37C4CB99B08C00B /* OAIResponseDeserializer.m in Sources */,
 				49AAFAE94B0FBB368E9950697AE41903 /* OAISanitizer.m in Sources */,
+				F9FDDEA523565E0100A0153A /* StepsModel.m in Sources */,
 				0033C3DA9D43F4DD9433C044E003122C /* OpenAPIClient-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1739,6 +1807,18 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F9FC981223476F5F000B76C5 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F9FC981123476F5F000B76C5 /* Model1.xcdatamodel */,
+			);
+			currentVersion = F9FC981123476F5F000B76C5 /* Model1.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 }

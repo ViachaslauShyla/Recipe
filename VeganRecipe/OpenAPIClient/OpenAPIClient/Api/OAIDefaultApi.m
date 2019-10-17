@@ -2,6 +2,7 @@
 #import "OAIQueryParamCollection.h"
 #import "OAIApiClient.h"
 #import "OAIInlineObject8.h"
+#import "RecipeModel.h"
 
 
 @interface OAIDefaultApi ()
@@ -4861,7 +4862,13 @@ NSInteger kOAIDefaultApiMissingParamErrorCode = 234513;
                               responseType: @"NSObject*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((NSObject*)data, error);
+                                    if ((NSDictionary *)data && (NSArray *)data[@"results"]) {
+                                        for (NSDictionary *result in data[@"results"]) {
+                                            RecipeModel *recipe = [[RecipeModel alloc] initWithResultRequest:result];
+                                            handler((NSObject*)recipe, error);
+                                        }
+                                    }
+                                    
                                 }
                             }];
 }

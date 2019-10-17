@@ -9,11 +9,14 @@
 /* Begin PBXBuildFile section */
 		5E5725908E041A51FF8EB331 /* Pods_VeganRecipe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99068C48BDEE06D3E0474A01 /* Pods_VeganRecipe.framework */; };
 		F9FAA08E233D5D8D00FAC497 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9FAA08D233D5D8D00FAC497 /* CoreData.framework */; };
+		F9FCCCC6235272FB00666B5E /* ShoppingList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FCCCC5235272FB00666B5E /* ShoppingList.swift */; };
+		F9FCCCC8235276A200666B5E /* MealPlanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FCCCC7235276A200666B5E /* MealPlanner.swift */; };
 		F9FD9BC9231DB4FF00E31C0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FD9BC8231DB4FF00E31C0A /* AppDelegate.swift */; };
 		F9FD9BCB231DB4FF00E31C0A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FD9BCA231DB4FF00E31C0A /* ViewController.swift */; };
 		F9FD9BCE231DB4FF00E31C0A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9FD9BCC231DB4FF00E31C0A /* Main.storyboard */; };
 		F9FD9BD0231DB50100E31C0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9FD9BCF231DB50100E31C0A /* Assets.xcassets */; };
 		F9FD9BD3231DB50100E31C0A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9FD9BD1231DB50100E31C0A /* LaunchScreen.storyboard */; };
+		F9FEC4852348F18300BBAAC2 /* ApiRequestWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FEC4842348F18300BBAAC2 /* ApiRequestWrapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,8 @@
 		ED2F7836DB716ADE4E52AD61 /* Pods-VeganRecipe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VeganRecipe.debug.xcconfig"; path = "Target Support Files/Pods-VeganRecipe/Pods-VeganRecipe.debug.xcconfig"; sourceTree = "<group>"; };
 		F96DD8A72336F230005A69A9 /* Api-Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Api-Bridge.h"; sourceTree = "<group>"; };
 		F9FAA08D233D5D8D00FAC497 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		F9FCCCC5235272FB00666B5E /* ShoppingList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingList.swift; sourceTree = "<group>"; };
+		F9FCCCC7235276A200666B5E /* MealPlanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlanner.swift; sourceTree = "<group>"; };
 		F9FD9BC5231DB4FF00E31C0A /* VeganRecipe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VeganRecipe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9FD9BC8231DB4FF00E31C0A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F9FD9BCA231DB4FF00E31C0A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,6 +34,7 @@
 		F9FD9BCF231DB50100E31C0A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F9FD9BD2231DB50100E31C0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F9FD9BD4231DB50100E31C0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F9FEC4842348F18300BBAAC2 /* ApiRequestWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequestWrapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +91,9 @@
 			children = (
 				F9FD9BC8231DB4FF00E31C0A /* AppDelegate.swift */,
 				F9FD9BCA231DB4FF00E31C0A /* ViewController.swift */,
+				F9FCCCC5235272FB00666B5E /* ShoppingList.swift */,
+				F9FCCCC7235276A200666B5E /* MealPlanner.swift */,
+				F9FEC4842348F18300BBAAC2 /* ApiRequestWrapper.swift */,
 				F9FD9BCC231DB4FF00E31C0A /* Main.storyboard */,
 				F9FD9BCF231DB50100E31C0A /* Assets.xcassets */,
 				F9FD9BD1231DB50100E31C0A /* LaunchScreen.storyboard */,
@@ -209,7 +218,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9FCCCC8235276A200666B5E /* MealPlanner.swift in Sources */,
 				F9FD9BCB231DB4FF00E31C0A /* ViewController.swift in Sources */,
+				F9FEC4852348F18300BBAAC2 /* ApiRequestWrapper.swift in Sources */,
+				F9FCCCC6235272FB00666B5E /* ShoppingList.swift in Sources */,
 				F9FD9BC9231DB4FF00E31C0A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

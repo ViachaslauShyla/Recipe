@@ -4,6 +4,7 @@
 #import "OAIJSONRequestSerializer.h"
 #import "OAIQueryParamCollection.h"
 #import "OAIDefaultConfiguration.h"
+#import "CoreDataManager.h"
 
 NSString *const OAIResponseObjectErrorKey = @"OAIResponseObject";
 
@@ -188,6 +189,14 @@ static NSString * OAI__fileNameForResponse(NSURLResponse *response) {
     
      NSString* urlString = [[NSURL URLWithString:pathWithQueryParams relativeToURL:self.baseURL] absoluteString];
 
+   // Checked data from cache
+    NSDictionary *result = [CoreDataManager.shared dataSourceForUrl:urlString];
+    
+    if (result != nil) /* && offsetCache == offsetRequest)*/ {
+        completionBlock(result, nil);
+        return nil;
+    }
+
     NSError *requestCreateError = nil;
     NSMutableURLRequest * request = nil;
     if (files.count > 0) {
@@ -241,6 +250,14 @@ static NSString * OAI__fileNameForResponse(NSURLResponse *response) {
             if(!response && !error){
                 error = serializationError;
             }
+
+        // If get offset to reload more objects, we save data for neccesary url
+//            NSString *urlForCoreData = urlString;
+//            NSString *offsetString = [@"offset=" stringByAppendingString:[[NSString alloc] initWithFormat:@"%@", offsetRequest]];
+//            urlForCoreData = [urlString stringByReplacingOccurrencesOfString:offsetString withString: @"offset=0"];
+//            NSMutableDictionary * endDict = [NSMutableDictionary dictionaryWithDictionary:result];
+//            [endDict addEntriesFromDictionary:response];
+            [CoreDataManager.shared saveIntoDataSourceFor:urlString data:response];
             completionBlock(response, error);
         }];
     }
