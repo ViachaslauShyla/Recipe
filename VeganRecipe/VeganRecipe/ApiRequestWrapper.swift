@@ -33,9 +33,9 @@ class ApiRequestWrapper {
         self.api = api
     }
     
-    func getRecipeInformation(id: Int, complition: @escaping (Dictionary<String, Any>) -> ()) {
-        api.getRecipeInformation(withId: NSNumber(value: id), includeNutrition: NSNumber(value: false)) { (object, error) in
-            guard let result = object as? Dictionary<String, Any> else {
+    func getRecipeInformation(id: NSNumber, complition: @escaping (NSDictionary) -> ()) {
+        api.getRecipeInformation(withId: id, includeNutrition: NSNumber(value: false)) { (object, error) in
+            guard let result = object as? NSDictionary else {
                 print(error?.localizedDescription ?? "error recipe information")
                 return
             }

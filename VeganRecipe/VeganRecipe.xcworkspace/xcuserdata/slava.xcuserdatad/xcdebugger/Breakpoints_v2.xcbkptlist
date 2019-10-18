@@ -22,16 +22,111 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OpenAPIClient/OpenAPIClient/Core/OAIApiClient.m"
+            timestampString = "593094951.756808"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "195"
+            endingLineNumber = "195"
+            landmarkName = "-requestWithPath:method:pathParams:queryParams:formParams:files:body:headerParams:authSettings:requestContentType:responseContentType:responseType:completionBlock:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VeganRecipe/ViewController.swift"
+            timestampString = "593102077.155759"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "dataSource"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "OpenAPIClient/OpenAPIClient/Model/IngredientModel.m"
-            timestampString = "592951284.850643"
+            filePath = "OpenAPIClient/OpenAPIClient/Model/RecipeModel.m"
+            timestampString = "593102077.156288"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "12"
-            endingLineNumber = "12"
-            landmarkName = "-initWithResultRequest:"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
+            landmarkName = "-fillFullData:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[RecipeModel fillFullData:]"
+                  moduleName = "OpenAPIClient"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/slava/Desktop/Recipe/VeganRecipe/OpenAPIClient/OpenAPIClient/Model/RecipeModel.m"
+                  timestampString = "593101841.838823"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "79"
+                  endingLineNumber = "79"
+                  offsetFromSymbolStart = "2030">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__28-[RecipeModel fillFullData:]_block_invoke"
+                  moduleName = "OpenAPIClient"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/slava/Desktop/Recipe/VeganRecipe/OpenAPIClient/OpenAPIClient/Model/RecipeModel.m"
+                  timestampString = "593101841.8421299"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "81"
+                  endingLineNumber = "81"
+                  offsetFromSymbolStart = "75">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__destroy_helper_block_e8_32s"
+                  moduleName = "OpenAPIClient"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/slava/Desktop/Recipe/VeganRecipe/OpenAPIClient/OpenAPIClient/Model/RecipeModel.m"
+                  timestampString = "593101841.846169"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "79"
+                  endingLineNumber = "79"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OpenAPIClient/OpenAPIClient/Model/RecipeModel.m"
+            timestampString = "593102077.156383"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
+            landmarkName = "-fillFullData:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -41,13 +136,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "VeganRecipe/ViewController.swift"
-            timestampString = "592990176.801923"
+            filePath = "OpenAPIClient/OpenAPIClient/Model/RecipeModel.m"
+            timestampString = "593102077.156472"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
-            landmarkName = "viewDidLoad()"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
+            landmarkName = "-fillFullData:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
