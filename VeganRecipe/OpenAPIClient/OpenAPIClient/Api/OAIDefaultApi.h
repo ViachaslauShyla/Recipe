@@ -1481,4 +1481,8 @@ extern NSInteger kOAIDefaultApiMissingParamErrorCode;
 
 
 
+- (NSURLSessionDataTask *)downloadImageDataBy:(NSURL *) url
+                               downloadProgress:(void (^)(NSProgress *downloadProgress)) downloadProgressBlock
+                              completionHandler:(void (^)(NSData * responseData, BOOL isCache,  NSError * error))completionHandler;
+
 @end

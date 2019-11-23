@@ -28,10 +28,15 @@
         _api = [[OAIDefaultApi alloc] init];
         _steps = [NSArray array];
         _ingredients = [NSArray array];
+        _recipeImage = [[UIImage alloc] init];
         [self setInitialDataIntoModel:result];
     }
 
     return self;
+}
+
+- (void)setImage:(UIImage *)recipeImage {
+    self.recipeImage = recipeImage;
 }
 
 - (void)setInitialDataIntoModel: (NSDictionary *)data {

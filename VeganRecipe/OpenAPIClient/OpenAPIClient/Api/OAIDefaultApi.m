@@ -3,6 +3,7 @@
 #import "OAIApiClient.h"
 #import "OAIInlineObject8.h"
 #import "RecipeModel.h"
+#import "CoreDataManager.h"
 
 
 @interface OAIDefaultApi ()
@@ -4253,6 +4254,31 @@ NSInteger kOAIDefaultApiMissingParamErrorCode = 234513;
                             }];
 }
 
+- (NSURLSessionDataTask *)downloadImageDataBy:(NSURL *) url
+                             downloadProgress:(void (^)(NSProgress *downloadProgress)) downloadProgressBlock
+                            completionHandler:(void (^)(NSData * _Nullable responseData, BOOL isCache,  NSError * _Nullable error)) completionHandler {
+
+    NSURLSessionDataTask *task = nil;
+
+    NSData *imageData = [CoreDataManager.shared imageDataForUrl: [NSString stringWithFormat:@"%@",url]];
+    if (imageData) {
+        completionHandler(imageData, YES, nil);
+    } else {
+
+        NSURLRequest *request = [NSURLRequest requestWithURL:url];
+        task = [self.apiClient dataTaskWithRequest:request
+                                    uploadProgress:nil
+                                  downloadProgress:downloadProgressBlock
+                                 completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
+
+                                     [CoreDataManager.shared saveImageDataFor:[NSString stringWithFormat:@"%@",url] data:responseObject];
+                                     completionHandler(responseObject, NO, error);
+                                 }];
+        [task resume];
+    }
+    return task;
+}
+
 ///
 /// Search Recipes Complex
 /// Search through hundreds of thousands of recipes using advanced filtering and ranking. NOTE: Since this method combines searching by query, by ingredients, and by nutrients in one endpoint.
@@ -4863,10 +4889,12 @@ NSInteger kOAIDefaultApiMissingParamErrorCode = 234513;
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
                                     if ((NSDictionary *)data && (NSArray *)data[@"results"]) {
+                                        NSMutableArray *recipes = [NSMutableArray array];
                                         for (NSDictionary *result in data[@"results"]) {
                                             RecipeModel *recipe = [[RecipeModel alloc] initWithResultRequest:result];
-                                            handler((NSObject*)recipe, error);
+                                            [recipes addObject:recipe];
                                         }
+                                        handler(recipes, error);
                                     }
                                     
                                 }
@@ -5938,7 +5966,5 @@ NSInteger kOAIDefaultApiMissingParamErrorCode = 234513;
                                 }
                             }];
 }
-
-
 
 @end

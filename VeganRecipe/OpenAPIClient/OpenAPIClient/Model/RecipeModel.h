@@ -19,6 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property(strong, nonatomic) NSNumber *idRecipe;
 @property(strong, nonatomic) NSString *imageUrl;
+@property(strong, nonatomic, nullable) UIImage* recipeImage;
 @property(strong, nonatomic) NSString *title;
 @property(strong, nonatomic) NSArray<StepsModel *> *steps;
 @property(strong, nonatomic) NSArray<IngredientModel *> *ingredients;
@@ -31,6 +32,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (id) initWithResultRequest: (NSDictionary *) result;
 - (void)setInitialDataIntoModel: (NSDictionary *)data;
 - (void)fillFullData: (NSDictionary *)data;
+- (void)setImage:(UIImage *)recipeImage;
 
 @end
 

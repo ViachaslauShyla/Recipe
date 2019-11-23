@@ -18,6 +18,28 @@
     return singleton;
 }
 
+- (NSData *) imageDataForUrl: (NSString *)url {
+    NSEntityDescription *description = [NSEntityDescription entityForName:@"ImageData" inManagedObjectContext:self.persistentContainer.viewContext];
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setEntity:description];
+    [request setPredicate:[NSPredicate predicateWithFormat:@"url==%@",url]];
+    NSError *error;
+    NSArray *result = [self.persistentContainer.viewContext executeFetchRequest:request error:&error];
+    NSManagedObject *object = result.firstObject;
+    NSData* data = [object valueForKey:@"data"];
+    return  data;
+}
+
+- (void) saveImageDataFor: (NSString *)key data: (NSObject *)data {
+    NSEntityDescription *description = [NSEntityDescription entityForName:@"ImageData" inManagedObjectContext:self.persistentContainer.viewContext];
+    NSManagedObject *object = [[NSManagedObject alloc] initWithEntity:description insertIntoManagedObjectContext:self.persistentContainer.viewContext];
+    [object setValue:key forKey:@"url"];
+    [object setValue:data forKey:@"data"];
+
+    [self saveContext];
+}
+
+
 - (NSDictionary *) dataSourceForUrl: (NSString *)url {
     NSEntityDescription *description = [NSEntityDescription entityForName:@"Cache" inManagedObjectContext:self.persistentContainer.viewContext];
     NSFetchRequest *request = [[NSFetchRequest alloc] init];

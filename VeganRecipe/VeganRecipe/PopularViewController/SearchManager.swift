@@ -1,8 +1,8 @@
 //
-//  ApiRequestWrapper.swift
+//  SearchManager.swift
 //  VeganRecipe
 //
-//  Created by Slava on 10/5/19.
+//  Created by Slava on 11/1/19.
 //  Copyright © 2019 Slava. All rights reserved.
 //
 
@@ -25,14 +25,45 @@ struct ConstantName {
     static let offset = "offset"
 }
 
-class ApiRequestWrapper {
-    
+
+class SearchManager {
+
     let api: OAIDefaultApi
-    
-    init (api: OAIDefaultApi) {
-        self.api = api
+
+    init() {
+        self.api = OAIDefaultApi()
     }
-    
+
+    func initialSearchComplexRecipe(complition: @escaping ([RecipeModel]) -> Void) {
+        let request: [String : Any] = [ConstantName.sort: "popularity",
+                                       ConstantName.diet: "Gluten Free",
+                                       ConstantName.offset: 0 ]
+        searchRecipesComplexWith(dictionary: request, complition: complition)
+    }
+
+    func nextSearchComplexRecipe(offset: Int, complition: @escaping ([RecipeModel]) -> Void) {
+        let request: [String : Any] = [ConstantName.sort: "popularity",
+                                       ConstantName.diet: "Vegan",
+                                       ConstantName.offset: offset ]
+        searchRecipesComplexWith(dictionary: request, complition: complition)
+    }
+
+    func downloadImageDataBy(url: URL, downloadProgress: @escaping (Progress?) -> (), complition: @escaping (UIImage?) -> ()) {
+
+        api.downloadImageData(by:url , downloadProgress: downloadProgress) { (data, isCache, error) in
+            if let data = data,
+                let image = UIImage(data: data) {
+                DispatchQueue.main.async {
+                    complition(image)
+                }
+            } else {
+                complition(nil)
+            }
+        }
+
+
+    }
+
     func getRecipeInformation(id: NSNumber, complition: @escaping (NSDictionary) -> ()) {
         api.getRecipeInformation(withId: id, includeNutrition: NSNumber(value: false)) { (object, error) in
             guard let result = object as? NSDictionary else {
@@ -42,8 +73,11 @@ class ApiRequestWrapper {
             complition(result)
         }
     }
-    
-    func searchRecipesComplexWith(dictionary: Dictionary<String, Any>, complition: @escaping (NSObject) -> ()) {
+
+
+
+
+   private func searchRecipesComplexWith(dictionary: Dictionary<String, Any>, complition: @escaping ([RecipeModel]) -> ()) {
         func valueFor(key: String) -> Any? {
             guard let v = dictionary[key] else {
                 return nil
@@ -143,14 +177,15 @@ class ApiRequestWrapper {
                                  offset: NSNumber(value: dictionary[ConstantName.offset] as? Int ?? 0),
                                  number: nil,
                                  limitLicense: nil) { (object, error) in
-                                    guard let object = object else {
+                                    guard let object = object as? [RecipeModel] else {
                                         print(error?.localizedDescription ?? "error complex search")
                                         return
                                     }
-                                   complition(object)
+                                    complition(object)
         }
-        
-        
-        
+
+
+
     }
+
 }

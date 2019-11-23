@@ -165,7 +165,7 @@ static NSString * OAI__fileNameForResponse(NSURLResponse *response) {
     queryParams = [sanitizer sanitizeForSerialization:queryParams];
     headerParams = [sanitizer sanitizeForSerialization:headerParams];
     formParams = [sanitizer sanitizeForSerialization:formParams];
-    
+
     formParams = @{@"apiKey" : @"09f0875e111844b9a45ed307593fbb81"};
 
     if(![body isKindOfClass:[NSData class]]) {
@@ -192,7 +192,7 @@ static NSString * OAI__fileNameForResponse(NSURLResponse *response) {
    // Checked data from cache
     NSDictionary *result = [CoreDataManager.shared dataSourceForUrl:urlString];
     
-    if (result != nil) /* && offsetCache == offsetRequest)*/ {
+    if (result != nil) {
         completionBlock(result, nil);
         return nil;
     }
@@ -251,12 +251,6 @@ static NSString * OAI__fileNameForResponse(NSURLResponse *response) {
                 error = serializationError;
             }
 
-        // If get offset to reload more objects, we save data for neccesary url
-//            NSString *urlForCoreData = urlString;
-//            NSString *offsetString = [@"offset=" stringByAppendingString:[[NSString alloc] initWithFormat:@"%@", offsetRequest]];
-//            urlForCoreData = [urlString stringByReplacingOccurrencesOfString:offsetString withString: @"offset=0"];
-//            NSMutableDictionary * endDict = [NSMutableDictionary dictionaryWithDictionary:result];
-//            [endDict addEntriesFromDictionary:response];
             [CoreDataManager.shared saveIntoDataSourceFor:urlString data:response];
             completionBlock(response, error);
         }];
