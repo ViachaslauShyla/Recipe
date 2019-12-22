@@ -12,79 +12,37 @@
 #import "OAIDefaultApi.h"
 #import "NutritionModel.h"
 
-@interface RecipeModel()
-
-@property(strong, nonatomic) OAIDefaultApi *api;
-
-@end
-
-
 @implementation RecipeModel
 
--(id) initWithResultRequest: (NSDictionary *)result {
-
++ (JSONKeyMapper *)keyMapper {
+    return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{ @"idRecipe": @"id", @"imageUrl":@"image", @"title":@"title", @"serving":@"serving", @"healthScore":@"healthScore", @"dishTypes":@"dishTypes" }];
+}
+// , @"ingredients":@"extendedIngredients", , @"steps": @"analyzedInstructions"
+- (id) initWith: (NSDictionary *) data {
     self = [super init];
     if (self) {
-        _api = [[OAIDefaultApi alloc] init];
-        _steps = [NSArray array];
-        _ingredients = [NSArray array];
-        _recipeImage = [[UIImage alloc] init];
-        [self setInitialDataIntoModel:result];
+        [self mergeFromDictionary:data useKeyMapping:true error:nil];
     }
-
-    return self;
+    return  self;
 }
 
-- (void)setImage:(UIImage *)recipeImage {
-    self.recipeImage = recipeImage;
+- (instancetype)initWithDictionary:(NSDictionary *)dict error:(NSError **)err {
+    self = [super init];
+    if (self) {
+        [self mergeFromDictionary:dict useKeyMapping:true error:nil];
+    }
+    return  self;
 }
 
-- (void)setInitialDataIntoModel: (NSDictionary *)data {
+- (void)fillFullRecipe: (NSDictionary *) data {
+    [self mergeFromDictionary:data useKeyMapping:true error:nil];
+    _ingredients = [IngredientModel arrayOfModelsFromDictionaries:data[@"extendedIngredients"] error:nil];
+    _cookTime = [[CookTimeModel alloc] initWithDictionary:data error:nil];
 
-    if ((NSNumber *)data[@"id"]) {
-        _idRecipe = data[@"id"];
-    }
-
-    if ((NSString *)data[@"image"]) {
-        _imageUrl = data[@"image"];
-    }
-
-    if ((NSString *)data[@"title"]) {
-        _title = data[@"title"];
-    }
-}
-
-- (void)fillFullData: (NSDictionary *)data {
-    
-    if ((NSArray<NSDictionary *> *)data[@"steps"]) {
-        NSMutableArray *tempArray = [NSMutableArray array];
-        for (NSDictionary *result in data[@"steps"]) {
-            StepsModel *step = [[StepsModel alloc] initWithResultRequest:result];
-            [tempArray addObject:step];
-        }
-        self.steps = [NSArray arrayWithArray:tempArray];
-    }
-
-    if ((NSArray<NSDictionary *> *)data[@"extendedIngredients"]) {
-        NSMutableArray *tempArray = [NSMutableArray array];
-        for (NSDictionary *result in data[@"extendedIngredients"]) {
-            IngredientModel *ingredient = [[IngredientModel alloc] initWithResultRequest:result];
-            [tempArray addObject:ingredient];
-        }
-        self.ingredients = [NSArray arrayWithArray:tempArray];
-    }
-
-    self.cookTime = [[CookTimeModel alloc] initWithResultRequest:data];
-    self.serving = (NSNumber *)data[@"servings"];
-    self.dishTypes = [NSArray arrayWithArray:(NSArray *)data[@"dishTypes"]];
-    self.healthScore = (NSNumber *)data[@"healthScore"];
-
-    // Getting Nutrition
-    [self.api getRecipeNutritionByIDWithId:self.idRecipe completionHandler:^(NSObject *output, NSError *error) {
-        if ((NSDictionary *)output) {
-            self.nutrition = [[NutritionModel alloc] initWithResultRequest:(NSDictionary *)output];
-        }
-    }];
+    NSArray* analyzedInstructions = data[@"analyzedInstructions"];
+    NSDictionary* dict = [analyzedInstructions firstObject];
+    NSArray* steps = dict[@"steps"];
+    _steps = [StepsModel arrayOfModelsFromDictionaries:steps error:nil];
 }
 
 @end

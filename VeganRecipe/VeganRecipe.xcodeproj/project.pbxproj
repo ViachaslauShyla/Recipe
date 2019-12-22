@@ -8,16 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		5E5725908E041A51FF8EB331 /* Pods_VeganRecipe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99068C48BDEE06D3E0474A01 /* Pods_VeganRecipe.framework */; };
+		F901301B23A58C4800D46029 /* ContainerSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F901301A23A58C4800D46029 /* ContainerSearchView.swift */; };
 		F901C84A235F8C8900299098 /* PopularViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F901C849235F8C8900299098 /* PopularViewController.swift */; };
 		F901C84C235FB69A00299098 /* PopularCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F901C84B235FB69A00299098 /* PopularCollectionViewCell.swift */; };
-		F90371842360FC2500B5EEA4 /* Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90371832360FC2500B5EEA4 /* Downloader.swift */; };
+		F9FA77ED23AEC49A008109D5 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FA77EC23AEC49A008109D5 /* ProgressView.swift */; };
 		F9FAA08E233D5D8D00FAC497 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9FAA08D233D5D8D00FAC497 /* CoreData.framework */; };
-		F9FCA458236CD343009487BC /* SearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FCA457236CD343009487BC /* SearchManager.swift */; };
+		F9FB9A8023B0183E0087E973 /* PopularModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FB9A7F23B0183E0087E973 /* PopularModelView.swift */; };
+		F9FC4F6223ACA22B005DE7B3 /* Extention+UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FC4F6123ACA22B005DE7B3 /* Extention+UIImageView.swift */; };
+		F9FC4F6423ACAA4B005DE7B3 /* UploadImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FC4F6323ACAA4B005DE7B3 /* UploadImageView.swift */; };
 		F9FCBCC72364EA7E0083DE49 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FCBCC62364EA7E0083DE49 /* View.swift */; };
-		F9FCCCC6235272FB00666B5E /* ShoppingList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FCCCC5235272FB00666B5E /* ShoppingList.swift */; };
-		F9FCCCC8235276A200666B5E /* MealPlanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FCCCC7235276A200666B5E /* MealPlanner.swift */; };
 		F9FD9BC9231DB4FF00E31C0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FD9BC8231DB4FF00E31C0A /* AppDelegate.swift */; };
-		F9FD9BCB231DB4FF00E31C0A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FD9BCA231DB4FF00E31C0A /* ViewController.swift */; };
 		F9FD9BCE231DB4FF00E31C0A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9FD9BCC231DB4FF00E31C0A /* Main.storyboard */; };
 		F9FD9BD0231DB50100E31C0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9FD9BCF231DB50100E31C0A /* Assets.xcassets */; };
 		F9FD9BD3231DB50100E31C0A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9FD9BD1231DB50100E31C0A /* LaunchScreen.storyboard */; };
@@ -27,18 +27,18 @@
 		99068C48BDEE06D3E0474A01 /* Pods_VeganRecipe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VeganRecipe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CADF60C0BE41050326E8B35 /* Pods-VeganRecipe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VeganRecipe.release.xcconfig"; path = "Target Support Files/Pods-VeganRecipe/Pods-VeganRecipe.release.xcconfig"; sourceTree = "<group>"; };
 		ED2F7836DB716ADE4E52AD61 /* Pods-VeganRecipe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VeganRecipe.debug.xcconfig"; path = "Target Support Files/Pods-VeganRecipe/Pods-VeganRecipe.debug.xcconfig"; sourceTree = "<group>"; };
+		F901301A23A58C4800D46029 /* ContainerSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerSearchView.swift; sourceTree = "<group>"; };
 		F901C849235F8C8900299098 /* PopularViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularViewController.swift; sourceTree = "<group>"; };
 		F901C84B235FB69A00299098 /* PopularCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularCollectionViewCell.swift; sourceTree = "<group>"; };
-		F90371832360FC2500B5EEA4 /* Downloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Downloader.swift; sourceTree = "<group>"; };
 		F96DD8A72336F230005A69A9 /* Api-Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Api-Bridge.h"; sourceTree = "<group>"; };
+		F9FA77EC23AEC49A008109D5 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		F9FAA08D233D5D8D00FAC497 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		F9FCA457236CD343009487BC /* SearchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchManager.swift; sourceTree = "<group>"; };
+		F9FB9A7F23B0183E0087E973 /* PopularModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularModelView.swift; sourceTree = "<group>"; };
+		F9FC4F6123ACA22B005DE7B3 /* Extention+UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extention+UIImageView.swift"; sourceTree = "<group>"; };
+		F9FC4F6323ACAA4B005DE7B3 /* UploadImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImageView.swift; sourceTree = "<group>"; };
 		F9FCBCC62364EA7E0083DE49 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
-		F9FCCCC5235272FB00666B5E /* ShoppingList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingList.swift; sourceTree = "<group>"; };
-		F9FCCCC7235276A200666B5E /* MealPlanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlanner.swift; sourceTree = "<group>"; };
 		F9FD9BC5231DB4FF00E31C0A /* VeganRecipe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VeganRecipe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9FD9BC8231DB4FF00E31C0A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F9FD9BCA231DB4FF00E31C0A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F9FD9BCD231DB4FF00E31C0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F9FD9BCF231DB50100E31C0A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F9FD9BD2231DB50100E31C0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -76,12 +76,38 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F9FB9A7C23B017960087E973 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				F9FCBCC62364EA7E0083DE49 /* View.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		F9FB9A7D23B017B20087E973 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F9FB9A7E23B017E20087E973 /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				F9FC4F6123ACA22B005DE7B3 /* Extention+UIImageView.swift */,
+			);
+			path = Extentions;
+			sourceTree = "<group>";
+		};
 		F9FCBCCA236508C80083DE49 /* PopularViewController */ = {
 			isa = PBXGroup;
 			children = (
 				F901C849235F8C8900299098 /* PopularViewController.swift */,
-				F9FCA457236CD343009487BC /* SearchManager.swift */,
 				F901C84B235FB69A00299098 /* PopularCollectionViewCell.swift */,
+				F9FB9A7F23B0183E0087E973 /* PopularModelView.swift */,
+				F901301A23A58C4800D46029 /* ContainerSearchView.swift */,
+				F9FC4F6323ACAA4B005DE7B3 /* UploadImageView.swift */,
+				F9FA77EC23AEC49A008109D5 /* ProgressView.swift */,
 			);
 			path = PopularViewController;
 			sourceTree = "<group>";
@@ -108,12 +134,10 @@
 			isa = PBXGroup;
 			children = (
 				F9FD9BC8231DB4FF00E31C0A /* AppDelegate.swift */,
-				F9FD9BCA231DB4FF00E31C0A /* ViewController.swift */,
 				F9FCBCCA236508C80083DE49 /* PopularViewController */,
-				F9FCBCC62364EA7E0083DE49 /* View.swift */,
-				F90371832360FC2500B5EEA4 /* Downloader.swift */,
-				F9FCCCC5235272FB00666B5E /* ShoppingList.swift */,
-				F9FCCCC7235276A200666B5E /* MealPlanner.swift */,
+				F9FB9A7D23B017B20087E973 /* Views */,
+				F9FB9A7E23B017E20087E973 /* Extentions */,
+				F9FB9A7C23B017960087E973 /* Factory */,
 				F9FD9BCC231DB4FF00E31C0A /* Main.storyboard */,
 				F9FD9BCF231DB50100E31C0A /* Assets.xcassets */,
 				F9FD9BD1231DB50100E31C0A /* LaunchScreen.storyboard */,
@@ -238,15 +262,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9FB9A8023B0183E0087E973 /* PopularModelView.swift in Sources */,
 				F901C84A235F8C8900299098 /* PopularViewController.swift in Sources */,
-				F9FCCCC8235276A200666B5E /* MealPlanner.swift in Sources */,
-				F90371842360FC2500B5EEA4 /* Downloader.swift in Sources */,
-				F9FD9BCB231DB4FF00E31C0A /* ViewController.swift in Sources */,
+				F9FC4F6223ACA22B005DE7B3 /* Extention+UIImageView.swift in Sources */,
+				F901301B23A58C4800D46029 /* ContainerSearchView.swift in Sources */,
 				F901C84C235FB69A00299098 /* PopularCollectionViewCell.swift in Sources */,
-				F9FCA458236CD343009487BC /* SearchManager.swift in Sources */,
-				F9FCCCC6235272FB00666B5E /* ShoppingList.swift in Sources */,
 				F9FCBCC72364EA7E0083DE49 /* View.swift in Sources */,
+				F9FA77ED23AEC49A008109D5 /* ProgressView.swift in Sources */,
 				F9FD9BC9231DB4FF00E31C0A /* AppDelegate.swift in Sources */,
+				F9FC4F6423ACAA4B005DE7B3 /* UploadImageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,7 +430,7 @@
 				PRODUCT_MODULE_NAME = VeganRecipe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "VeganRecipe/Api-Bridge.h";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -427,7 +451,7 @@
 				PRODUCT_MODULE_NAME = VeganRecipe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "VeganRecipe/Api-Bridge.h";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

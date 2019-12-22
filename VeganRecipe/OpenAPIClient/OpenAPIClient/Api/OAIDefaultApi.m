@@ -4,6 +4,7 @@
 #import "OAIInlineObject8.h"
 #import "RecipeModel.h"
 #import "CoreDataManager.h"
+#import "OAIDefaultApi+RecipeMethods.h"
 
 
 @interface OAIDefaultApi ()
@@ -589,68 +590,68 @@ NSInteger kOAIDefaultApiMissingParamErrorCode = 234513;
 ///
 ///  @returns NSObject*
 ///
--(NSURLSessionTask*) classifyGroceryProductWithInlineObject8: (OAIInlineObject8*) inlineObject8
-    locale: (NSString*) locale
-    completionHandler: (void (^)(NSObject* output, NSError* error)) handler {
-    // verify the required parameter 'inlineObject8' is set
-    if (inlineObject8 == nil) {
-        NSParameterAssert(inlineObject8);
-        if(handler) {
-            NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"inlineObject8"] };
-            NSError* error = [NSError errorWithDomain:kOAIDefaultApiErrorDomain code:kOAIDefaultApiMissingParamErrorCode userInfo:userInfo];
-            handler(nil, error);
-        }
-        return nil;
-    }
-
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/food/products/classify"];
-
-    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
-
-    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
-    if (locale != nil) {
-        queryParams[@"locale"] = locale;
-    }
-    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
-    [headerParams addEntriesFromDictionary:self.defaultHeaders];
-    // HTTP header `Accept`
-    NSString *acceptHeader = [self.apiClient.sanitizer selectHeaderAccept:@[@"application/json"]];
-    if(acceptHeader.length > 0) {
-        headerParams[@"Accept"] = acceptHeader;
-    }
-
-    // response content type
-    NSString *responseContentType = [[acceptHeader componentsSeparatedByString:@", "] firstObject] ?: @"";
-
-    // request content type
-    NSString *requestContentType = [self.apiClient.sanitizer selectHeaderContentType:@[@"application/json"]];
-
-    // Authentication setting
-    NSArray *authSettings = @[];
-
-    id bodyParam = nil;
-    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
-    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
-    bodyParam = inlineObject8;
-
-    return [self.apiClient requestWithPath: resourcePath
-                                    method: @"POST"
-                                pathParams: pathParams
-                               queryParams: queryParams
-                                formParams: formParams
-                                     files: localVarFiles
-                                      body: bodyParam
-                              headerParams: headerParams
-                              authSettings: authSettings
-                        requestContentType: requestContentType
-                       responseContentType: responseContentType
-                              responseType: @"NSObject*"
-                           completionBlock: ^(id data, NSError *error) {
-                                if(handler) {
-                                    handler((NSObject*)data, error);
-                                }
-                            }];
-}
+//-(NSURLSessionTask*) classifyGroceryProductWithInlineObject8: (OAIInlineObject8*) inlineObject8
+//    locale: (NSString*) locale
+//    completionHandler: (void (^)(NSObject* output, NSError* error)) handler {
+//    // verify the required parameter 'inlineObject8' is set
+//    if (inlineObject8 == nil) {
+//        NSParameterAssert(inlineObject8);
+//        if(handler) {
+//            NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"inlineObject8"] };
+//            NSError* error = [NSError errorWithDomain:kOAIDefaultApiErrorDomain code:kOAIDefaultApiMissingParamErrorCode userInfo:userInfo];
+//            handler(nil, error);
+//        }
+//        return nil;
+//    }
+//
+//    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/food/products/classify"];
+//
+//    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+//
+//    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+//    if (locale != nil) {
+//        queryParams[@"locale"] = locale;
+//    }
+//    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
+//    [headerParams addEntriesFromDictionary:self.defaultHeaders];
+//    // HTTP header `Accept`
+//    NSString *acceptHeader = [self.apiClient.sanitizer selectHeaderAccept:@[@"application/json"]];
+//    if(acceptHeader.length > 0) {
+//        headerParams[@"Accept"] = acceptHeader;
+//    }
+//
+//    // response content type
+//    NSString *responseContentType = [[acceptHeader componentsSeparatedByString:@", "] firstObject] ?: @"";
+//
+//    // request content type
+//    NSString *requestContentType = [self.apiClient.sanitizer selectHeaderContentType:@[@"application/json"]];
+//
+//    // Authentication setting
+//    NSArray *authSettings = @[];
+//
+//    id bodyParam = nil;
+//    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+//    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+//    bodyParam = inlineObject8;
+//
+//    return [self.apiClient requestWithPath: resourcePath
+//                                    method: @"POST"
+//                                pathParams: pathParams
+//                               queryParams: queryParams
+//                                formParams: formParams
+//                                     files: localVarFiles
+//                                      body: bodyParam
+//                              headerParams: headerParams
+//                              authSettings: authSettings
+//                        requestContentType: requestContentType
+//                       responseContentType: responseContentType
+//                              responseType: @"NSObject*"
+//                           completionBlock: ^(id data, NSError *error) {
+//                                if(handler) {
+//                                    handler((NSObject*)data, error);
+//                                }
+//                            }];
+//}
 
 ///
 /// Classify Grocery Product Bulk
@@ -4254,30 +4255,7 @@ NSInteger kOAIDefaultApiMissingParamErrorCode = 234513;
                             }];
 }
 
-- (NSURLSessionDataTask *)downloadImageDataBy:(NSURL *) url
-                             downloadProgress:(void (^)(NSProgress *downloadProgress)) downloadProgressBlock
-                            completionHandler:(void (^)(NSData * _Nullable responseData, BOOL isCache,  NSError * _Nullable error)) completionHandler {
 
-    NSURLSessionDataTask *task = nil;
-
-    NSData *imageData = [CoreDataManager.shared imageDataForUrl: [NSString stringWithFormat:@"%@",url]];
-    if (imageData) {
-        completionHandler(imageData, YES, nil);
-    } else {
-
-        NSURLRequest *request = [NSURLRequest requestWithURL:url];
-        task = [self.apiClient dataTaskWithRequest:request
-                                    uploadProgress:nil
-                                  downloadProgress:downloadProgressBlock
-                                 completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
-
-                                     [CoreDataManager.shared saveImageDataFor:[NSString stringWithFormat:@"%@",url] data:responseObject];
-                                     completionHandler(responseObject, NO, error);
-                                 }];
-        [task resume];
-    }
-    return task;
-}
 
 ///
 /// Search Recipes Complex
@@ -4869,6 +4847,7 @@ NSInteger kOAIDefaultApiMissingParamErrorCode = 234513;
 
     // Authentication setting
     NSArray *authSettings = @[];
+    
 
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
@@ -4891,7 +4870,8 @@ NSInteger kOAIDefaultApiMissingParamErrorCode = 234513;
                                     if ((NSDictionary *)data && (NSArray *)data[@"results"]) {
                                         NSMutableArray *recipes = [NSMutableArray array];
                                         for (NSDictionary *result in data[@"results"]) {
-                                            RecipeModel *recipe = [[RecipeModel alloc] initWithResultRequest:result];
+                                            RecipeModel *recipe = [[RecipeModel alloc] initWithDictionary:result error: nil];
+
                                             [recipes addObject:recipe];
                                         }
                                         handler(recipes, error);

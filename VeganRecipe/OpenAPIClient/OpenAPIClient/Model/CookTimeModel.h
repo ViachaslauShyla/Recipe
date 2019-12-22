@@ -1,22 +1,15 @@
-//
-//  CookTimeModel.h
-//  OpenAPIClient
-//
-//  Created by Slava on 10/16/19.
-//
-
 #import <Foundation/Foundation.h>
+#import "OAIObject.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface CookTimeModel : NSObject
+@interface CookTimeModel: OAIObject
 
 @property(strong, nonatomic) NSNumber *inReady;
 @property(strong, nonatomic) NSNumber *cooking;
 @property(strong, nonatomic) NSNumber *preparetion;
 
--(id) initWithResultRequest: (NSDictionary *)result;
-- (void)setDataIntoModel: (NSDictionary *)data;
+- (instancetype)initWithDictionary:(NSDictionary *)dict error:(NSError **)err;
 
 @end
 

@@ -3,11 +3,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface EquipmentModel : OAIObject
+@interface Measures : OAIObject
 
-@property(strong, nonatomic) NSNumber *idEquipment;
-@property(strong, nonatomic) NSString *title;
-@property(strong, nonatomic) NSString *imageName;
+@property(strong, nonatomic) NSNumber *amount;
+@property(strong, nonatomic) NSString *unitShort;
+@property(strong, nonatomic) NSString *unitLong;
 
 - (instancetype)initWithDictionary:(NSDictionary *)dict error:(NSError **)err;
 

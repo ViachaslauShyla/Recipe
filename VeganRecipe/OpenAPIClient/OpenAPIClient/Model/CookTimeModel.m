@@ -1,37 +1,15 @@
-//
-//  CookTimeModel.m
-//  OpenAPIClient
-//
-//  Created by Slava on 10/16/19.
-//
-
 #import "CookTimeModel.h"
 
 @implementation CookTimeModel
 
--(id) initWithResultRequest: (NSDictionary *)result {
-
-    self = [super init];
-    if (self) {
-        [self setDataIntoModel:result];
-    }
-
-    return  self;
++ (JSONKeyMapper *)keyMapper {
+    return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{ @"inReady": @"readyInMinutes", @"cooking":@"cookingMinutes", @"preparetion":@"preparationMinutes" }];
 }
 
-- (void)setDataIntoModel: (NSDictionary *)data {
+- (instancetype)initWithDictionary:(NSDictionary *)dict error:(NSError **)err {
+    [self mergeFromDictionary:dict useKeyMapping:true error:err];
 
-    if ((NSNumber *)data[@"readyInMinutes"]) {
-        _inReady = data[@"readyInMinutes"];
-    }
-
-    if ((NSNumber *)data[@"cookingMinutes"]) {
-        _cooking = data[@"cookingMinutes"];
-    }
-
-    if ((NSNumber *)data[@"preparationMinutes"]) {
-        _preparetion = data[@"preparationMinutes"];
-    }
+    return  self;
 }
 
 @end

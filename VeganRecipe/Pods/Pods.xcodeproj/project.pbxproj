@@ -10,7 +10,6 @@
 		0033C3DA9D43F4DD9433C044E003122C /* OpenAPIClient-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB82CDF132009839E22E03A669F01DD /* OpenAPIClient-dummy.m */; };
 		0254EABA2D0AACFBFA5E2BAD753C5E2D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E28A3DF6EC6398004DB11BFBB5C12BB /* Foundation.framework */; };
 		02E2954BD351E7B167D8F60B13208DAF /* JSONModelError.h in Headers */ = {isa = PBXBuildFile; fileRef = 85F3FCFB8AFD951BA63F6FA127C94BC0 /* JSONModelError.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		07AD3BECCC7F0892575269DC02CC97E1 /* OAIInlineObject6.h in Headers */ = {isa = PBXBuildFile; fileRef = 1443193BFDC94EF3D4B3671E92B97FBB /* OAIInlineObject6.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		09E2F57C3C2B897ACC8AF5C49F1E9592 /* UIImage+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 14C38F5DAAA8C838498EAF93274B11A9 /* UIImage+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		09E785555B549DE5974C744DB8324B91 /* UIRefreshControl+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = C70447B428558D8B34FCC292B2AC9B39 /* UIRefreshControl+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0D40EE6956924384435BBBD4B718DEC8 /* AFImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D4A10BDB113B13CD104956E744606A /* AFImageDownloader.m */; };
@@ -27,31 +26,21 @@
 		2AE1F29F045D02727E815DBBAC8C7B4F /* AFNetworkActivityIndicatorManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 82683A36564F6043A5461EE5C734D9D2 /* AFNetworkActivityIndicatorManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3033C2DE9CB2085ECBB95717CFB6425A /* AFAutoPurgingImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = EBB119739E8540053F66F2CDF7CDDC4D /* AFAutoPurgingImageCache.m */; };
 		30DF77E53D2E837133265614EC8BEDA8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E28A3DF6EC6398004DB11BFBB5C12BB /* Foundation.framework */; };
-		3206FBD5CA545EFF764BEF73604E3E13 /* OAIInlineObject3.m in Sources */ = {isa = PBXBuildFile; fileRef = 6515D284A9A87172CA5B8B17C3F4420B /* OAIInlineObject3.m */; };
-		3460B027E146433D456BBE1666DA76B8 /* OAIInlineObject8.m in Sources */ = {isa = PBXBuildFile; fileRef = D98CD6E9D824AF6A0E01EA07C759332D /* OAIInlineObject8.m */; };
 		34A7C5747B4C0825465453E196E57FAA /* UIButton+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1F6BEFCFCC0581397933EBD249F23B /* UIButton+AFNetworking.m */; };
-		37BF9581CEA71F5A30BCD756E6174673 /* OAIInlineObject7.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B353788DF8A50BEAE6A4CB2FAD41AF /* OAIInlineObject7.m */; };
 		3A186F3A7711FAAB8C60562D63FF0D9F /* UIProgressView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 6B124853FE372C10CB29D9DBE350431E /* UIProgressView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3AEA2F22B88CD78E671F25B60DB66ADA /* JSONAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = 66818384387A71E6A3014BAF9104D3FF /* JSONAPI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3BDC8FBDB7922AA1ABA2C90DBA2DBB35 /* AFNetworking-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 28576A1A3A96FC4966AFE4FB2314E88B /* AFNetworking-dummy.m */; };
 		3E112DA53DD725C9A3185A54EB342EAF /* AFSecurityPolicy.h in Headers */ = {isa = PBXBuildFile; fileRef = 222B32890545358312B58D5DD65F6F3E /* AFSecurityPolicy.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3F0C6EC06C70AB8DEDCB2A81D9DF4B84 /* OAIJSONRequestSerializer.h in Headers */ = {isa = PBXBuildFile; fileRef = AE15EE7E635A179398003227FD9BBA92 /* OAIJSONRequestSerializer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		427E065DEE0CA9C1BEAD5BA12CCB2ED8 /* OAIInlineObject8.h in Headers */ = {isa = PBXBuildFile; fileRef = BC941FCAF744C96F84EEC82F4AB557F8 /* OAIInlineObject8.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		45AD6149EEB2883EAC09063B5FDD6F5B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6B60D07EC882BD611FCFE5EFDC06BDE /* CoreGraphics.framework */; };
-		4602590B8CC970E66CA8572112605EF6 /* OAIInlineObject7.h in Headers */ = {isa = PBXBuildFile; fileRef = 112B68EF14D42EB22302EB1743394FD4 /* OAIInlineObject7.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		46158B76D03BE905B0224234CAC5580F /* OAIConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = F2FF9DC90529505F13651100808A247B /* OAIConfiguration.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		47FF1D17418AB1144FDE0E46427F4877 /* AFURLResponseSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = 6686B16F5910341627E8A333674D28F0 /* AFURLResponseSerialization.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4892F099D3B6298847A2C15E1CEA2B4E /* OAIInlineObject5.m in Sources */ = {isa = PBXBuildFile; fileRef = 62DD51AF367CCA4FE2B55B291D05E509 /* OAIInlineObject5.m */; };
 		49AAFAE94B0FBB368E9950697AE41903 /* OAISanitizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B9141EBDA377E68B016F76C4A081304 /* OAISanitizer.m */; };
 		5036C1D6D87D4DA731C972A410C17ABC /* AFNetworking-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F33F447E539FEE6BF1775108A5D701E /* AFNetworking-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5047FB416FC4FE8D1EAD668E98FC736C /* OAIInlineObject2.h in Headers */ = {isa = PBXBuildFile; fileRef = CE412945C254130617A404FD05F8E39A /* OAIInlineObject2.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		53045A679645294B1B9BE0A9D63B4093 /* JSONModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8059DE1E9476FDFC5CF2DD76DA1A9DAD /* JSONModel.framework */; };
 		55AF8FB3094D874EDED23813832A8EC3 /* OAIResponseDeserializer.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D3328F01D1189C62F07F484473D8039 /* OAIResponseDeserializer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		56670D7975DA23939FA5FC86949E57C5 /* OAIInlineObject4.h in Headers */ = {isa = PBXBuildFile; fileRef = E1F3EDC0C21F726CC4C6321CF14D2C30 /* OAIInlineObject4.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5898B7C6F21E66BED173CB2619150D15 /* OAIQueryParamCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 57840FFDEEB087D4D2CC264718D168D8 /* OAIQueryParamCollection.m */; };
-		5A6EF00AAB26F4F6872EA786CCA37563 /* OAIInlineObject2.m in Sources */ = {isa = PBXBuildFile; fileRef = 94EE5F5BD03EDD7BB0B93A7980918741 /* OAIInlineObject2.m */; };
 		5B04D69DECC93D87860AB16CF71D152C /* NSDate+ISO8601.m in Sources */ = {isa = PBXBuildFile; fileRef = 54BF72EC6E193E5864A5DA6C662B042E /* NSDate+ISO8601.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		5B1F3F580705378089FEB393EA669AFD /* OAIInlineObject4.m in Sources */ = {isa = PBXBuildFile; fileRef = C8494DE138578DC1E165716EF04CB978 /* OAIInlineObject4.m */; };
 		5BE804F967080AE4F4FBBE08D56C706B /* OAIDefaultApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 8872C2DD9D0E9D3A639D33D637210D15 /* OAIDefaultApi.m */; };
 		5C3623AB96BBD4362F07840E90C29DC6 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51074F359B4C5E062429827984120484 /* AFNetworking.framework */; };
 		5D02B475481D49842E44432A79950A39 /* Pods-VeganRecipe-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 589266FDB44AD4891E340527C01CC461 /* Pods-VeganRecipe-dummy.m */; };
@@ -69,14 +58,11 @@
 		77876997CA63145CC72A2D6FB5758513 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5BDBDAE8D95C04759EC2018E3C7853 /* AFHTTPSessionManager.m */; };
 		7C69CBE2861F4F6725131736414AF932 /* Pods-VeganRecipe-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D80A572759C5BA9A0F5631F0E40E7DA /* Pods-VeganRecipe-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7F372985CE80B69B5524CC3277E1C1AF /* AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 24CCC7687EFFBC9D99B81FE373AED1E3 /* AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		810381F00761DD9FB3AD1C64999EABAD /* OAIInlineObject5.h in Headers */ = {isa = PBXBuildFile; fileRef = A8BDCF986DBA03472109B7B6967D5398 /* OAIInlineObject5.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		82B1BD39BCAC9EC892620BD5B13968F4 /* OAIApiClient.h in Headers */ = {isa = PBXBuildFile; fileRef = B2D276E388F231029E89BD26CF7598B1 /* OAIApiClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		856B571FA3AE9D65E81FACB19E3557F4 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 731F314DECB4E4E9A87A7FD65A63292D /* AFURLSessionManager.m */; };
 		870044029B3BA449A0932AAE3A495DE9 /* AFAutoPurgingImageCache.h in Headers */ = {isa = PBXBuildFile; fileRef = D1E86A473A2EED9CDD6E1376D7C24E0E /* AFAutoPurgingImageCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8C746D5C20135920E9848EE3A8F9234A /* OAIInlineObject9.h in Headers */ = {isa = PBXBuildFile; fileRef = D7B509D38BD79B5212C706F126DFFD5C /* OAIInlineObject9.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8F96E82F250EE718FA3F08AC9AB58423 /* UIActivityIndicatorView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 54B074210464D907D4F1D08034CD2D4E /* UIActivityIndicatorView+AFNetworking.m */; };
 		902A64F41070DF1E36738A1ED16878A6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E28A3DF6EC6398004DB11BFBB5C12BB /* Foundation.framework */; };
-		9145471F023535793E64211D380B6A57 /* OAIInlineObject6.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CFB189D9B48390FE068616CD8D05C70 /* OAIInlineObject6.m */; };
 		9151FBCF97D1513CEC3671B0A1F5E11B /* OAIObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 101C82ABFBC0BB6D61D525F595B7711B /* OAIObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9572700691D1FDC9640606240F59F404 /* OAIInlineObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 75F10676EC7983C895D6A2880EEDDA32 /* OAIInlineObject.m */; };
 		95DAE5AD46A86973A77907D38716F694 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F62BAC877B21CEF05509E1019F15CF /* AFNetworkReachabilityManager.m */; };
@@ -100,11 +86,8 @@
 		B4C7BC969594EB3E9323674B7FF7C66E /* JSONHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACCD02B0575B068DEF3A27CA308AE54 /* JSONHTTPClient.m */; };
 		B5AD0B8F0F9304975A01978B2908B62F /* UIActivityIndicatorView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = A1063D1B2AD088EE6C8780F4EB66E284 /* UIActivityIndicatorView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B9C27176F37BB54B2F7830ABCA10A33F /* ISO8601Serialization.h in Headers */ = {isa = PBXBuildFile; fileRef = E980F9D7AF4B721F8F47324E45B6D9F5 /* ISO8601Serialization.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BE2CE817938A38B21F52BBACFA00B6B9 /* OAIInlineObject1.m in Sources */ = {isa = PBXBuildFile; fileRef = A2F56F7279BED24B09E241F9B0F87DC2 /* OAIInlineObject1.m */; };
-		C15F20CDFD4996B7A03C14F73B2DD2CE /* OAIInlineObject3.h in Headers */ = {isa = PBXBuildFile; fileRef = 086145F19240CB6A987DF4ED79ECBA58 /* OAIInlineObject3.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C25BD96E691172D62B98B2F5F8D7F0C7 /* JSONModelLib.h in Headers */ = {isa = PBXBuildFile; fileRef = F5CC51AE6AAFCEAE08B74ED5CA5AB982 /* JSONModelLib.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C4ADF7E61577C1EEFB89C5F976F4E101 /* NSDate+ISO8601.h in Headers */ = {isa = PBXBuildFile; fileRef = C901FF20A7DBCF707CC9F81ACA022944 /* NSDate+ISO8601.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C503CFD7E4F0AA3B985A954B152B28FB /* OAIInlineObject9.m in Sources */ = {isa = PBXBuildFile; fileRef = 6829047ACD067E3B388BF5122E539620 /* OAIInlineObject9.m */; };
 		C64C8DE746D376EEA160794275302677 /* JSONModelClassProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = B7C8EE50D3090CC43C318FFFFF6BE78E /* JSONModelClassProperty.m */; };
 		C65CBBF120A2DD097498BFA38119D466 /* JSONAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = B4A8EFD8774EAEE3C48FBDFDB06521A5 /* JSONAPI.m */; };
 		C7850AB3F7B5FDCA4F1F47F1EC205276 /* JSONKeyMapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 7FDB3AEBE282DD6FC3D9265E0110B27B /* JSONKeyMapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -128,6 +111,8 @@
 		F442593E37B8F49398FDB1974EDF3FD6 /* JSONModel-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E33502EB8743DEDC2912E1D9FF70D032 /* JSONModel-dummy.m */; };
 		F4FED6C37367BC46B92BB3FE18D233B8 /* UIWebView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A44B9D0714EADAD500C336F02780E89 /* UIWebView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F653B2EACD348C9BF37C4CB99B08C00B /* OAIResponseDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 662C2A31B74C72CA8B07F8C8C62C915D /* OAIResponseDeserializer.m */; };
+		F902901B23A2E263001EDD90 /* Measures.h in Headers */ = {isa = PBXBuildFile; fileRef = F902901923A2E263001EDD90 /* Measures.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F902901C23A2E263001EDD90 /* Measures.m in Sources */ = {isa = PBXBuildFile; fileRef = F902901A23A2E263001EDD90 /* Measures.m */; };
 		F93FA8D42343724800B50F8E /* OAIInlineObject3.md in Resources */ = {isa = PBXBuildFile; fileRef = F93FA8C92343724700B50F8E /* OAIInlineObject3.md */; };
 		F93FA8D52343724800B50F8E /* OAIInlineObject9.md in Resources */ = {isa = PBXBuildFile; fileRef = F93FA8CA2343724700B50F8E /* OAIInlineObject9.md */; };
 		F93FA8D62343724800B50F8E /* OAIInlineObject6.md in Resources */ = {isa = PBXBuildFile; fileRef = F93FA8CB2343724800B50F8E /* OAIInlineObject6.md */; };
@@ -139,6 +124,24 @@
 		F93FA8DC2343724800B50F8E /* OAIInlineObject1.md in Resources */ = {isa = PBXBuildFile; fileRef = F93FA8D12343724800B50F8E /* OAIInlineObject1.md */; };
 		F93FA8DD2343724800B50F8E /* OAIInlineObject2.md in Resources */ = {isa = PBXBuildFile; fileRef = F93FA8D22343724800B50F8E /* OAIInlineObject2.md */; };
 		F93FA8DE2343724800B50F8E /* OAIDefaultApi.md in Resources */ = {isa = PBXBuildFile; fileRef = F93FA8D32343724800B50F8E /* OAIDefaultApi.md */; };
+		F9FA77DA23AEBD13008109D5 /* OAIInlineObject1.h in Headers */ = {isa = PBXBuildFile; fileRef = F9FA77C423AEBBFF008109D5 /* OAIInlineObject1.h */; };
+		F9FA77DB23AEBD19008109D5 /* OAIInlineObject1.m in Sources */ = {isa = PBXBuildFile; fileRef = F9FA77B823AEBBFE008109D5 /* OAIInlineObject1.m */; };
+		F9FA77DC23AEBD1D008109D5 /* OAIInlineObject2.h in Headers */ = {isa = PBXBuildFile; fileRef = F9FA77C723AEBBFF008109D5 /* OAIInlineObject2.h */; };
+		F9FA77DD23AEBD21008109D5 /* OAIInlineObject2.m in Sources */ = {isa = PBXBuildFile; fileRef = F9FA77B923AEBBFE008109D5 /* OAIInlineObject2.m */; };
+		F9FA77DE23AEBD26008109D5 /* OAIInlineObject3.h in Headers */ = {isa = PBXBuildFile; fileRef = F9FA77BC23AEBBFE008109D5 /* OAIInlineObject3.h */; };
+		F9FA77DF23AEBD2E008109D5 /* OAIInlineObject3.m in Sources */ = {isa = PBXBuildFile; fileRef = F9FA77C023AEBBFE008109D5 /* OAIInlineObject3.m */; };
+		F9FA77E023AEBD32008109D5 /* OAIInlineObject4.h in Headers */ = {isa = PBXBuildFile; fileRef = F9FA77BE23AEBBFE008109D5 /* OAIInlineObject4.h */; };
+		F9FA77E123AEBD37008109D5 /* OAIInlineObject4.m in Sources */ = {isa = PBXBuildFile; fileRef = F9FA77C623AEBBFF008109D5 /* OAIInlineObject4.m */; };
+		F9FA77E223AEBD3C008109D5 /* OAIInlineObject5.h in Headers */ = {isa = PBXBuildFile; fileRef = F9FA77BA23AEBBFE008109D5 /* OAIInlineObject5.h */; };
+		F9FA77E323AEBD40008109D5 /* OAIInlineObject5.m in Sources */ = {isa = PBXBuildFile; fileRef = F9FA77B623AEBBFD008109D5 /* OAIInlineObject5.m */; };
+		F9FA77E423AEBD45008109D5 /* OAIInlineObject6.h in Headers */ = {isa = PBXBuildFile; fileRef = F9FA77B723AEBBFD008109D5 /* OAIInlineObject6.h */; };
+		F9FA77E523AEBD49008109D5 /* OAIInlineObject6.m in Sources */ = {isa = PBXBuildFile; fileRef = F9FA77C123AEBBFF008109D5 /* OAIInlineObject6.m */; };
+		F9FA77E623AEBD4E008109D5 /* OAIInlineObject7.h in Headers */ = {isa = PBXBuildFile; fileRef = F9FA77C223AEBBFF008109D5 /* OAIInlineObject7.h */; };
+		F9FA77E723AEBD53008109D5 /* OAIInlineObject7.m in Sources */ = {isa = PBXBuildFile; fileRef = F9FA77BB23AEBBFE008109D5 /* OAIInlineObject7.m */; };
+		F9FA77E823AEBD58008109D5 /* OAIInlineObject8.h in Headers */ = {isa = PBXBuildFile; fileRef = F9FA77C323AEBBFF008109D5 /* OAIInlineObject8.h */; };
+		F9FA77E923AEBD5C008109D5 /* OAIInlineObject8.m in Sources */ = {isa = PBXBuildFile; fileRef = F9FA77BD23AEBBFE008109D5 /* OAIInlineObject8.m */; };
+		F9FA77EA23AEBD60008109D5 /* OAIInlineObject9.h in Headers */ = {isa = PBXBuildFile; fileRef = F9FA77C523AEBBFF008109D5 /* OAIInlineObject9.h */; };
+		F9FA77EB23AEBD64008109D5 /* OAIInlineObject9.m in Sources */ = {isa = PBXBuildFile; fileRef = F9FA77BF23AEBBFE008109D5 /* OAIInlineObject9.m */; };
 		F9FB36A82357A4CA00D03604 /* EquipmentModel.h in Headers */ = {isa = PBXBuildFile; fileRef = F9FB36A62357A4CA00D03604 /* EquipmentModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F9FB36A92357A4CA00D03604 /* EquipmentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F9FB36A72357A4CA00D03604 /* EquipmentModel.m */; };
 		F9FB36AC2357A62400D03604 /* IngredientModel.h in Headers */ = {isa = PBXBuildFile; fileRef = F9FB36AA2357A62400D03604 /* IngredientModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -154,7 +157,8 @@
 		F9FC981323476F76000B76C5 /* Model.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = F9FC981223476F5F000B76C5 /* Model.xcdatamodeld */; };
 		F9FDDEA423565E0100A0153A /* StepsModel.h in Headers */ = {isa = PBXBuildFile; fileRef = F9FDDEA223565E0100A0153A /* StepsModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F9FDDEA523565E0100A0153A /* StepsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F9FDDEA323565E0100A0153A /* StepsModel.m */; };
-		FCBEB83F4D7DD4DEDCCDB2F184C353E9 /* OAIInlineObject1.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DAAD3339401E72A470674FE5F3A48F4 /* OAIInlineObject1.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F9FDE7C8238C618F001F6162 /* OAIDefaultApi+RecipeMethods.h in Headers */ = {isa = PBXBuildFile; fileRef = F9FDE7C6238C618F001F6162 /* OAIDefaultApi+RecipeMethods.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F9FDE7C9238C618F001F6162 /* OAIDefaultApi+RecipeMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = F9FDE7C7238C618F001F6162 /* OAIDefaultApi+RecipeMethods.m */; };
 		FD42569341073F898AAA9394594DFC6A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA2DFB6C50277B6ABF268771377AFA36 /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
@@ -211,13 +215,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		086145F19240CB6A987DF4ED79ECBA58 /* OAIInlineObject3.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = OAIInlineObject3.h; sourceTree = "<group>"; };
 		0924D23B97A81AEEC8DF49D6D3AD33FC /* ISO8601-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ISO8601-umbrella.h"; sourceTree = "<group>"; };
 		0ACCD02B0575B068DEF3A27CA308AE54 /* JSONHTTPClient.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JSONHTTPClient.m; path = JSONModel/JSONModelNetworking/JSONHTTPClient.m; sourceTree = "<group>"; };
 		0EC1CE50E57E40BEFC3E004AB62547A2 /* OAIJSONRequestSerializer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = OAIJSONRequestSerializer.m; sourceTree = "<group>"; };
 		101C82ABFBC0BB6D61D525F595B7711B /* OAIObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = OAIObject.h; sourceTree = "<group>"; };
-		112B68EF14D42EB22302EB1743394FD4 /* OAIInlineObject7.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = OAIInlineObject7.h; sourceTree = "<group>"; };
-		1443193BFDC94EF3D4B3671E92B97FBB /* OAIInlineObject6.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = OAIInlineObject6.h; sourceTree = "<group>"; };
 		14C38F5DAAA8C838498EAF93274B11A9 /* UIImage+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+AFNetworking.h"; path = "UIKit+AFNetworking/UIImage+AFNetworking.h"; sourceTree = "<group>"; };
 		157101F7E9FD529E9BB8E4E09515307E /* AFSecurityPolicy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFSecurityPolicy.m; path = AFNetworking/AFSecurityPolicy.m; sourceTree = "<group>"; };
 		1828B3FA654C08E1798DC310D50865D2 /* UIButton+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIButton+AFNetworking.h"; path = "UIKit+AFNetworking/UIButton+AFNetworking.h"; sourceTree = "<group>"; };
@@ -231,7 +232,6 @@
 		24CCC7687EFFBC9D99B81FE373AED1E3 /* AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworking.h; path = AFNetworking/AFNetworking.h; sourceTree = "<group>"; };
 		25CE781FC4B1BD24EE101D545D798299 /* JSONModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSONModel.h; path = JSONModel/JSONModel/JSONModel.h; sourceTree = "<group>"; };
 		28576A1A3A96FC4966AFE4FB2314E88B /* AFNetworking-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AFNetworking-dummy.m"; sourceTree = "<group>"; };
-		29B353788DF8A50BEAE6A4CB2FAD41AF /* OAIInlineObject7.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = OAIInlineObject7.m; sourceTree = "<group>"; };
 		2B9141EBDA377E68B016F76C4A081304 /* OAISanitizer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = OAISanitizer.m; sourceTree = "<group>"; };
 		2C617EA0F2879ABF3EA09DC66B57355E /* OAIBasicAuthTokenProvider.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = OAIBasicAuthTokenProvider.m; sourceTree = "<group>"; };
 		31C081C81E885796A76E279A205AF418 /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIWebView+AFNetworking.m"; path = "UIKit+AFNetworking/UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
@@ -239,7 +239,6 @@
 		377F82D435048D619C8C681E4B5E46E8 /* JSONModel-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JSONModel-prefix.pch"; sourceTree = "<group>"; };
 		3A678FF159C7F06B29CDD5463E5471A6 /* AFURLRequestSerialization.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLRequestSerialization.h; path = AFNetworking/AFURLRequestSerialization.h; sourceTree = "<group>"; };
 		3AB82CDF132009839E22E03A669F01DD /* OpenAPIClient-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "OpenAPIClient-dummy.m"; sourceTree = "<group>"; };
-		3DAAD3339401E72A470674FE5F3A48F4 /* OAIInlineObject1.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = OAIInlineObject1.h; sourceTree = "<group>"; };
 		3E57A2A91BFCD1820897953CA2EFFA7E /* JSONModelError.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JSONModelError.m; path = JSONModel/JSONModel/JSONModelError.m; sourceTree = "<group>"; };
 		42481C3BED7602E0915C751F41DD4994 /* UIProgressView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIProgressView+AFNetworking.m"; path = "UIKit+AFNetworking/UIProgressView+AFNetworking.m"; sourceTree = "<group>"; };
 		43516FE7CFDFB8EF94BB24DABE970261 /* OAIDefaultApi.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = OAIDefaultApi.h; sourceTree = "<group>"; };
@@ -258,16 +257,12 @@
 		58A49E45DE9A54ADCDE2AC67E44AA08D /* OAIBasicAuthTokenProvider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = OAIBasicAuthTokenProvider.h; sourceTree = "<group>"; };
 		5AB2F435E8D09D2D16355103FCCFDBF6 /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFHTTPSessionManager.h; path = AFNetworking/AFHTTPSessionManager.h; sourceTree = "<group>"; };
 		5B1EA74E0923FB8C0926EC84A6F6F08A /* Pods-VeganRecipe-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-VeganRecipe-frameworks.sh"; sourceTree = "<group>"; };
-		5CFB189D9B48390FE068616CD8D05C70 /* OAIInlineObject6.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = OAIInlineObject6.m; sourceTree = "<group>"; };
 		5D4C2EC1CADF59294BBE93AB2C1F2772 /* Pods-VeganRecipe-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-VeganRecipe-Info.plist"; sourceTree = "<group>"; };
 		5E3C98320F5A3E837D3C9E6D1AC42F10 /* OAIApi.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = OAIApi.h; sourceTree = "<group>"; };
 		6249BCEC0BD755FA02E7CFE590E827F2 /* OpenAPIClient-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "OpenAPIClient-prefix.pch"; sourceTree = "<group>"; };
-		62DD51AF367CCA4FE2B55B291D05E509 /* OAIInlineObject5.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = OAIInlineObject5.m; sourceTree = "<group>"; };
-		6515D284A9A87172CA5B8B17C3F4420B /* OAIInlineObject3.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = OAIInlineObject3.m; sourceTree = "<group>"; };
 		662C2A31B74C72CA8B07F8C8C62C915D /* OAIResponseDeserializer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = OAIResponseDeserializer.m; sourceTree = "<group>"; };
 		66818384387A71E6A3014BAF9104D3FF /* JSONAPI.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSONAPI.h; path = JSONModel/JSONModelNetworking/JSONAPI.h; sourceTree = "<group>"; };
 		6686B16F5910341627E8A333674D28F0 /* AFURLResponseSerialization.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLResponseSerialization.h; path = AFNetworking/AFURLResponseSerialization.h; sourceTree = "<group>"; };
-		6829047ACD067E3B388BF5122E539620 /* OAIInlineObject9.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = OAIInlineObject9.m; sourceTree = "<group>"; };
 		6B124853FE372C10CB29D9DBE350431E /* UIProgressView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIProgressView+AFNetworking.h"; path = "UIKit+AFNetworking/UIProgressView+AFNetworking.h"; sourceTree = "<group>"; };
 		6B1F6BEFCFCC0581397933EBD249F23B /* UIButton+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIButton+AFNetworking.m"; path = "UIKit+AFNetworking/UIButton+AFNetworking.m"; sourceTree = "<group>"; };
 		6BCABCE3D97EA90D2447078EC5EAEA95 /* AFURLRequestSerialization.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLRequestSerialization.m; path = AFNetworking/AFURLRequestSerialization.m; sourceTree = "<group>"; };
@@ -301,7 +296,6 @@
 		91BF2A0B0E57B2F8058D21E5BC8622B8 /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworkReachabilityManager.h; path = AFNetworking/AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
 		921E87DC01871A64D9B29A2B9CA62D01 /* ISO8601.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ISO8601.h; path = Support/ISO8601.h; sourceTree = "<group>"; };
 		930392F792A32BF3AD0583D6D74A02FE /* JSONValueTransformer+ISO8601.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JSONValueTransformer+ISO8601.h"; sourceTree = "<group>"; };
-		94EE5F5BD03EDD7BB0B93A7980918741 /* OAIInlineObject2.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = OAIInlineObject2.m; sourceTree = "<group>"; };
 		9649A3A9B79D7914BC945127C0D1B7C5 /* ISO8601.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ISO8601.xcconfig; sourceTree = "<group>"; };
 		97100FB1000A5C3B9B25D1E34B285E86 /* AFNetworking-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "AFNetworking-Info.plist"; sourceTree = "<group>"; };
 		9A44B9D0714EADAD500C336F02780E89 /* UIWebView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIWebView+AFNetworking.h"; path = "UIKit+AFNetworking/UIWebView+AFNetworking.h"; sourceTree = "<group>"; };
@@ -310,9 +304,7 @@
 		9E264E82458672AD78E4FA638D818EE4 /* AFURLSessionManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLSessionManager.h; path = AFNetworking/AFURLSessionManager.h; sourceTree = "<group>"; };
 		A1063D1B2AD088EE6C8780F4EB66E284 /* UIActivityIndicatorView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIActivityIndicatorView+AFNetworking.h"; path = "UIKit+AFNetworking/UIActivityIndicatorView+AFNetworking.h"; sourceTree = "<group>"; };
 		A1E39A6E07738A14565AA2516D1D3A4F /* JSONModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JSONModel.m; path = JSONModel/JSONModel/JSONModel.m; sourceTree = "<group>"; };
-		A2F56F7279BED24B09E241F9B0F87DC2 /* OAIInlineObject1.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = OAIInlineObject1.m; sourceTree = "<group>"; };
 		A4FA15D44DF6BAC7550EDEED10862AA3 /* AFNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AFNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A8BDCF986DBA03472109B7B6967D5398 /* OAIInlineObject5.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = OAIInlineObject5.h; sourceTree = "<group>"; };
 		A90F74D9A961B0E88ADBDFC9DBA78205 /* Pods-VeganRecipe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VeganRecipe.release.xcconfig"; sourceTree = "<group>"; };
 		AE15EE7E635A179398003227FD9BBA92 /* OAIJSONRequestSerializer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = OAIJSONRequestSerializer.h; sourceTree = "<group>"; };
 		AE6FDE7F3D25B8304031ECB2E3184927 /* JSONKeyMapper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JSONKeyMapper.m; path = JSONModel/JSONModelTransformations/JSONKeyMapper.m; sourceTree = "<group>"; };
@@ -321,7 +313,6 @@
 		B4A8EFD8774EAEE3C48FBDFDB06521A5 /* JSONAPI.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JSONAPI.m; path = JSONModel/JSONModelNetworking/JSONAPI.m; sourceTree = "<group>"; };
 		B7C8EE50D3090CC43C318FFFFF6BE78E /* JSONModelClassProperty.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JSONModelClassProperty.m; path = JSONModel/JSONModel/JSONModelClassProperty.m; sourceTree = "<group>"; };
 		BAACA1BF7AB3DD28402C4F9A7C2FD104 /* JSONModel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JSONModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BC941FCAF744C96F84EEC82F4AB557F8 /* OAIInlineObject8.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = OAIInlineObject8.h; sourceTree = "<group>"; };
 		BF012A80C356A62A2F48D11E0A0BF9C3 /* Pods-VeganRecipe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VeganRecipe.debug.xcconfig"; sourceTree = "<group>"; };
 		BF7770C253A377CD0BBCDF255C38D67E /* Pods-VeganRecipe-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-VeganRecipe-acknowledgements.plist"; sourceTree = "<group>"; };
 		C049837BAC36E1DF2FBF7E59DAC89043 /* JSONValueTransformer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSONValueTransformer.h; path = JSONModel/JSONModelTransformations/JSONValueTransformer.h; sourceTree = "<group>"; };
@@ -330,22 +321,17 @@
 		C6B60D07EC882BD611FCFE5EFDC06BDE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
 		C70447B428558D8B34FCC292B2AC9B39 /* UIRefreshControl+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIRefreshControl+AFNetworking.h"; path = "UIKit+AFNetworking/UIRefreshControl+AFNetworking.h"; sourceTree = "<group>"; };
 		C7AB36742BFC207F7A39B9EBA636DC0C /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImageView+AFNetworking.h"; path = "UIKit+AFNetworking/UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
-		C8494DE138578DC1E165716EF04CB978 /* OAIInlineObject4.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = OAIInlineObject4.m; sourceTree = "<group>"; };
 		C864F2E4FDF86F620406AC0E94F132E9 /* JSONHTTPClient.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSONHTTPClient.h; path = JSONModel/JSONModelNetworking/JSONHTTPClient.h; sourceTree = "<group>"; };
 		C8F47D31F4978F04E4D6A9760143DC44 /* OAILogger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = OAILogger.h; sourceTree = "<group>"; };
 		C901FF20A7DBCF707CC9F81ACA022944 /* NSDate+ISO8601.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSDate+ISO8601.h"; path = "Sources/NSDate+ISO8601.h"; sourceTree = "<group>"; };
 		CA2DFB6C50277B6ABF268771377AFA36 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
 		CB00C8D4D667EC5F8DF0FD85545EBE63 /* JSONModel-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "JSONModel-Info.plist"; sourceTree = "<group>"; };
 		CB2A283F99AF3DD7ABA250FA0DF5D721 /* OpenAPIClient-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "OpenAPIClient-Info.plist"; sourceTree = "<group>"; };
-		CE412945C254130617A404FD05F8E39A /* OAIInlineObject2.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = OAIInlineObject2.h; sourceTree = "<group>"; };
 		CE88B1E280AE3E0ECB9A79352E33CC95 /* Pods-VeganRecipe-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-VeganRecipe-acknowledgements.markdown"; sourceTree = "<group>"; };
 		CEE1081392C3047BA0E58C966D6F6D86 /* JSONValueTransformer+ISO8601.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "JSONValueTransformer+ISO8601.m"; sourceTree = "<group>"; };
 		D1E86A473A2EED9CDD6E1376D7C24E0E /* AFAutoPurgingImageCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFAutoPurgingImageCache.h; path = "UIKit+AFNetworking/AFAutoPurgingImageCache.h"; sourceTree = "<group>"; };
 		D45EF0E4BFE695EFC7DE80963E79DC69 /* OpenAPIClient.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = OpenAPIClient.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		D7B509D38BD79B5212C706F126DFFD5C /* OAIInlineObject9.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = OAIInlineObject9.h; sourceTree = "<group>"; };
-		D98CD6E9D824AF6A0E01EA07C759332D /* OAIInlineObject8.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = OAIInlineObject8.m; sourceTree = "<group>"; };
 		DC63DF97B6933678160D7A0857608A5E /* JSONModel.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = JSONModel.modulemap; sourceTree = "<group>"; };
-		E1F3EDC0C21F726CC4C6321CF14D2C30 /* OAIInlineObject4.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = OAIInlineObject4.h; sourceTree = "<group>"; };
 		E235B2535B2F8302D1486F744D4882DE /* AFNetworkActivityIndicatorManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFNetworkActivityIndicatorManager.m; path = "UIKit+AFNetworking/AFNetworkActivityIndicatorManager.m"; sourceTree = "<group>"; };
 		E33502EB8743DEDC2912E1D9FF70D032 /* JSONModel-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "JSONModel-dummy.m"; sourceTree = "<group>"; };
 		E7DB71731CDB22972FBEFAD86B511BEA /* OAIDefaultConfiguration.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = OAIDefaultConfiguration.m; sourceTree = "<group>"; };
@@ -357,6 +343,8 @@
 		F2FF9DC90529505F13651100808A247B /* OAIConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = OAIConfiguration.h; sourceTree = "<group>"; };
 		F4D4A10BDB113B13CD104956E744606A /* AFImageDownloader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFImageDownloader.m; path = "UIKit+AFNetworking/AFImageDownloader.m"; sourceTree = "<group>"; };
 		F5CC51AE6AAFCEAE08B74ED5CA5AB982 /* JSONModelLib.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSONModelLib.h; path = JSONModel/JSONModelLib.h; sourceTree = "<group>"; };
+		F902901923A2E263001EDD90 /* Measures.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Measures.h; sourceTree = "<group>"; };
+		F902901A23A2E263001EDD90 /* Measures.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Measures.m; sourceTree = "<group>"; };
 		F93FA8C92343724700B50F8E /* OAIInlineObject3.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = OAIInlineObject3.md; sourceTree = "<group>"; };
 		F93FA8CA2343724700B50F8E /* OAIInlineObject9.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = OAIInlineObject9.md; sourceTree = "<group>"; };
 		F93FA8CB2343724800B50F8E /* OAIInlineObject6.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = OAIInlineObject6.md; sourceTree = "<group>"; };
@@ -369,6 +357,24 @@
 		F93FA8D22343724800B50F8E /* OAIInlineObject2.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = OAIInlineObject2.md; sourceTree = "<group>"; };
 		F93FA8D32343724800B50F8E /* OAIDefaultApi.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = OAIDefaultApi.md; sourceTree = "<group>"; };
 		F946E4562A775B9991E77DD650F21DAE /* OpenAPIClient.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = OpenAPIClient.modulemap; sourceTree = "<group>"; };
+		F9FA77B623AEBBFD008109D5 /* OAIInlineObject5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAIInlineObject5.m; sourceTree = "<group>"; };
+		F9FA77B723AEBBFD008109D5 /* OAIInlineObject6.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAIInlineObject6.h; sourceTree = "<group>"; };
+		F9FA77B823AEBBFE008109D5 /* OAIInlineObject1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAIInlineObject1.m; sourceTree = "<group>"; };
+		F9FA77B923AEBBFE008109D5 /* OAIInlineObject2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAIInlineObject2.m; sourceTree = "<group>"; };
+		F9FA77BA23AEBBFE008109D5 /* OAIInlineObject5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAIInlineObject5.h; sourceTree = "<group>"; };
+		F9FA77BB23AEBBFE008109D5 /* OAIInlineObject7.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAIInlineObject7.m; sourceTree = "<group>"; };
+		F9FA77BC23AEBBFE008109D5 /* OAIInlineObject3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAIInlineObject3.h; sourceTree = "<group>"; };
+		F9FA77BD23AEBBFE008109D5 /* OAIInlineObject8.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAIInlineObject8.m; sourceTree = "<group>"; };
+		F9FA77BE23AEBBFE008109D5 /* OAIInlineObject4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAIInlineObject4.h; sourceTree = "<group>"; };
+		F9FA77BF23AEBBFE008109D5 /* OAIInlineObject9.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAIInlineObject9.m; sourceTree = "<group>"; };
+		F9FA77C023AEBBFE008109D5 /* OAIInlineObject3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAIInlineObject3.m; sourceTree = "<group>"; };
+		F9FA77C123AEBBFF008109D5 /* OAIInlineObject6.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAIInlineObject6.m; sourceTree = "<group>"; };
+		F9FA77C223AEBBFF008109D5 /* OAIInlineObject7.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAIInlineObject7.h; sourceTree = "<group>"; };
+		F9FA77C323AEBBFF008109D5 /* OAIInlineObject8.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAIInlineObject8.h; sourceTree = "<group>"; };
+		F9FA77C423AEBBFF008109D5 /* OAIInlineObject1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAIInlineObject1.h; sourceTree = "<group>"; };
+		F9FA77C523AEBBFF008109D5 /* OAIInlineObject9.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAIInlineObject9.h; sourceTree = "<group>"; };
+		F9FA77C623AEBBFF008109D5 /* OAIInlineObject4.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAIInlineObject4.m; sourceTree = "<group>"; };
+		F9FA77C723AEBBFF008109D5 /* OAIInlineObject2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAIInlineObject2.h; sourceTree = "<group>"; };
 		F9FB36A62357A4CA00D03604 /* EquipmentModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EquipmentModel.h; sourceTree = "<group>"; };
 		F9FB36A72357A4CA00D03604 /* EquipmentModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EquipmentModel.m; sourceTree = "<group>"; };
 		F9FB36AA2357A62400D03604 /* IngredientModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IngredientModel.h; sourceTree = "<group>"; };
@@ -384,6 +390,8 @@
 		F9FC981123476F5F000B76C5 /* Model1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model1.xcdatamodel; sourceTree = "<group>"; };
 		F9FDDEA223565E0100A0153A /* StepsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StepsModel.h; sourceTree = "<group>"; };
 		F9FDDEA323565E0100A0153A /* StepsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StepsModel.m; sourceTree = "<group>"; };
+		F9FDE7C6238C618F001F6162 /* OAIDefaultApi+RecipeMethods.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OAIDefaultApi+RecipeMethods.h"; sourceTree = "<group>"; };
+		F9FDE7C7238C618F001F6162 /* OAIDefaultApi+RecipeMethods.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "OAIDefaultApi+RecipeMethods.m"; sourceTree = "<group>"; };
 		FAB5037A66D30077A8C077F82E24F435 /* ISO8601-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ISO8601-dummy.m"; sourceTree = "<group>"; };
 		FB99E04477623D90441FA1506CB395AD /* AFNetworking-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AFNetworking-prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -534,24 +542,24 @@
 			children = (
 				89467F8ECFA86B508FA9B15FD7821F2D /* OAIInlineObject.h */,
 				75F10676EC7983C895D6A2880EEDDA32 /* OAIInlineObject.m */,
-				3DAAD3339401E72A470674FE5F3A48F4 /* OAIInlineObject1.h */,
-				A2F56F7279BED24B09E241F9B0F87DC2 /* OAIInlineObject1.m */,
-				CE412945C254130617A404FD05F8E39A /* OAIInlineObject2.h */,
-				94EE5F5BD03EDD7BB0B93A7980918741 /* OAIInlineObject2.m */,
-				086145F19240CB6A987DF4ED79ECBA58 /* OAIInlineObject3.h */,
-				6515D284A9A87172CA5B8B17C3F4420B /* OAIInlineObject3.m */,
-				E1F3EDC0C21F726CC4C6321CF14D2C30 /* OAIInlineObject4.h */,
-				C8494DE138578DC1E165716EF04CB978 /* OAIInlineObject4.m */,
-				A8BDCF986DBA03472109B7B6967D5398 /* OAIInlineObject5.h */,
-				62DD51AF367CCA4FE2B55B291D05E509 /* OAIInlineObject5.m */,
-				1443193BFDC94EF3D4B3671E92B97FBB /* OAIInlineObject6.h */,
-				5CFB189D9B48390FE068616CD8D05C70 /* OAIInlineObject6.m */,
-				112B68EF14D42EB22302EB1743394FD4 /* OAIInlineObject7.h */,
-				29B353788DF8A50BEAE6A4CB2FAD41AF /* OAIInlineObject7.m */,
-				BC941FCAF744C96F84EEC82F4AB557F8 /* OAIInlineObject8.h */,
-				D98CD6E9D824AF6A0E01EA07C759332D /* OAIInlineObject8.m */,
-				D7B509D38BD79B5212C706F126DFFD5C /* OAIInlineObject9.h */,
-				6829047ACD067E3B388BF5122E539620 /* OAIInlineObject9.m */,
+				F9FA77C423AEBBFF008109D5 /* OAIInlineObject1.h */,
+				F9FA77B823AEBBFE008109D5 /* OAIInlineObject1.m */,
+				F9FA77C723AEBBFF008109D5 /* OAIInlineObject2.h */,
+				F9FA77B923AEBBFE008109D5 /* OAIInlineObject2.m */,
+				F9FA77BC23AEBBFE008109D5 /* OAIInlineObject3.h */,
+				F9FA77C023AEBBFE008109D5 /* OAIInlineObject3.m */,
+				F9FA77BE23AEBBFE008109D5 /* OAIInlineObject4.h */,
+				F9FA77C623AEBBFF008109D5 /* OAIInlineObject4.m */,
+				F9FA77BA23AEBBFE008109D5 /* OAIInlineObject5.h */,
+				F9FA77B623AEBBFD008109D5 /* OAIInlineObject5.m */,
+				F9FA77B723AEBBFD008109D5 /* OAIInlineObject6.h */,
+				F9FA77C123AEBBFF008109D5 /* OAIInlineObject6.m */,
+				F9FA77C223AEBBFF008109D5 /* OAIInlineObject7.h */,
+				F9FA77BB23AEBBFE008109D5 /* OAIInlineObject7.m */,
+				F9FA77C323AEBBFF008109D5 /* OAIInlineObject8.h */,
+				F9FA77BD23AEBBFE008109D5 /* OAIInlineObject8.m */,
+				F9FA77C523AEBBFF008109D5 /* OAIInlineObject9.h */,
+				F9FA77BF23AEBBFE008109D5 /* OAIInlineObject9.m */,
 				F9FBDDD62355C6AB0095C5BD /* RecipeModel.h */,
 				F9FBDDD72355C6AB0095C5BD /* RecipeModel.m */,
 				F9FDDEA223565E0100A0153A /* StepsModel.h */,
@@ -560,6 +568,8 @@
 				F9FB36A72357A4CA00D03604 /* EquipmentModel.m */,
 				F9FB36AA2357A62400D03604 /* IngredientModel.h */,
 				F9FB36AB2357A62400D03604 /* IngredientModel.m */,
+				F902901923A2E263001EDD90 /* Measures.h */,
+				F902901A23A2E263001EDD90 /* Measures.m */,
 				F9FB36AE2357ABE400D03604 /* CookTimeModel.h */,
 				F9FB36AF2357ABE400D03604 /* CookTimeModel.m */,
 				F9FB36B22357AC6400D03604 /* NutritionModel.h */,
@@ -833,6 +843,8 @@
 			children = (
 				43516FE7CFDFB8EF94BB24DABE970261 /* OAIDefaultApi.h */,
 				8872C2DD9D0E9D3A639D33D637210D15 /* OAIDefaultApi.m */,
+				F9FDE7C6238C618F001F6162 /* OAIDefaultApi+RecipeMethods.h */,
+				F9FDE7C7238C618F001F6162 /* OAIDefaultApi+RecipeMethods.m */,
 			);
 			name = Api;
 			path = OpenAPIClient/Api;
@@ -856,8 +868,12 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9FA77DE23AEBD26008109D5 /* OAIInlineObject3.h in Headers */,
 				A6FC001A16302AFD8324E22BAB152963 /* JSONValueTransformer+ISO8601.h in Headers */,
 				A257E091B61186733C988BEAA5458136 /* OAIApi.h in Headers */,
+				F9FA77E623AEBD4E008109D5 /* OAIInlineObject7.h in Headers */,
+				F9FA77E023AEBD32008109D5 /* OAIInlineObject4.h in Headers */,
+				F9FA77DA23AEBD13008109D5 /* OAIInlineObject1.h in Headers */,
 				82B1BD39BCAC9EC892620BD5B13968F4 /* OAIApiClient.h in Headers */,
 				F9FB36B42357AC6400D03604 /* NutritionModel.h in Headers */,
 				A768E1C4E56F6FFF8FFE1918974101E4 /* OAIBasicAuthTokenProvider.h in Headers */,
@@ -865,26 +881,24 @@
 				ADBD35C9571CFCBF71CFC2298B31A0CA /* OAIDefaultApi.h in Headers */,
 				CAC7DEB6D71C4CA0CA0283F21E4C6E0D /* OAIDefaultConfiguration.h in Headers */,
 				6A620B7AF66EE1C4408E45207A0EC05A /* OAIInlineObject.h in Headers */,
-				FCBEB83F4D7DD4DEDCCDB2F184C353E9 /* OAIInlineObject1.h in Headers */,
-				5047FB416FC4FE8D1EAD668E98FC736C /* OAIInlineObject2.h in Headers */,
-				C15F20CDFD4996B7A03C14F73B2DD2CE /* OAIInlineObject3.h in Headers */,
 				F9FB36A82357A4CA00D03604 /* EquipmentModel.h in Headers */,
-				56670D7975DA23939FA5FC86949E57C5 /* OAIInlineObject4.h in Headers */,
 				F9FC980723472CD8000B76C5 /* CoreDataManager.h in Headers */,
-				810381F00761DD9FB3AD1C64999EABAD /* OAIInlineObject5.h in Headers */,
+				F9FA77E823AEBD58008109D5 /* OAIInlineObject8.h in Headers */,
 				F9FDDEA423565E0100A0153A /* StepsModel.h in Headers */,
-				07AD3BECCC7F0892575269DC02CC97E1 /* OAIInlineObject6.h in Headers */,
-				4602590B8CC970E66CA8572112605EF6 /* OAIInlineObject7.h in Headers */,
 				F9FBDDD82355C6AB0095C5BD /* RecipeModel.h in Headers */,
-				427E065DEE0CA9C1BEAD5BA12CCB2ED8 /* OAIInlineObject8.h in Headers */,
-				8C746D5C20135920E9848EE3A8F9234A /* OAIInlineObject9.h in Headers */,
 				3F0C6EC06C70AB8DEDCB2A81D9DF4B84 /* OAIJSONRequestSerializer.h in Headers */,
 				F9FB36AC2357A62400D03604 /* IngredientModel.h in Headers */,
 				1D00642C4CBB99F43766C46290F25D59 /* OAILogger.h in Headers */,
 				9151FBCF97D1513CEC3671B0A1F5E11B /* OAIObject.h in Headers */,
 				F9FB36B02357ABE400D03604 /* CookTimeModel.h in Headers */,
+				F9FA77E223AEBD3C008109D5 /* OAIInlineObject5.h in Headers */,
+				F9FA77DC23AEBD1D008109D5 /* OAIInlineObject2.h in Headers */,
 				6824FAFE45B61EE13E348F1199DCE9A6 /* OAIQueryParamCollection.h in Headers */,
 				55AF8FB3094D874EDED23813832A8EC3 /* OAIResponseDeserializer.h in Headers */,
+				F902901B23A2E263001EDD90 /* Measures.h in Headers */,
+				F9FDE7C8238C618F001F6162 /* OAIDefaultApi+RecipeMethods.h in Headers */,
+				F9FA77E423AEBD45008109D5 /* OAIInlineObject6.h in Headers */,
+				F9FA77EA23AEBD60008109D5 /* OAIInlineObject9.h in Headers */,
 				6FC8F1E1284378E54CB5E6D005E09FBC /* OAISanitizer.h in Headers */,
 				5D150165D19144D7F28FC974D9CCFBD4 /* OpenAPIClient-umbrella.h in Headers */,
 			);
@@ -1176,30 +1190,32 @@
 			files = (
 				F9FB36B52357AC6400D03604 /* NutritionModel.m in Sources */,
 				10FE31C2798429BDC5BE135C043BC916 /* JSONValueTransformer+ISO8601.m in Sources */,
+				F9FA77E923AEBD5C008109D5 /* OAIInlineObject8.m in Sources */,
 				F9FBDDD92355C6AB0095C5BD /* RecipeModel.m in Sources */,
 				69BB69B2A58CC8B52AFFB9DA1A4A617A /* OAIApiClient.m in Sources */,
 				ECE7A9D8EE472AA77E1882CE370FD059 /* OAIBasicAuthTokenProvider.m in Sources */,
 				5BE804F967080AE4F4FBBE08D56C706B /* OAIDefaultApi.m in Sources */,
+				F9FA77E123AEBD37008109D5 /* OAIInlineObject4.m in Sources */,
 				102760D7988569ECADC45703ABAB983B /* OAIDefaultConfiguration.m in Sources */,
 				9572700691D1FDC9640606240F59F404 /* OAIInlineObject.m in Sources */,
-				BE2CE817938A38B21F52BBACFA00B6B9 /* OAIInlineObject1.m in Sources */,
-				5A6EF00AAB26F4F6872EA786CCA37563 /* OAIInlineObject2.m in Sources */,
-				3206FBD5CA545EFF764BEF73604E3E13 /* OAIInlineObject3.m in Sources */,
 				F9FB36A92357A4CA00D03604 /* EquipmentModel.m in Sources */,
-				5B1F3F580705378089FEB393EA669AFD /* OAIInlineObject4.m in Sources */,
-				4892F099D3B6298847A2C15E1CEA2B4E /* OAIInlineObject5.m in Sources */,
-				9145471F023535793E64211D380B6A57 /* OAIInlineObject6.m in Sources */,
 				F9FB36AD2357A62400D03604 /* IngredientModel.m in Sources */,
+				F9FA77E323AEBD40008109D5 /* OAIInlineObject5.m in Sources */,
 				F9FC980823472CD8000B76C5 /* CoreDataManager.m in Sources */,
-				37BF9581CEA71F5A30BCD756E6174673 /* OAIInlineObject7.m in Sources */,
-				3460B027E146433D456BBE1666DA76B8 /* OAIInlineObject8.m in Sources */,
-				C503CFD7E4F0AA3B985A954B152B28FB /* OAIInlineObject9.m in Sources */,
 				743378B337C7EA4F258E9D7EE759FEE3 /* OAIJSONRequestSerializer.m in Sources */,
+				F9FA77DF23AEBD2E008109D5 /* OAIInlineObject3.m in Sources */,
 				D84270CDE3F3D72CA9763B8AB1AAA1DB /* OAILogger.m in Sources */,
 				D791CD1E7085DFA31CCB7CE476DE13CB /* OAIObject.m in Sources */,
+				F9FA77EB23AEBD64008109D5 /* OAIInlineObject9.m in Sources */,
+				F9FA77E723AEBD53008109D5 /* OAIInlineObject7.m in Sources */,
+				F9FA77DD23AEBD21008109D5 /* OAIInlineObject2.m in Sources */,
+				F9FDE7C9238C618F001F6162 /* OAIDefaultApi+RecipeMethods.m in Sources */,
+				F902901C23A2E263001EDD90 /* Measures.m in Sources */,
 				F9FB36B12357ABE400D03604 /* CookTimeModel.m in Sources */,
 				5898B7C6F21E66BED173CB2619150D15 /* OAIQueryParamCollection.m in Sources */,
+				F9FA77E523AEBD49008109D5 /* OAIInlineObject6.m in Sources */,
 				F653B2EACD348C9BF37C4CB99B08C00B /* OAIResponseDeserializer.m in Sources */,
+				F9FA77DB23AEBD19008109D5 /* OAIInlineObject1.m in Sources */,
 				49AAFAE94B0FBB368E9950697AE41903 /* OAISanitizer.m in Sources */,
 				F9FDDEA523565E0100A0153A /* StepsModel.m in Sources */,
 				0033C3DA9D43F4DD9433C044E003122C /* OpenAPIClient-dummy.m in Sources */,

@@ -1,5 +1,5 @@
 #import <Foundation/Foundation.h>
-#import "OAIInlineObject8.h"
+//#import "OAIInlineObject8.h"
 #import "OAIApi.h"
 
 /**
@@ -154,9 +154,9 @@ extern NSInteger kOAIDefaultApiMissingParamErrorCode;
 ///  code:404 message:"Not Found"
 ///
 /// @return NSObject*
--(NSURLSessionTask*) classifyGroceryProductWithInlineObject8: (OAIInlineObject8*) inlineObject8
-    locale: (NSString*) locale
-    completionHandler: (void (^)(NSObject* output, NSError* error)) handler;
+//-(NSURLSessionTask*) classifyGroceryProductWithInlineObject8: (OAIInlineObject8*) inlineObject8
+//    locale: (NSString*) locale
+//    completionHandler: (void (^)(NSObject* output, NSError* error)) handler;
 
 
 /// Classify Grocery Product Bulk
@@ -1481,8 +1481,6 @@ extern NSInteger kOAIDefaultApiMissingParamErrorCode;
 
 
 
-- (NSURLSessionDataTask *)downloadImageDataBy:(NSURL *) url
-                               downloadProgress:(void (^)(NSProgress *downloadProgress)) downloadProgressBlock
-                              completionHandler:(void (^)(NSData * responseData, BOOL isCache,  NSError * error))completionHandler;
+
 
 @end
