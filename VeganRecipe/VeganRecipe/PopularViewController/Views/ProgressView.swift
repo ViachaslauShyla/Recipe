@@ -13,7 +13,9 @@ class ProgressView: UIView {
 
     var progress: Progress? {
         didSet {
-            self.setNeedsDisplay()
+            DispatchQueue.main.async {
+                self.setNeedsDisplay()
+            }
         }
     }
 
@@ -32,7 +34,7 @@ class ProgressView: UIView {
         path.stroke()
 
         let progressPath = UIBezierPath(arcCenter: center, radius: radius, startAngle: startAngle, endAngle: endAngle, clockwise: true)
-        UIColor.gray.setStroke()
+        UIColor.white.setStroke()
         progressPath.stroke()
     }
 }

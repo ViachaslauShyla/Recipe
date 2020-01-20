@@ -10,14 +10,14 @@
 
 - (void)initialSearchComplexRecipe: (void (^)(NSArray<RecipeModel *> *recipes, NSError* error)) handler {
     NSDictionary* request = @{@"sort": @"popularity",
-                              @"diet": @"Gluten Free",
+                              @"diet": @"Vegan",
                               @"offset": [NSNumber numberWithInteger:0]};
     [self searchRecipesComplexWithRequest:request complitionHandler:handler];
 }
 
 - (void)nextSearchComplexRecipe: (NSInteger) offset complitionHandler: (void (^)(NSArray<RecipeModel *> *recipes, NSError* error)) handler {
     NSDictionary* request = @{@"sort": @"popularity",
-                              @"diet": @"Gluten Free",
+                              @"diet": @"Vegan",
                               @"offset": [NSNumber numberWithInteger:offset]};
     [self searchRecipesComplexWithRequest:request complitionHandler:handler];
 }

@@ -4,11 +4,22 @@ class PopularViewController: UIViewController {
     private struct Constants {
         static let navigationTitle = "Popular Recipes"
         static let cellIdentifier = "collectionViewCellIdentifire"
+        static let bottomInset: CGFloat = 100.0
     }
 
-    var loadingIndicatorView: UIView?
+    private var viewModel: PopularModelViewProtocol
 
-    var viewModel: PopularModelViewProtocol
+    private var containerSearchView: ContainerSearchView = {
+        let v = ContainerSearchView(frame: .zero) { request in
+            //api.request(request)
+        }
+
+        return v
+    }()
+
+    lazy private var requestIndicatorView: UIView = {
+        return UIView(frame: CGRect(x: 0, y: collectionView.contentSize.height - Constants.bottomInset, width: collectionView.frame.width, height: Constants.bottomInset))
+    }()
 
     lazy var collectionView: UICollectionView = {
         let cv = UICollectionView(frame: CGRect.zero, collectionViewLayout: UICollectionViewFlowLayout())
@@ -30,26 +41,34 @@ class PopularViewController: UIViewController {
         super.init(coder: coder)
     }
 
-
-
     override func viewDidLoad() {
         super.viewDidLoad()
+
         setupNavigationItem()
+        setupNavigationBelowView()
         setupCollectionView()
         //make preview of screen
-        viewModel.uploadRecipes {
+        viewModel.showFirstRecipes {
             // delete preview
             self.collectionView.reloadData()
         }
-        
     }
+}
+
+//MARK: - PrivateMetods
+private extension PopularViewController {
 
     @objc func tapSearchRecipe(_ sender: UIBarButtonItem) {
-
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.layoutIfNeeded()
+      //  navigationController?.setNavigationBarHidden(true, animated: true)
+        containerSearchView.showSearch()
     }
+}
 
-    //MARK: - Private Methods
-    private func getPercent(value: CGFloat) -> CGFloat {
+// MARK: - TransformCell
+private extension PopularViewController {
+    func getPercent(value: CGFloat) -> CGFloat {
         switch value {
         case value where value > 1: return 1
         case value where value < 0: return 0
@@ -57,10 +76,10 @@ class PopularViewController: UIViewController {
         }
     }
 
-    private func makeTransformCell(_ cell: UICollectionViewCell) {
+    func makeTransformCell(_ cell: UICollectionViewCell) {
         let convertFrame = cell.convert(cell.bounds, to: view)
         var percent: CGFloat = 0
-        let fullHeight = view.frame.height + 64
+        let fullHeight = view.frame.height
 
         if convertFrame.minY > 0 {
             let transformOffsetY = fullHeight - cell.frame.height * 2 / 3
@@ -76,37 +95,27 @@ class PopularViewController: UIViewController {
         cell.transform = CGAffineTransform(scaleX: (1 - scale), y: (1 - scale))
         cell.alpha = 1 - percent
     }
-
-    private func makeNewRequest(_ scrollView: UIScrollView) {
-        if loadingIndicatorView == nil {
-            let offset = self.dataSource.count
-
-            let activityIndicator = UIActivityIndicatorView(style: .whiteLarge)
-            loadingIndicatorView = View.makeLoadingViewFor(scrollView, With: activityIndicator)
-            scrollView.contentInset.bottom = 100
-            scrollView.addSubview(loadingIndicatorView!)
-            activityIndicator.startAnimating()
-
-            
-//            api.nextSearchComplexRecipe(offset: offset) { [weak self] (resipes) in
-//                 self?.dataSource.append(contentsOf: resipes)
-//                 activityIndicator.stopAnimating()
-//                 activityIndicator.hidesWhenStopped = true
-//                 scrollView.contentInset.bottom = 0
-//                 self?.loadingIndicatorView = nil
-//                 self?.collectionView.reloadData()
-//            }
-        }
-    }
 }
 
+// MARK: - Setup Methods
 private extension PopularViewController {
+    func setupNavigationBelowView() {
+        view.addSubview(containerSearchView)
+        containerSearchView.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            containerSearchView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            containerSearchView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            containerSearchView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+        ])
+    }
+
     func setupCollectionView() {
         view.addSubview(collectionView)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            collectionView.topAnchor.constraint(equalTo: containerSearchView.bottomAnchor),
             collectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
@@ -117,6 +126,25 @@ private extension PopularViewController {
         let rightButton = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(tapSearchRecipe))
         self.navigationItem.rightBarButtonItem = rightButton
         self.navigationItem.title = Constants.navigationTitle
+    }
+
+    func setupRequestIndicatorView() -> UIActivityIndicatorView {
+        collectionView.contentInset.bottom = Constants.bottomInset
+        collectionView.addSubview(requestIndicatorView)
+        requestIndicatorView.backgroundColor = .red
+
+        let indicatorView = UIActivityIndicatorView(style: .whiteLarge)
+        requestIndicatorView.addSubview(indicatorView)
+        indicatorView.translatesAutoresizingMaskIntoConstraints = false
+        indicatorView.centerXAnchor.constraint(equalTo: requestIndicatorView.centerXAnchor).isActive = true
+        indicatorView.centerYAnchor.constraint(equalTo: requestIndicatorView.centerYAnchor).isActive = true
+
+        return indicatorView
+    }
+
+    func removeRequestIndicatorView() {
+        collectionView.contentInset.bottom = 0.0
+        requestIndicatorView.removeFromSuperview()
     }
 }
 
@@ -130,11 +158,8 @@ extension PopularViewController: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.cellIdentifier, for: indexPath) as? PopularCollectionViewCell
 
         let recipe = viewModel.recipes[indexPath.row]
-        cell?.configureWith(image: nil, title: recipe.title)
-//        if let image = recipe.recipeImage {
-//            cell?.configureWith(image: image, title: recipe.title)
-//        }
-
+        cell?.configureWith(title: recipe.title, imageUrl: recipe.imageUrl)
+        
         return cell!
     }
 }
@@ -145,9 +170,14 @@ extension PopularViewController: UICollectionViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         collectionView.visibleCells.forEach({ makeTransformCell($0) })
 
-        let maxScrollY = scrollView.contentOffset.y + scrollView.bounds.height
-        if scrollView.contentSize.height > 0 && maxScrollY - scrollView.contentSize.height > 100 {
-            makeNewRequest(scrollView)
+        let maxScrollPosition = scrollView.contentOffset.y + scrollView.bounds.height - scrollView.contentSize.height
+        if scrollView.contentSize.height > 0 && maxScrollPosition > 100 {
+            let indicatorView = setupRequestIndicatorView()
+            indicatorView.stopAnimating()
+            viewModel.showMoreRescipes {
+                self.removeRequestIndicatorView()
+                self.collectionView.reloadData()
+            }
         }
     }
 }

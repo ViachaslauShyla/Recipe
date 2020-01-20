@@ -11,7 +11,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface RecipeModel : OAIObject
 
 @property(strong, nonatomic) NSNumber *idRecipe;
-@property(strong, nonatomic) NSString *imageUrl;
+@property(strong, nonatomic) NSURL *imageUrl;
 @property(strong, nonatomic) NSString *title;
 @property(strong, nonatomic) NSArray<StepsModel *> *steps;
 @property(strong, nonatomic) NSArray<IngredientModel *> *ingredients;
