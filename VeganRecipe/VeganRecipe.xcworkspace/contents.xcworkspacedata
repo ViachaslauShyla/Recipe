@@ -2,30 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/appstore/RecipeList/VeganRecipe/OpenAPIClient/CoreDataManager/ImageData+CoreDataProperties.h">
-   </FileRef>
-   <FileRef
-      location = "group:/Users/appstore/RecipeList/VeganRecipe/OpenAPIClient/CoreDataManager/ImageData+CoreDataClass.h">
-   </FileRef>
-   <FileRef
-      location = "group:/Users/appstore/RecipeList/VeganRecipe/OpenAPIClient/CoreDataManager/ImageData+CoreDataClass.m">
-   </FileRef>
-   <FileRef
-      location = "group:/Users/appstore/RecipeList/VeganRecipe/OpenAPIClient/CoreDataManager/ImageData+CoreDataProperties.m">
-   </FileRef>
-   <FileRef
-      location = "group:/Users/appstore/RecipeList/VeganRecipe/OpenAPIClient/CoreDataManager/Cache+CoreDataProperties.h">
-   </FileRef>
-   <FileRef
-      location = "group:/Users/appstore/RecipeList/VeganRecipe/OpenAPIClient/CoreDataManager/Cache+CoreDataClass.h">
-   </FileRef>
-   <FileRef
-      location = "group:/Users/appstore/RecipeList/VeganRecipe/OpenAPIClient/CoreDataManager/Cache+CoreDataClass.m">
-   </FileRef>
-   <FileRef
-      location = "group:/Users/appstore/RecipeList/VeganRecipe/OpenAPIClient/CoreDataManager/Cache+CoreDataProperties.m">
-   </FileRef>
-   <FileRef
       location = "group:VeganRecipe.xcodeproj">
    </FileRef>
    <FileRef
