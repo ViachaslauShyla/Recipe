@@ -68,6 +68,14 @@
 		98114570DFFDF5BD81B7724B4810501D /* UIProgressView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 42481C3BED7602E0915C751F41DD4994 /* UIProgressView+AFNetworking.m */; };
 		9AD0618851147DEEB1A8348A9E16BF04 /* ISO8601.h in Headers */ = {isa = PBXBuildFile; fileRef = 921E87DC01871A64D9B29A2B9CA62D01 /* ISO8601.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9B41316D2DE09092FA0143B33A74B769 /* UIKit+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 23C17F2B6E9B6D81BD58FF40E5BD8524 /* UIKit+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9D2856D123D860CA0018D1A8 /* ImageData+CoreDataProperties.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D2856C923D860CA0018D1A8 /* ImageData+CoreDataProperties.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9D2856D223D860CA0018D1A8 /* ImageData+CoreDataClass.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D2856CA23D860CA0018D1A8 /* ImageData+CoreDataClass.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9D2856D323D860CA0018D1A8 /* ImageData+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D2856CB23D860CA0018D1A8 /* ImageData+CoreDataClass.m */; };
+		9D2856D423D860CA0018D1A8 /* ImageData+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D2856CC23D860CA0018D1A8 /* ImageData+CoreDataProperties.m */; };
+		9D2856D523D860CA0018D1A8 /* Cache+CoreDataProperties.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D2856CD23D860CA0018D1A8 /* Cache+CoreDataProperties.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9D2856D623D860CA0018D1A8 /* Cache+CoreDataClass.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D2856CE23D860CA0018D1A8 /* Cache+CoreDataClass.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9D2856D723D860CA0018D1A8 /* Cache+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D2856CF23D860CA0018D1A8 /* Cache+CoreDataClass.m */; };
+		9D2856D823D860CA0018D1A8 /* Cache+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D2856D023D860CA0018D1A8 /* Cache+CoreDataProperties.m */; };
 		A1FF33B1A9BAE0019018CDE073936E60 /* ISO8601-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB5037A66D30077A8C077F82E24F435 /* ISO8601-dummy.m */; };
 		A257E091B61186733C988BEAA5458136 /* OAIApi.h in Headers */ = {isa = PBXBuildFile; fileRef = 5E3C98320F5A3E837D3C9E6D1AC42F10 /* OAIApi.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A52DD788A5384665F425D6A2C7493AD0 /* JSONModelError.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E57A2A91BFCD1820897953CA2EFFA7E /* JSONModelError.m */; };
@@ -266,6 +274,14 @@
 		9649A3A9B79D7914BC945127C0D1B7C5 /* ISO8601.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ISO8601.xcconfig; sourceTree = "<group>"; };
 		97100FB1000A5C3B9B25D1E34B285E86 /* AFNetworking-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "AFNetworking-Info.plist"; sourceTree = "<group>"; };
 		9A44B9D0714EADAD500C336F02780E89 /* UIWebView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIWebView+AFNetworking.h"; path = "UIKit+AFNetworking/UIWebView+AFNetworking.h"; sourceTree = "<group>"; };
+		9D2856C923D860CA0018D1A8 /* ImageData+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ImageData+CoreDataProperties.h"; sourceTree = "<group>"; };
+		9D2856CA23D860CA0018D1A8 /* ImageData+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ImageData+CoreDataClass.h"; sourceTree = "<group>"; };
+		9D2856CB23D860CA0018D1A8 /* ImageData+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ImageData+CoreDataClass.m"; sourceTree = "<group>"; };
+		9D2856CC23D860CA0018D1A8 /* ImageData+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ImageData+CoreDataProperties.m"; sourceTree = "<group>"; };
+		9D2856CD23D860CA0018D1A8 /* Cache+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Cache+CoreDataProperties.h"; sourceTree = "<group>"; };
+		9D2856CE23D860CA0018D1A8 /* Cache+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Cache+CoreDataClass.h"; sourceTree = "<group>"; };
+		9D2856CF23D860CA0018D1A8 /* Cache+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Cache+CoreDataClass.m"; sourceTree = "<group>"; };
+		9D2856D023D860CA0018D1A8 /* Cache+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Cache+CoreDataProperties.m"; sourceTree = "<group>"; };
 		9D80A572759C5BA9A0F5631F0E40E7DA /* Pods-VeganRecipe-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-VeganRecipe-umbrella.h"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9E264E82458672AD78E4FA638D818EE4 /* AFURLSessionManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLSessionManager.h; path = AFNetworking/AFURLSessionManager.h; sourceTree = "<group>"; };
@@ -580,6 +596,21 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		9D2856D923D861010018D1A8 /* NSManagedObjects */ = {
+			isa = PBXGroup;
+			children = (
+				9D2856C923D860CA0018D1A8 /* ImageData+CoreDataProperties.h */,
+				9D2856CC23D860CA0018D1A8 /* ImageData+CoreDataProperties.m */,
+				9D2856CA23D860CA0018D1A8 /* ImageData+CoreDataClass.h */,
+				9D2856CB23D860CA0018D1A8 /* ImageData+CoreDataClass.m */,
+				9D2856CD23D860CA0018D1A8 /* Cache+CoreDataProperties.h */,
+				9D2856D023D860CA0018D1A8 /* Cache+CoreDataProperties.m */,
+				9D2856CE23D860CA0018D1A8 /* Cache+CoreDataClass.h */,
+				9D2856CF23D860CA0018D1A8 /* Cache+CoreDataClass.m */,
+			);
+			path = NSManagedObjects;
+			sourceTree = "<group>";
+		};
 		9E475FBCBF4CB37D60489B2022FE4B23 /* JSONModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -730,6 +761,7 @@
 		F9FB482A23583FE300AEF78A /* CoreDataManager */ = {
 			isa = PBXGroup;
 			children = (
+				9D2856D923D861010018D1A8 /* NSManagedObjects */,
 				F9FC981223476F5F000B76C5 /* Model.xcdatamodeld */,
 				F9FC980523472CD8000B76C5 /* CoreDataManager.h */,
 				F9FC980623472CD8000B76C5 /* CoreDataManager.m */,
@@ -769,9 +801,12 @@
 			files = (
 				A6FC001A16302AFD8324E22BAB152963 /* JSONValueTransformer+ISO8601.h in Headers */,
 				A257E091B61186733C988BEAA5458136 /* OAIApi.h in Headers */,
+				9D2856D623D860CA0018D1A8 /* Cache+CoreDataClass.h in Headers */,
 				82B1BD39BCAC9EC892620BD5B13968F4 /* OAIApiClient.h in Headers */,
 				F9FB36B42357AC6400D03604 /* NutritionModel.h in Headers */,
+				9D2856D123D860CA0018D1A8 /* ImageData+CoreDataProperties.h in Headers */,
 				A768E1C4E56F6FFF8FFE1918974101E4 /* OAIBasicAuthTokenProvider.h in Headers */,
+				9D2856D223D860CA0018D1A8 /* ImageData+CoreDataClass.h in Headers */,
 				46158B76D03BE905B0224234CAC5580F /* OAIConfiguration.h in Headers */,
 				ADBD35C9571CFCBF71CFC2298B31A0CA /* OAIDefaultApi.h in Headers */,
 				CAC7DEB6D71C4CA0CA0283F21E4C6E0D /* OAIDefaultConfiguration.h in Headers */,
@@ -790,6 +825,7 @@
 				F9FDE7C8238C618F001F6162 /* OAIDefaultApi+RecipeMethods.h in Headers */,
 				6FC8F1E1284378E54CB5E6D005E09FBC /* OAISanitizer.h in Headers */,
 				5D150165D19144D7F28FC974D9CCFBD4 /* OpenAPIClient-umbrella.h in Headers */,
+				9D2856D523D860CA0018D1A8 /* Cache+CoreDataProperties.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -960,6 +996,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
 			productRefGroup = 1D36D6414EF815627519E5FC8866A5B8 /* Products */;
@@ -1067,12 +1104,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9FB36B52357AC6400D03604 /* NutritionModel.m in Sources */,
+				9D2856D423D860CA0018D1A8 /* ImageData+CoreDataProperties.m in Sources */,
 				10FE31C2798429BDC5BE135C043BC916 /* JSONValueTransformer+ISO8601.m in Sources */,
 				F9FBDDD92355C6AB0095C5BD /* RecipeModel.m in Sources */,
 				69BB69B2A58CC8B52AFFB9DA1A4A617A /* OAIApiClient.m in Sources */,
 				ECE7A9D8EE472AA77E1882CE370FD059 /* OAIBasicAuthTokenProvider.m in Sources */,
 				5BE804F967080AE4F4FBBE08D56C706B /* OAIDefaultApi.m in Sources */,
 				102760D7988569ECADC45703ABAB983B /* OAIDefaultConfiguration.m in Sources */,
+				9D2856D723D860CA0018D1A8 /* Cache+CoreDataClass.m in Sources */,
+				9D2856D323D860CA0018D1A8 /* ImageData+CoreDataClass.m in Sources */,
 				F9FB36A92357A4CA00D03604 /* EquipmentModel.m in Sources */,
 				F9FB36AD2357A62400D03604 /* IngredientModel.m in Sources */,
 				F9FC980823472CD8000B76C5 /* CoreDataManager.m in Sources */,
@@ -1080,6 +1120,7 @@
 				D84270CDE3F3D72CA9763B8AB1AAA1DB /* OAILogger.m in Sources */,
 				D791CD1E7085DFA31CCB7CE476DE13CB /* OAIObject.m in Sources */,
 				F9FDE7C9238C618F001F6162 /* OAIDefaultApi+RecipeMethods.m in Sources */,
+				9D2856D823D860CA0018D1A8 /* Cache+CoreDataProperties.m in Sources */,
 				F902901C23A2E263001EDD90 /* Measures.m in Sources */,
 				F9FB36B12357ABE400D03604 /* CookTimeModel.m in Sources */,
 				5898B7C6F21E66BED173CB2619150D15 /* OAIQueryParamCollection.m in Sources */,

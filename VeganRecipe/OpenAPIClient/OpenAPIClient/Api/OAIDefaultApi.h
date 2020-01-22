@@ -162,7 +162,6 @@ extern NSInteger kOAIDefaultApiMissingParamErrorCode;
 /// Classify Grocery Product Bulk
 /// Given a set of product jsons, get back classified products.
 ///
-/// @param body 
 /// @param locale The locale of the returned category, supported is en_US and en_GB. (optional)
 /// 
 ///  code:200 message:"Success",
@@ -659,7 +658,6 @@ extern NSInteger kOAIDefaultApiMissingParamErrorCode;
 /// Map Ingredients to Grocery Products
 /// Map a set of ingredients to products you can buy in the grocery store.
 ///
-/// @param body 
 /// 
 ///  code:200 message:"Success",
 ///  code:401 message:"Unauthorized",
