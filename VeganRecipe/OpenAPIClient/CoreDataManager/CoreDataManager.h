@@ -16,11 +16,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (CoreDataManager *)shared;
 
-- (NSDictionary *) dataSourceForUrl: (NSString *)url;
-- (void) saveIntoDataSourceFor: (NSString *)key data: (NSObject *)data;
-- (void) deleteData;
-- (NSData *) imageDataForUrl: (NSString *)url;
-- (void) saveImageDataFor: (NSString *)key data: (NSObject *)data;
+- (NSDictionary *)dataSourceForUrl:(NSString *)url;
+- (void)saveIntoDataSourceFor:(NSString *)key data:(NSObject *)data;
+- (void)deleteData;
+- (NSData *)imageDataForUrl:(NSString *)url;
+- (void)saveImageDataFor:(NSString *)key data:(NSObject *)data;
 
 @end
 
