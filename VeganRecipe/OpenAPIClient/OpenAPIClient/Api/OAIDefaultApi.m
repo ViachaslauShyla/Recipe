@@ -1,7 +1,6 @@
 #import "OAIDefaultApi.h"
 #import "OAIQueryParamCollection.h"
 #import "OAIApiClient.h"
-#import "OAIInlineObject8.h"
 #import "RecipeModel.h"
 #import "CoreDataManager.h"
 #import "OAIDefaultApi+RecipeMethods.h"
