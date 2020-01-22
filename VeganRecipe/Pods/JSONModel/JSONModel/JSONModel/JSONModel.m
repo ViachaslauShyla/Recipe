@@ -72,7 +72,7 @@ static JSONKeyMapper* globalKeyMapper = nil;
     });
 }
 
--(void)__setup__
+- (void)__setup__
 {
     //if first instance of this model, generate the property list
     if (!objc_getAssociatedObject(self.class, &kClassPropertiesKey)) {
@@ -91,7 +91,7 @@ static JSONKeyMapper* globalKeyMapper = nil;
     }
 }
 
--(id)init
+- (id)init
 {
     self = [super init];
     if (self) {
@@ -101,7 +101,7 @@ static JSONKeyMapper* globalKeyMapper = nil;
     return self;
 }
 
--(instancetype)initWithData:(NSData *)data error:(NSError *__autoreleasing *)err
+- (instancetype)initWithData:(NSData *)data error:(NSError *__autoreleasing *)err
 {
     //check for nil input
     if (!data) {
@@ -125,7 +125,7 @@ static JSONKeyMapper* globalKeyMapper = nil;
     return objModel;
 }
 
--(id)initWithString:(NSString*)string error:(JSONModelError**)err
+- (id)initWithString:(NSString*)string error:(JSONModelError**)err
 {
     JSONModelError* initError = nil;
     id objModel = [self initWithString:string usingEncoding:NSUTF8StringEncoding error:&initError];
@@ -133,7 +133,7 @@ static JSONKeyMapper* globalKeyMapper = nil;
     return objModel;
 }
 
--(id)initWithString:(NSString *)string usingEncoding:(NSStringEncoding)encoding error:(JSONModelError**)err
+- (id)initWithString:(NSString *)string usingEncoding:(NSStringEncoding)encoding error:(JSONModelError**)err
 {
     //check for nil input
     if (!string) {
@@ -148,7 +148,7 @@ static JSONKeyMapper* globalKeyMapper = nil;
 
 }
 
--(id)initWithDictionary:(NSDictionary*)dict error:(NSError**)err
+- (id)initWithDictionary:(NSDictionary*)dict error:(NSError**)err
 {
     //check for nil input
     if (!dict) {
@@ -190,13 +190,13 @@ static JSONKeyMapper* globalKeyMapper = nil;
     return self;
 }
 
--(JSONKeyMapper*)__keyMapper
+- (JSONKeyMapper*)__keyMapper
 {
     //get the model key mapper
     return objc_getAssociatedObject(self.class, &kMapperObjectKey);
 }
 
--(BOOL)__doesDictionary:(NSDictionary*)dict matchModelWithKeyMapper:(JSONKeyMapper*)keyMapper error:(NSError**)err
+- (BOOL)__doesDictionary:(NSDictionary*)dict matchModelWithKeyMapper:(JSONKeyMapper*)keyMapper error:(NSError**)err
 {
     //check if all required properties are present
     NSArray* incomingKeysArray = [dict allKeys];
@@ -252,7 +252,7 @@ static JSONKeyMapper* globalKeyMapper = nil;
     return YES;
 }
 
--(NSString*)__mapString:(NSString*)string withKeyMapper:(JSONKeyMapper*)keyMapper
+- (NSString*)__mapString:(NSString*)string withKeyMapper:(JSONKeyMapper*)keyMapper
 {
     if (keyMapper) {
         //custom mapper
@@ -269,7 +269,7 @@ static JSONKeyMapper* globalKeyMapper = nil;
     return string;
 }
 
--(BOOL)__importDictionary:(NSDictionary*)dict withKeyMapper:(JSONKeyMapper*)keyMapper validation:(BOOL)validation error:(NSError**)err
+- (BOOL)__importDictionary:(NSDictionary*)dict withKeyMapper:(JSONKeyMapper*)keyMapper validation:(BOOL)validation error:(NSError**)err
 {
     //loop over the incoming keys and set self's properties
     for (JSONModelClassProperty* property in [self __properties__]) {
@@ -478,7 +478,7 @@ static JSONKeyMapper* globalKeyMapper = nil;
 
 #pragma mark - property inspection methods
 
--(BOOL)__isJSONModelSubClass:(Class)class
+- (BOOL)__isJSONModelSubClass:(Class)class
 {
 // http://stackoverflow.com/questions/19883472/objc-nsobject-issubclassofclass-gives-incorrect-failure
 #ifdef UNIT_TESTING
@@ -489,7 +489,7 @@ static JSONKeyMapper* globalKeyMapper = nil;
 }
 
 //returns a set of the required keys for the model
--(NSMutableSet*)__requiredPropertyNames
+- (NSMutableSet*)__requiredPropertyNames
 {
     //fetch the associated property names
     NSMutableSet* classRequiredPropertyNames = objc_getAssociatedObject(self.class, &kClassRequiredPropertyNamesKey);
@@ -512,7 +512,7 @@ static JSONKeyMapper* globalKeyMapper = nil;
 }
 
 //returns a list of the model's properties
--(NSArray*)__properties__
+- (NSArray*)__properties__
 {
     //fetch the associated object
     NSDictionary* classProperties = objc_getAssociatedObject(self.class, &kClassPropertiesKey);
@@ -527,7 +527,7 @@ static JSONKeyMapper* globalKeyMapper = nil;
 }
 
 //inspects the class, get's a list of the class properties
--(void)__inspectProperties
+- (void)__inspectProperties
 {
     //JMLog(@"Inspect class: %@", [self class]);
 
@@ -720,7 +720,7 @@ static JSONKeyMapper* globalKeyMapper = nil;
 
 #pragma mark - built-in transformer methods
 //few built-in transformations
--(id)__transform:(id)value forProperty:(JSONModelClassProperty*)property error:(NSError**)err
+- (id)__transform:(id)value forProperty:(JSONModelClassProperty*)property error:(NSError**)err
 {
     Class protocolClass = NSClassFromString(property.protocol);
     if (!protocolClass) {
@@ -803,7 +803,7 @@ static JSONKeyMapper* globalKeyMapper = nil;
 }
 
 //built-in reverse transformations (export to JSON compliant objects)
--(id)__reverseTransform:(id)value forProperty:(JSONModelClassProperty*)property
+- (id)__reverseTransform:(id)value forProperty:(JSONModelClassProperty*)property
 {
     Class protocolClass = NSClassFromString(property.protocol);
     if (!protocolClass) return value;
@@ -873,7 +873,7 @@ static JSONKeyMapper* globalKeyMapper = nil;
 }
 
 #pragma mark - persistance
--(void)__createDictionariesForKeyPath:(NSString*)keyPath inDictionary:(NSMutableDictionary**)dict
+- (void)__createDictionariesForKeyPath:(NSString*)keyPath inDictionary:(NSMutableDictionary**)dict
 {
     //find if there's a dot left in the keyPath
     NSUInteger dotLocation = [keyPath rangeOfString:@"."].location;
@@ -896,17 +896,17 @@ static JSONKeyMapper* globalKeyMapper = nil;
     [*dict setValue:nextLevelDictionary  forKeyPath: nextHierarchyLevelKeyName];
 }
 
--(NSDictionary*)toDictionary
+- (NSDictionary*)toDictionary
 {
     return [self toDictionaryWithKeys:nil];
 }
 
--(NSString*)toJSONString
+- (NSString*)toJSONString
 {
     return [self toJSONStringWithKeys:nil];
 }
 
--(NSData*)toJSONData
+- (NSData*)toJSONData
 {
     return [self toJSONDataWithKeys:nil];
 }
@@ -1216,13 +1216,13 @@ static JSONKeyMapper* globalKeyMapper = nil;
 
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wdeprecated-declarations"
--(NSString*)indexPropertyName
+- (NSString*)indexPropertyName
 {
     //custom getter for an associated object
     return objc_getAssociatedObject(self.class, &kIndexPropertyNameKey);
 }
 
--(BOOL)isEqual:(id)object
+- (BOOL)isEqual:(id)object
 {
     //bail early if different classes
     if (![object isMemberOfClass:[self class]]) return NO;
@@ -1237,7 +1237,7 @@ static JSONKeyMapper* globalKeyMapper = nil;
     return [super isEqual:object];
 }
 
--(NSComparisonResult)compare:(id)object
+- (NSComparisonResult)compare:(id)object
 {
     if (self.indexPropertyName) {
         id objectId = [object valueForKey: self.indexPropertyName];
@@ -1269,14 +1269,14 @@ static JSONKeyMapper* globalKeyMapper = nil;
 #pragma GCC diagnostic pop
 
 #pragma mark - custom data validation
--(BOOL)validate:(NSError**)error
+- (BOOL)validate:(NSError**)error
 {
     return YES;
 }
 
 #pragma mark - custom recursive description
 //custom description method for debugging purposes
--(NSString*)description
+- (NSString*)description
 {
     NSMutableString* text = [NSMutableString stringWithFormat:@"<%@> \n", [self class]];
 
@@ -1349,14 +1349,14 @@ static JSONKeyMapper* globalKeyMapper = nil;
 }
 
 #pragma mark - NSCopying, NSCoding
--(instancetype)copyWithZone:(NSZone *)zone
+- (instancetype)copyWithZone:(NSZone *)zone
 {
     return [NSKeyedUnarchiver unarchiveObjectWithData:
         [NSKeyedArchiver archivedDataWithRootObject:self]
      ];
 }
 
--(instancetype)initWithCoder:(NSCoder *)decoder
+- (instancetype)initWithCoder:(NSCoder *)decoder
 {
     NSString* json;
 
@@ -1374,7 +1374,7 @@ static JSONKeyMapper* globalKeyMapper = nil;
     return self;
 }
 
--(void)encodeWithCoder:(NSCoder *)encoder
+- (void)encodeWithCoder:(NSCoder *)encoder
 {
     [encoder encodeObject:self.toJSONString forKey:@"json"];
 }

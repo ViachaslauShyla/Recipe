@@ -14,16 +14,15 @@
 * Do not edit the class manually.
 */
 
-
 @protocol OAIApi <NSObject>
 
-@property(readonly, nonatomic, strong) OAIApiClient *apiClient;
+@property (readonly, nonatomic, strong) OAIApiClient *apiClient;
 
--(instancetype) initWithApiClient:(OAIApiClient *)apiClient;
+- (instancetype)initWithApiClient:(OAIApiClient *)apiClient;
 
--(void) setDefaultHeaderValue:(NSString*) value forKey:(NSString*)key;
--(NSString*) defaultHeaderForKey:(NSString*)key;
+- (void)setDefaultHeaderValue:(NSString *)value forKey:(NSString *)key;
+- (NSString *)defaultHeaderForKey:(NSString *)key;
 
--(NSDictionary *)defaultHeaders;
+- (NSDictionary *)defaultHeaders;
 
 @end

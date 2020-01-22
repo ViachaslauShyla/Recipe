@@ -12,7 +12,6 @@
 * Do not edit the class manually.
 */
 
-
 /**
  * A key for deserialization ErrorDomain
  */
@@ -42,7 +41,7 @@ extern NSInteger const OAIUnknownResponseObjectErrorCode;
  * @param className The type of objective-c object.
  * @param error The error
  */
-- (id) deserialize:(id) data class:(NSString *) className error:(NSError**)error;
+- (id)deserialize:(id)data class:(NSString *)className error:(NSError **)error;
 
 @end
 

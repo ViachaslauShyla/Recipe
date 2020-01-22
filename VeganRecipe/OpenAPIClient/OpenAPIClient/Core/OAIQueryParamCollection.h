@@ -12,13 +12,12 @@
 * Do not edit the class manually.
 */
 
-
 @interface OAIQueryParamCollection : NSObject
 
-@property(nonatomic, readonly) NSArray* values;
-@property(nonatomic, readonly) NSString* format;
+@property (nonatomic, readonly) NSArray *values;
+@property (nonatomic, readonly) NSString *format;
 
-- (id) initWithValuesAndFormat: (NSArray*) values
-                        format: (NSString*) format;
+- (id)initWithValuesAndFormat:(NSArray *)values
+                       format:(NSString *)format;
 
 @end

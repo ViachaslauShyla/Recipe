@@ -9,17 +9,16 @@
 
 @implementation NutritionModel
 
--(id) initWithResultRequest: (NSDictionary *)result {
-
+- (id)initWithResultRequest:(NSDictionary *)result {
     self = [super init];
     if (self) {
         [self setDataIntoModel:result];
     }
 
-    return  self;
+    return self;
 }
-- (void)setDataIntoModel: (NSDictionary *)data {
 
+- (void)setDataIntoModel:(NSDictionary *)data {
     if ((NSString *)data[@"calories"]) {
         _calories = data[@"calories"];
     }

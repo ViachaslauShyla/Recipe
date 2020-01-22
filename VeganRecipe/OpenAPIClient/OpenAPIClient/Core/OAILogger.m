@@ -6,7 +6,7 @@
 
 @implementation OAILogger
 
-+ (instancetype) sharedLogger {
++ (instancetype)sharedLogger {
     static OAILogger *shardLogger = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -17,7 +17,8 @@
 
 #pragma mark - Log Methods
 
-- (void)debugLog:(NSString *)method message:(NSString *)format, ... {
+- (void)debugLog:(NSString *)method message:(NSString *)format, ...
+{
     if (!self.isEnabled) {
         return;
     }
@@ -46,16 +47,16 @@
 }
 
 - (void)logResponse:(NSURLResponse *)response responseObject:(id)responseObject request:(NSURLRequest *)request error:(NSError *)error {
-    NSString *message = [NSString stringWithFormat:@"\n[DEBUG] HTTP request body \n~BEGIN~\n %@\n~END~\n"\
+    NSString *message = [NSString stringWithFormat:@"\n[DEBUG] HTTP request body \n~BEGIN~\n %@\n~END~\n" \
                          "[DEBUG] HTTP response body \n~BEGIN~\n %@\n~END~\n",
-                                                   [[NSString alloc] initWithData:request.HTTPBody encoding:NSUTF8StringEncoding],
-                                                   responseObject];
+                         [[NSString alloc] initWithData:request.HTTPBody encoding:NSUTF8StringEncoding],
+                         responseObject];
 
     OAIDebugLog(message);
 }
 
-- (void) setLoggingFile:(NSString *)loggingFile {
-    if(_loggingFile == loggingFile) {
+- (void)setLoggingFile:(NSString *)loggingFile {
+    if (_loggingFile == loggingFile) {
         return;
     }
     // close old file handler

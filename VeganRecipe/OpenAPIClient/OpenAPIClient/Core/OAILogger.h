@@ -12,26 +12,25 @@
 * Do not edit the class manually.
 */
 
-
 #ifndef OAIDebugLogResponse
-#define OAIDebugLogResponse(response, responseObject,request, error) [[OAILogger sharedLogger] logResponse:response responseObject:responseObject request:request error:error];
+#define OAIDebugLogResponse(response, responseObject, request, error) [[OAILogger sharedLogger] logResponse:response responseObject:responseObject request:request error:error];
 #endif
 
 /**
  * Log debug message macro
  */
 #ifndef OAIDebugLog
-#define OAIDebugLog(format, ...) [[OAILogger sharedLogger] debugLog:[NSString stringWithFormat:@"%s", __PRETTY_FUNCTION__] message: format, ##__VA_ARGS__];
+#define OAIDebugLog(format, ...)                                      [[OAILogger sharedLogger] debugLog:[NSString stringWithFormat:@"%s", __PRETTY_FUNCTION__] message:format, ## __VA_ARGS__];
 #endif
 
 @interface OAILogger : NSObject
 
-+(instancetype)sharedLogger;
++ (instancetype)sharedLogger;
 
 /**
  * Enabled switch, default NO - default set by OAIConfiguration debug property
  */
-@property (nonatomic, assign, getter=isEnabled) BOOL enabled;
+@property (nonatomic, assign, getter = isEnabled) BOOL enabled;
 
 /**
  * Debug file location, default log in console
@@ -46,7 +45,7 @@
 /**
  * Log debug message
  */
--(void)debugLog:(NSString *)method message:(NSString *)format, ...;
+- (void)debugLog:(NSString *)method message:(NSString *)format, ...;
 
 /**
  * Logs request and response

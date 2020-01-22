@@ -3,7 +3,7 @@
 @implementation EquipmentModel
 
 + (JSONKeyMapper *)keyMapper {
-    return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{ @"idEquipment": @"id", @"imageName":@"image", @"title":@"name" }];
+    return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{ @"idEquipment": @"id", @"imageName": @"image", @"title": @"name" }];
 }
 
 - (instancetype)initWithDictionary:(NSDictionary *)dict error:(NSError **)err {
@@ -11,6 +11,5 @@
 
     return self;
 }
-
 
 @end

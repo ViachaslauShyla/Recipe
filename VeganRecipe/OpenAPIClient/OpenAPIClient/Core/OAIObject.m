@@ -12,20 +12,18 @@
     dispatch_once(&onceToken, ^{
         classNames = [NSMutableSet new];
     });
-    
+
     BOOL initSync;
     @synchronized([self class])
     {
         NSString *className = NSStringFromClass([self class]);
         initSync = ![classNames containsObject:className];
-        if(initSync)
-        {
+        if (initSync) {
             [classNames addObject:className];
             self = [super initWithDictionary:dict error:err];
         }
     }
-    if(!initSync)
-    {
+    if (!initSync) {
         self = [super initWithDictionary:dict error:err];
     }
     return self;

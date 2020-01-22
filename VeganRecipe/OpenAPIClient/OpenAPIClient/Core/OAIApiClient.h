@@ -15,7 +15,6 @@
 * Do not edit the class manually.
 */
 
-
 /**
  * A key for `NSError` user info dictionaries.
  *
@@ -23,25 +22,22 @@
  */
 extern NSString *const OAIResponseObjectErrorKey;
 
-
-
 @interface OAIApiClient : AFHTTPSessionManager
 
 @property (nonatomic, strong, readonly) id<OAIConfiguration> configuration;
 
-@property(nonatomic, assign) NSTimeInterval timeoutInterval;
+@property (nonatomic, assign) NSTimeInterval timeoutInterval;
 
-@property(nonatomic, strong) id<OAIResponseDeserializer> responseDeserializer;
+@property (nonatomic, strong) id<OAIResponseDeserializer> responseDeserializer;
 
-@property(nonatomic, strong) id<OAISanitizer> sanitizer;
+@property (nonatomic, strong) id<OAISanitizer> sanitizer;
 
-@property (nonatomic, strong) NSDictionary< NSString *, AFHTTPRequestSerializer <AFURLRequestSerialization> *>* requestSerializerForContentType;
+@property (nonatomic, strong) NSDictionary< NSString *, AFHTTPRequestSerializer <AFURLRequestSerialization> *> *requestSerializerForContentType;
 
 /**
  * Gets client singleton instance
  */
-+ (instancetype) sharedClient;
-
++ (instancetype)sharedClient;
 
 /**
  * Updates header parameters and query parameters for authentication
@@ -50,8 +46,7 @@ extern NSString *const OAIResponseObjectErrorKey;
  * @param querys The query parameters will be updated, passed by pointer to pointer.
  * @param authSettings The authentication names NSArray.
  */
-- (void) updateHeaderParams:(NSDictionary **)headers queryParams:(NSDictionary **)querys WithAuthSettings:(NSArray *)authSettings;
-
+- (void)updateHeaderParams:(NSDictionary **)headers queryParams:(NSDictionary **)querys WithAuthSettings:(NSArray *)authSettings;
 
 /**
  * Initializes the session manager with a configuration.
@@ -84,18 +79,18 @@ extern NSString *const OAIResponseObjectErrorKey;
  *
  * @return The created session task.
  */
-- (NSURLSessionTask*) requestWithPath: (NSString*) path
-                               method: (NSString*) method
-                           pathParams: (NSDictionary *) pathParams
-                          queryParams: (NSDictionary*) queryParams
-                           formParams: (NSDictionary *) formParams
-                                files: (NSDictionary *) files
-                                 body: (id) body
-                         headerParams: (NSDictionary*) headerParams
-                         authSettings: (NSArray *) authSettings
-                   requestContentType: (NSString*) requestContentType
-                  responseContentType: (NSString*) responseContentType
-                         responseType: (NSString *) responseType
-                      completionBlock: (void (^)(id, NSError *))completionBlock;
+- (NSURLSessionTask *)requestWithPath:(NSString *)path
+                               method:(NSString *)method
+                           pathParams:(NSDictionary *)pathParams
+                          queryParams:(NSDictionary *)queryParams
+                           formParams:(NSDictionary *)formParams
+                                files:(NSDictionary *)files
+                                 body:(id)body
+                         headerParams:(NSDictionary *)headerParams
+                         authSettings:(NSArray *)authSettings
+                   requestContentType:(NSString *)requestContentType
+                  responseContentType:(NSString *)responseContentType
+                         responseType:(NSString *)responseType
+                      completionBlock:(void (^)(id, NSError *))completionBlock;
 
 @end

@@ -26,7 +26,7 @@
         return [super requestBySerializingRequest:request withParameters:parameters error:error];
     }
     NSMutableURLRequest *mutableRequest = [request mutableCopy];
-    if([parameters isKindOfClass:[NSData class]]) {
+    if ([parameters isKindOfClass:[NSData class]]) {
         [mutableRequest setHTTPBody:parameters];
     } else {
         [mutableRequest setHTTPBody:[parameters dataUsingEncoding:self.stringEncoding]];

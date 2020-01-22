@@ -10,18 +10,17 @@ NSInteger const OAIEmptyValueOccurredErrorCode = 143509;
 
 NSInteger const OAIUnknownResponseObjectErrorCode = 143528;
 
-
 @interface OAIResponseDeserializer ()
 
-@property (nonatomic, strong) NSNumberFormatter* numberFormatter;
+@property (nonatomic, strong) NSNumberFormatter *numberFormatter;
 @property (nonatomic, strong) NSArray *primitiveTypes;
 @property (nonatomic, strong) NSArray *basicReturnTypes;
 @property (nonatomic, strong) NSArray *dataReturnTypes;
 
-@property (nonatomic, strong) NSRegularExpression* arrayOfModelsPatExpression;
-@property (nonatomic, strong) NSRegularExpression* arrayOfPrimitivesPatExpression;
-@property (nonatomic, strong) NSRegularExpression* dictPatExpression;
-@property (nonatomic, strong) NSRegularExpression* dictModelsPatExpression;
+@property (nonatomic, strong) NSRegularExpression *arrayOfModelsPatExpression;
+@property (nonatomic, strong) NSRegularExpression *arrayOfPrimitivesPatExpression;
+@property (nonatomic, strong) NSRegularExpression *dictPatExpression;
+@property (nonatomic, strong) NSRegularExpression *dictModelsPatExpression;
 
 @end
 
@@ -55,7 +54,7 @@ NSInteger const OAIUnknownResponseObjectErrorCode = 143528;
 
 #pragma mark - Deserialize methods
 
-- (id) deserialize:(id) data class:(NSString *) className error:(NSError **) error {
+- (id)deserialize:(id)data class:(NSString *)className error:(NSError **)error {
     if (!data || !className) {
         return nil;
     }
@@ -63,18 +62,18 @@ NSInteger const OAIUnknownResponseObjectErrorCode = 143528;
     if ([className hasSuffix:@"*"]) {
         className = [className substringToIndex:[className length] - 1];
     }
-    if([self.dataReturnTypes containsObject:className]) {
+    if ([self.dataReturnTypes containsObject:className]) {
         return data;
     }
     id jsonData = nil;
-    if([data isKindOfClass:[NSData class]]) {
+    if ([data isKindOfClass:[NSData class]]) {
         jsonData = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:error];
     } else {
         jsonData = data;
     }
-    if(!jsonData) {
+    if (!jsonData) {
         jsonData = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    } else if([jsonData isKindOfClass:[NSNull class]]) {
+    } else if ([jsonData isKindOfClass:[NSNull class]]) {
         return nil;
     }
 
@@ -120,18 +119,18 @@ NSInteger const OAIUnknownResponseObjectErrorCode = 143528;
     // model
     Class ModelClass = NSClassFromString(className);
     if ([ModelClass instancesRespondToSelector:@selector(initWithDictionary:error:)]) {
-        return [(JSONModel *) [ModelClass alloc] initWithDictionary:jsonData error:error];
+        return [(JSONModel *)[ModelClass alloc] initWithDictionary:jsonData error:error];
     }
 
-    if(error) {
+    if (error) {
         *error = [self unknownResponseErrorWithExpectedType:className data:jsonData];
     }
     return nil;
 }
 
-- (id) deserializeDictionaryValue:(id) data valueType:(NSString *) valueType error:(NSError**)error {
-    if(![data isKindOfClass: [NSDictionary class]]) {
-        if(error) {
+- (id)deserializeDictionaryValue:(id)data valueType:(NSString *)valueType error:(NSError **)error {
+    if (![data isKindOfClass:[NSDictionary class]]) {
+        if (error) {
             *error = [self typeMismatchErrorWithExpectedType:NSStringFromClass([NSDictionary class]) data:data];
         }
         return nil;
@@ -140,12 +139,12 @@ NSInteger const OAIUnknownResponseObjectErrorCode = 143528;
     for (id key in [data allKeys]) {
         id obj = [data valueForKey:key];
         id dicObj = [self deserialize:obj class:valueType error:error];
-        if(dicObj) {
+        if (dicObj) {
             [resultDict setValue:dicObj forKey:key];
-        } else if([obj isKindOfClass:[NSNull class]]) {
-            if(self.treatNullAsError) {
+        } else if ([obj isKindOfClass:[NSNull class]]) {
+            if (self.treatNullAsError) {
                 if (error) {
-                   *error = [self emptyValueOccurredError];
+                    *error = [self emptyValueOccurredError];
                 }
                 resultDict = nil;
                 break;
@@ -158,20 +157,20 @@ NSInteger const OAIUnknownResponseObjectErrorCode = 143528;
     return resultDict;
 }
 
-- (id) deserializeArrayValue:(id) data innerType:(NSString *) innerType error:(NSError**)error {
-    if(![data isKindOfClass: [NSArray class]]) {
-        if(error) {
+- (id)deserializeArrayValue:(id)data innerType:(NSString *)innerType error:(NSError **)error {
+    if (![data isKindOfClass:[NSArray class]]) {
+        if (error) {
             *error = [self typeMismatchErrorWithExpectedType:NSStringFromClass([NSArray class]) data:data];
         }
         return nil;
     }
-    NSMutableArray* resultArray = [NSMutableArray arrayWithCapacity:[data count]];
+    NSMutableArray *resultArray = [NSMutableArray arrayWithCapacity:[data count]];
     for (id obj in data) {
         id arrObj = [self deserialize:obj class:innerType error:error];
-        if(arrObj) {
+        if (arrObj) {
             [resultArray addObject:arrObj];
-        } else if([obj isKindOfClass:[NSNull class]]) {
-            if(self.treatNullAsError) {
+        } else if ([obj isKindOfClass:[NSNull class]]) {
+            if (self.treatNullAsError) {
                 if (error) {
                     *error = [self emptyValueOccurredError];
                 }
@@ -184,63 +183,60 @@ NSInteger const OAIUnknownResponseObjectErrorCode = 143528;
         }
     }
     return resultArray;
-};
+}
 
-- (id) deserializePrimitiveValue:(id) data class:(NSString *) className error:(NSError**)error {
+- (id)deserializePrimitiveValue:(id)data class:(NSString *)className error:(NSError **)error {
     if ([className isEqualToString:@"NSString"]) {
-        return [NSString stringWithFormat:@"%@",data];
-    }
-    else if ([className isEqualToString:@"NSDate"]) {
+        return [NSString stringWithFormat:@"%@", data];
+    } else if ([className isEqualToString:@"NSDate"]) {
         return [self deserializeDateValue:data error:error];
-    }
-    else if ([className isEqualToString:@"NSNumber"]) {
+    } else if ([className isEqualToString:@"NSNumber"]) {
         // NSNumber from NSNumber
         if ([data isKindOfClass:[NSNumber class]]) {
             return data;
-        }
-        else if ([data isKindOfClass:[NSString class]]) {
+        } else if ([data isKindOfClass:[NSString class]]) {
             // NSNumber (NSCFBoolean) from NSString
             if ([[data lowercaseString] isEqualToString:@"true"] || [[data lowercaseString] isEqualToString:@"false"]) {
                 return @([data boolValue]);
                 // NSNumber from NSString
             } else {
-                NSNumber* formattedValue = [self.numberFormatter numberFromString:data];
-                if(!formattedValue && [data length] > 0 && error) {
+                NSNumber *formattedValue = [self.numberFormatter numberFromString:data];
+                if (!formattedValue && [data length] > 0 && error) {
                     *error = [self typeMismatchErrorWithExpectedType:className data:data];
                 }
                 return formattedValue;
             }
         }
     }
-    if(error) {
+    if (error) {
         *error = [self typeMismatchErrorWithExpectedType:className data:data];
     }
     return nil;
 }
 
-- (id) deserializeDateValue:(id) data error:(NSError**)error {
-    NSDate *date =[NSDate dateWithISO8601String:data];
-    if(!date && [data length] > 0 && error) {
+- (id)deserializeDateValue:(id)data error:(NSError **)error {
+    NSDate *date = [NSDate dateWithISO8601String:data];
+    if (!date && [data length] > 0 && error) {
         *error = [self typeMismatchErrorWithExpectedType:NSStringFromClass([NSDate class]) data:data];
     }
     return date;
-};
+}
 
--(NSError *)typeMismatchErrorWithExpectedType:(NSString *)expected data:(id)data {
-    NSString * message = [NSString stringWithFormat:NSLocalizedString(@"Received response [%@] is not an object of type %@",nil),data, expected];
-    NSDictionary * userInfo = @{NSLocalizedDescriptionKey : message};
+- (NSError *)typeMismatchErrorWithExpectedType:(NSString *)expected data:(id)data {
+    NSString *message = [NSString stringWithFormat:NSLocalizedString(@"Received response [%@] is not an object of type %@", nil), data, expected];
+    NSDictionary *userInfo = @{ NSLocalizedDescriptionKey: message };
     return [NSError errorWithDomain:OAIDeserializationErrorDomainKey code:OAITypeMismatchErrorCode userInfo:userInfo];
 }
 
--(NSError *)emptyValueOccurredError {
-    NSString * message = NSLocalizedString(@"Received response contains null value in dictionary or array response",nil);
-    NSDictionary * userInfo = @{NSLocalizedDescriptionKey : message};
+- (NSError *)emptyValueOccurredError {
+    NSString *message = NSLocalizedString(@"Received response contains null value in dictionary or array response", nil);
+    NSDictionary *userInfo = @{ NSLocalizedDescriptionKey: message };
     return [NSError errorWithDomain:OAIDeserializationErrorDomainKey code:OAIEmptyValueOccurredErrorCode userInfo:userInfo];
 }
 
--(NSError *)unknownResponseErrorWithExpectedType:(NSString *)expected data:(id)data  {
-    NSString * message = [NSString stringWithFormat:NSLocalizedString(@"Unknown response expected type %@ [response: %@]",nil),expected,data];
-    NSDictionary * userInfo = @{NSLocalizedDescriptionKey : message};
+- (NSError *)unknownResponseErrorWithExpectedType:(NSString *)expected data:(id)data  {
+    NSString *message = [NSString stringWithFormat:NSLocalizedString(@"Unknown response expected type %@ [response: %@]", nil), expected, data];
+    NSDictionary *userInfo = @{ NSLocalizedDescriptionKey: message };
     return [NSError errorWithDomain:OAIDeserializationErrorDomainKey code:OAIUnknownResponseObjectErrorCode userInfo:userInfo];
 }
 

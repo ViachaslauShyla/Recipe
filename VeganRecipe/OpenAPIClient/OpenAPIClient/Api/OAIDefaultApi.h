@@ -14,44 +14,40 @@
 * Do not edit the class manually.
 */
 
+@interface OAIDefaultApi : NSObject <OAIApi>
 
-
-@interface OAIDefaultApi: NSObject <OAIApi>
-
-extern NSString* kOAIDefaultApiErrorDomain;
+    extern NSString *kOAIDefaultApiErrorDomain;
 extern NSInteger kOAIDefaultApiMissingParamErrorCode;
 
--(instancetype) initWithApiClient:(OAIApiClient *)apiClient NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithApiClient:(OAIApiClient *)apiClient NS_DESIGNATED_INITIALIZER;
 
 /// Analyze a Recipe Search Query
 /// Parse a recipe search query to find out its intention.
 ///
 /// @param q The recipe search query.
-/// 
+///
 ///  code:200 message:"Success",
 ///  code:401 message:"Unauthorized",
 ///  code:403 message:"Forbidden",
 ///  code:404 message:"Not Found"
 ///
 /// @return NSObject*
--(NSURLSessionTask*) analyzeARecipeSearchQueryWithQ: (NSString*) q
-    completionHandler: (void (^)(NSObject* output, NSError* error)) handler;
-
+- (NSURLSessionTask *)analyzeARecipeSearchQueryWithQ:(NSString *)q
+                                   completionHandler:(void (^)(NSObject *output, NSError *error))handler;
 
 /// Analyze Recipe Instructions
 /// Extract ingredients and equipment from the recipe instruction steps.
 ///
 /// @param instructions The instructions text.
-/// 
+///
 ///  code:200 message:"Success",
 ///  code:401 message:"Unauthorized",
 ///  code:403 message:"Forbidden",
 ///  code:404 message:"Not Found"
 ///
 /// @return NSObject*
--(NSURLSessionTask*) analyzeRecipeInstructionsWithInstructions: (NSString*) instructions
-    completionHandler: (void (^)(NSObject* output, NSError* error)) handler;
-
+- (NSURLSessionTask *)analyzeRecipeInstructionsWithInstructions:(NSString *)instructions
+                                              completionHandler:(void (^)(NSObject *output, NSError *error))handler;
 
 /// Autocomplete Ingredient Search
 /// Autocomplete a search for an ingredient.
@@ -60,120 +56,113 @@ extern NSInteger kOAIDefaultApiMissingParamErrorCode;
 /// @param number The number of results to return (between 1 and 100). (optional)
 /// @param metaInformation Whether to return more meta information about the ingredients. (optional)
 /// @param intolerances A comma-separated list of intolerances. All found ingredients must not cause problems for people with one of the given tolerances. See a full list of supported intolerances. (optional)
-/// 
+///
 ///  code:200 message:"Success",
 ///  code:401 message:"Unauthorized",
 ///  code:403 message:"Forbidden",
 ///  code:404 message:"Not Found"
 ///
 /// @return NSObject*
--(NSURLSessionTask*) autocompleteIngredientSearchWithQuery: (NSString*) query
-    number: (NSNumber*) number
-    metaInformation: (NSNumber*) metaInformation
-    intolerances: (NSNumber*) intolerances
-    completionHandler: (void (^)(NSObject* output, NSError* error)) handler;
-
+- (NSURLSessionTask *)autocompleteIngredientSearchWithQuery:(NSString *)query
+                                                     number:(NSNumber *)number
+                                            metaInformation:(NSNumber *)metaInformation
+                                               intolerances:(NSNumber *)intolerances
+                                          completionHandler:(void (^)(NSObject *output, NSError *error))handler;
 
 /// Autocomplete Menu Item Search
 /// Generate suggestions for menu items based on a (partial) query. The matches will be found by looking in the title only.
 ///
 /// @param query The (partial) search query.
 /// @param number The number of results to return (between 1 and 25). (optional)
-/// 
+///
 ///  code:200 message:"Success",
 ///  code:401 message:"Unauthorized",
 ///  code:403 message:"Forbidden",
 ///  code:404 message:"Not Found"
 ///
 /// @return NSObject*
--(NSURLSessionTask*) autocompleteMenuItemSearchWithQuery: (NSString*) query
-    number: (NSNumber*) number
-    completionHandler: (void (^)(NSObject* output, NSError* error)) handler;
-
+- (NSURLSessionTask *)autocompleteMenuItemSearchWithQuery:(NSString *)query
+                                                   number:(NSNumber *)number
+                                        completionHandler:(void (^)(NSObject *output, NSError *error))handler;
 
 /// Autocomplete Product Search
 /// Generate suggestions for grocery products based on a (partial) query. The matches will be found by looking in the title only.
 ///
 /// @param query The (partial) search query.
 /// @param number The number of results to return (between 1 and 25). (optional)
-/// 
+///
 ///  code:200 message:"Success",
 ///  code:401 message:"Unauthorized",
 ///  code:403 message:"Forbidden",
 ///  code:404 message:"Not Found"
 ///
 /// @return NSObject*
--(NSURLSessionTask*) autocompleteProductSearchWithQuery: (NSString*) query
-    number: (NSNumber*) number
-    completionHandler: (void (^)(NSObject* output, NSError* error)) handler;
-
+- (NSURLSessionTask *)autocompleteProductSearchWithQuery:(NSString *)query
+                                                  number:(NSNumber *)number
+                                       completionHandler:(void (^)(NSObject *output, NSError *error))handler;
 
 /// Autocomplete Recipe Search
 /// Autocomplete a partial input to possible recipe names.
 ///
 /// @param query The query to be autocompleted.
 /// @param number The number of results to return (between 1 and 25). (optional)
-/// 
+///
 ///  code:200 message:"Success",
 ///  code:401 message:"Unauthorized",
 ///  code:403 message:"Forbidden",
 ///  code:404 message:"Not Found"
 ///
 /// @return NSObject*
--(NSURLSessionTask*) autocompleteRecipeSearchWithQuery: (NSString*) query
-    number: (NSNumber*) number
-    completionHandler: (void (^)(NSObject* output, NSError* error)) handler;
-
+- (NSURLSessionTask *)autocompleteRecipeSearchWithQuery:(NSString *)query
+                                                 number:(NSNumber *)number
+                                      completionHandler:(void (^)(NSObject *output, NSError *error))handler;
 
 /// Classify Cuisine
 /// Classify the recipe's cuisine.
 ///
 /// @param title The title of the recipe.
 /// @param ingredientList The ingredient list of the recipe, one ingredient per line (separate lines with \\\\n).
-/// 
+///
 ///  code:200 message:"Success",
 ///  code:401 message:"Unauthorized",
 ///  code:403 message:"Forbidden",
 ///  code:404 message:"Not Found"
 ///
 /// @return NSObject*
--(NSURLSessionTask*) classifyCuisineWithTitle: (NSString*) title
-    ingredientList: (NSString*) ingredientList
-    completionHandler: (void (^)(NSObject* output, NSError* error)) handler;
-
+- (NSURLSessionTask *)classifyCuisineWithTitle:(NSString *)title
+                                ingredientList:(NSString *)ingredientList
+                             completionHandler:(void (^)(NSObject *output, NSError *error))handler;
 
 /// Classify Grocery Product
 /// Given a grocery product title, this endpoint allows you to detect what basic ingredient it is.
 ///
-/// @param inlineObject8 
+/// @param inlineObject8
 /// @param locale The locale of the returned category, supported is en_US and en_GB. (optional)
-/// 
+///
 ///  code:200 message:"Success",
 ///  code:401 message:"Unauthorized",
 ///  code:403 message:"Forbidden",
 ///  code:404 message:"Not Found"
 ///
 /// @return NSObject*
-//-(NSURLSessionTask*) classifyGroceryProductWithInlineObject8: (OAIInlineObject8*) inlineObject8
+//- (NSURLSessionTask*) classifyGroceryProductWithInlineObject8: (OAIInlineObject8*) inlineObject8
 //    locale: (NSString*) locale
 //    completionHandler: (void (^)(NSObject* output, NSError* error)) handler;
-
 
 /// Classify Grocery Product Bulk
 /// Given a set of product jsons, get back classified products.
 ///
 /// @param locale The locale of the returned category, supported is en_US and en_GB. (optional)
-/// 
+///
 ///  code:200 message:"Success",
 ///  code:401 message:"Unauthorized",
 ///  code:403 message:"Forbidden",
 ///  code:404 message:"Not Found"
 ///
 /// @return NSObject*
--(NSURLSessionTask*) classifyGroceryProductBulkWithBody: (NSObject*) body
-    locale: (NSString*) locale
-    completionHandler: (void (^)(NSObject* output, NSError* error)) handler;
-
+- (NSURLSessionTask *)classifyGroceryProductBulkWithBody:(NSObject *)body
+                                                  locale:(NSString *)locale
+                                       completionHandler:(void (^)(NSObject *output, NSError *error))handler;
 
 /// Convert Amounts
 /// Convert amounts like \"2 cups of flour to grams\".
@@ -182,19 +171,18 @@ extern NSInteger kOAIDefaultApiMissingParamErrorCode;
 /// @param sourceAmount The amount from which you want to convert, e.g. the 2.5 in \&quot;2.5 cups of flour to grams\&quot;.
 /// @param sourceUnit The unit from which you want to convert, e.g. the grams in \&quot;2.5 cups of flour to grams\&quot;. You can also use \&quot;piece\&quot;, e.g. \&quot;3.4 oz tomatoes to piece\&quot;
 /// @param targetUnit The unit to which you want to convert, e.g. the grams in \&quot;2.5 cups of flour to grams\&quot;. You can also use \&quot;piece\&quot;, e.g. \&quot;3.4 oz tomatoes to piece\&quot;
-/// 
+///
 ///  code:200 message:"Success",
 ///  code:401 message:"Unauthorized",
 ///  code:403 message:"Forbidden",
 ///  code:404 message:"Not Found"
 ///
 /// @return NSObject*
--(NSURLSessionTask*) convertAmountsWithIngredientName: (NSString*) ingredientName
-    sourceAmount: (NSNumber*) sourceAmount
-    sourceUnit: (NSString*) sourceUnit
-    targetUnit: (NSString*) targetUnit
-    completionHandler: (void (^)(NSObject* output, NSError* error)) handler;
-
+- (NSURLSessionTask *)convertAmountsWithIngredientName:(NSString *)ingredientName
+                                          sourceAmount:(NSNumber *)sourceAmount
+                                            sourceUnit:(NSString *)sourceUnit
+                                            targetUnit:(NSString *)targetUnit
+                                     completionHandler:(void (^)(NSObject *output, NSError *error))handler;
 
 /// Create Recipe Card
 /// Create Recipe Card.
@@ -211,59 +199,56 @@ extern NSInteger kOAIDefaultApiMissingParamErrorCode;
 /// @param backgroundColor The background color on the recipe card as a hex-string. (optional)
 /// @param fontColor The font color on the recipe card as a hex-string. (optional)
 /// @param source The source of the recipe. (optional)
-/// 
+///
 ///  code:200 message:"Success",
 ///  code:401 message:"Unauthorized",
 ///  code:403 message:"Forbidden",
 ///  code:404 message:"Not Found"
 ///
 /// @return NSObject*
--(NSURLSessionTask*) createRecipeCardWithTitle: (NSString*) title
-    image: (NSURL*) image
-    ingredients: (NSString*) ingredients
-    instructions: (NSString*) instructions
-    readyInMinutes: (NSNumber*) readyInMinutes
-    servings: (NSNumber*) servings
-    mask: (NSString*) mask
-    backgroundImage: (NSString*) backgroundImage
-    author: (NSString*) author
-    backgroundColor: (NSString*) backgroundColor
-    fontColor: (NSString*) fontColor
-    source: (NSString*) source
-    completionHandler: (void (^)(NSObject* output, NSError* error)) handler;
-
+- (NSURLSessionTask *)createRecipeCardWithTitle:(NSString *)title
+                                          image:(NSURL *)image
+                                    ingredients:(NSString *)ingredients
+                                   instructions:(NSString *)instructions
+                                 readyInMinutes:(NSNumber *)readyInMinutes
+                                       servings:(NSNumber *)servings
+                                           mask:(NSString *)mask
+                                backgroundImage:(NSString *)backgroundImage
+                                         author:(NSString *)author
+                                backgroundColor:(NSString *)backgroundColor
+                                      fontColor:(NSString *)fontColor
+                                         source:(NSString *)source
+                              completionHandler:(void (^)(NSObject *output, NSError *error))handler;
 
 /// Detect Food in Text
 /// Detect ingredients and dishes in texts. This task is also called Named Entity Recognition (NER). In our case the entities are foods. Either dishes, such as pizza and cheeseburger or ingredients, such as cucumber and almonds.
 ///
 /// @param text The text in which food items such as dish names and ingredients should be detected in.
-/// 
+///
 ///  code:200 message:"Success",
 ///  code:401 message:"Unauthorized",
 ///  code:403 message:"Forbidden",
 ///  code:404 message:"Not Found"
 ///
 /// @return NSObject*
--(NSURLSessionTask*) detectFoodInTextWithText: (NSString*) text
-    completionHandler: (void (^)(NSObject* output, NSError* error)) handler;
-
+- (NSURLSessionTask *)detectFoodInTextWithText:(NSString *)text
+                             completionHandler:(void (^)(NSObject *output, NSError *error))handler;
 
 /// Extract Recipe from Website
 /// Get an analyzed breakdown of a recipe's instructions. Each step is enriched with the ingredients and the equipment that is used.
 ///
 /// @param url The URL of the recipe page.
 /// @param forceExtraction If true, the extraction will be triggered no matter whether we know the recipe already. Use that only if information is missing as this operation is slower. (optional)
-/// 
+///
 ///  code:200 message:"Success",
 ///  code:401 message:"Unauthorized",
 ///  code:403 message:"Forbidden",
 ///  code:404 message:"Not Found"
 ///
 /// @return NSObject*
--(NSURLSessionTask*) extractRecipeFromWebsiteWithUrl: (NSString*) url
-    forceExtraction: (NSNumber*) forceExtraction
-    completionHandler: (void (^)(NSObject* output, NSError* error)) handler;
-
+- (NSURLSessionTask *)extractRecipeFromWebsiteWithUrl:(NSString *)url
+                                      forceExtraction:(NSNumber *)forceExtraction
+                                    completionHandler:(void (^)(NSObject *output, NSError *error))handler;
 
 /// Generate Meal Plan
 /// Generate a meal plan with three meals per day (breakfast, lunch, and dinner).
@@ -272,97 +257,91 @@ extern NSInteger kOAIDefaultApiMissingParamErrorCode;
 /// @param targetCalories What is the caloric target for one day? The meal plan generator will try to get as close as possible to that goal. (optional)
 /// @param diet Enter a diet that the meal plan has to adhere to. See a full list of supported diets. (optional)
 /// @param exclude A comma-separated list of allergens or ingredients that must be excluded. (optional)
-/// 
+///
 ///  code:200 message:"Success",
 ///  code:401 message:"Unauthorized",
 ///  code:403 message:"Forbidden",
 ///  code:404 message:"Not Found"
 ///
 /// @return NSObject*
--(NSURLSessionTask*) generateMealPlanWithTimeFrame: (NSString*) timeFrame
-    targetCalories: (NSNumber*) targetCalories
-    diet: (NSString*) diet
-    exclude: (NSString*) exclude
-    completionHandler: (void (^)(NSObject* output, NSError* error)) handler;
-
+- (NSURLSessionTask *)generateMealPlanWithTimeFrame:(NSString *)timeFrame
+                                     targetCalories:(NSNumber *)targetCalories
+                                               diet:(NSString *)diet
+                                            exclude:(NSString *)exclude
+                                  completionHandler:(void (^)(NSObject *output, NSError *error))handler;
 
 /// Get a Random Food Joke
 /// Get a random joke that includes or is about food.
 ///
-/// 
+///
 ///  code:200 message:"Success",
 ///  code:401 message:"Unauthorized",
 ///  code:403 message:"Forbidden",
 ///  code:404 message:"Not Found"
 ///
 /// @return NSObject*
--(NSURLSessionTask*) getARandomFoodJokeWithCompletionHandler: 
-    (void (^)(NSObject* output, NSError* error)) handler;
-
+- (NSURLSessionTask *)getARandomFoodJokeWithCompletionHandler:
+    (void (^)(NSObject *output, NSError *error))handler;
 
 /// Get Analyzed Recipe Instructions
 /// Get an analyzed breakdown of a recipe's instructions. Each step is enriched with the ingredients and the equipment that is used.
 ///
 /// @param _id The recipe id.
 /// @param stepBreakdown Whether to break down the recipe steps even more. (optional)
-/// 
+///
 ///  code:200 message:"Success",
 ///  code:401 message:"Unauthorized",
 ///  code:403 message:"Forbidden",
 ///  code:404 message:"Not Found"
 ///
 /// @return NSObject*
--(NSURLSessionTask*) getAnalyzedRecipeInstructionsWithId: (NSNumber*) _id
-    stepBreakdown: (NSNumber*) stepBreakdown
-    completionHandler: (void (^)(NSObject* output, NSError* error)) handler;
-
+- (NSURLSessionTask *)getAnalyzedRecipeInstructionsWithId:(NSNumber *)_id
+                                            stepBreakdown:(NSNumber *)stepBreakdown
+                                        completionHandler:(void (^)(NSObject *output, NSError *error))handler;
 
 /// Get Comparable Products
 /// Find comparable products to the given one.
 ///
 /// @param upc The UPC of the product for that you want to find comparable products.
-/// 
+///
 ///  code:200 message:"Success",
 ///  code:401 message:"Unauthorized",
 ///  code:403 message:"Forbidden",
 ///  code:404 message:"Not Found"
 ///
 /// @return NSObject*
--(NSURLSessionTask*) getComparableProductsWithUpc: (NSNumber*) upc
-    completionHandler: (void (^)(NSObject* output, NSError* error)) handler;
-
+- (NSURLSessionTask *)getComparableProductsWithUpc:(NSNumber *)upc
+                                 completionHandler:(void (^)(NSObject *output, NSError *error))handler;
 
 /// Get Conversation Suggests
 /// This endpoint returns suggestions for things the user can say or ask the chat bot.
 ///
 /// @param query A (partial) query from the user. The endpoint will return if it matches topics it can talk about.
 /// @param number The number of suggestions to return (between 1 and 25). (optional)
-/// 
+///
 ///  code:200 message:"Success",
 ///  code:401 message:"Unauthorized",
 ///  code:403 message:"Forbidden",
 ///  code:404 message:"Not Found"
 ///
 /// @return NSObject*
--(NSURLSessionTask*) getConversationSuggestsWithQuery: (NSString*) query
-    number: (NSNumber*) number
-    completionHandler: (void (^)(NSObject* output, NSError* error)) handler;
-
+- (NSURLSessionTask *)getConversationSuggestsWithQuery:(NSString *)query
+                                                number:(NSNumber *)number
+                                     completionHandler:(void (^)(NSObject *output, NSError *error))handler;
 
 /// Get Dish Pairing for Wine
 /// Get a dish that goes well with a given wine.
 ///
 /// @param wine The name of the wine that should be paired, e.g. \&quot;merlot\&quot;, \&quot;riesling\&quot;, or \&quot;malbec\&quot;.
-/// 
+///
 ///  code:200 message:"Success",
 ///  code:401 message:"Unauthorized",
 ///  code:403 message:"Forbidden",
 ///  code:404 message:"Not Found"
 ///
 /// @return NSObject*
--(NSURLSessionTask*) getDishPairingForWineWithWine: (NSString*) wine
-    completionHandler: (void (^)(NSObject* output, NSError* error)) handler;
-
+- (NSURLSessionTask *)getDishPairingForWineWithWine:(NSString *)wine
+                                  completionHandler:(void (^)(NSObject *output, NSError *error))handler;
 
 /// Get Food Information
 /// Get information about a certain food (ingredient).
@@ -370,92 +349,86 @@ extern NSInteger kOAIDefaultApiMissingParamErrorCode;
 /// @param _id The id of the food / ingredient.
 /// @param amount The amount of that food. (optional)
 /// @param unit The unit for the given amount. (optional)
-/// 
+///
 ///  code:200 message:"Success",
 ///  code:401 message:"Unauthorized",
 ///  code:403 message:"Forbidden",
 ///  code:404 message:"Not Found"
 ///
 /// @return NSObject*
--(NSURLSessionTask*) getFoodInformationWithId: (NSNumber*) _id
-    amount: (NSNumber*) amount
-    unit: (NSString*) unit
-    completionHandler: (void (^)(NSObject* output, NSError* error)) handler;
-
+- (NSURLSessionTask *)getFoodInformationWithId:(NSNumber *)_id
+                                        amount:(NSNumber *)amount
+                                          unit:(NSString *)unit
+                             completionHandler:(void (^)(NSObject *output, NSError *error))handler;
 
 /// Get Ingredient Substitutes
 /// Search for substitutes for a given ingredient.
 ///
 /// @param ingredientName The name of the ingredient you want to replace.
-/// 
+///
 ///  code:200 message:"Success",
 ///  code:401 message:"Unauthorized",
 ///  code:403 message:"Forbidden",
 ///  code:404 message:"Not Found"
 ///
 /// @return NSObject*
--(NSURLSessionTask*) getIngredientSubstitutesWithIngredientName: (NSString*) ingredientName
-    completionHandler: (void (^)(NSObject* output, NSError* error)) handler;
-
+- (NSURLSessionTask *)getIngredientSubstitutesWithIngredientName:(NSString *)ingredientName
+                                               completionHandler:(void (^)(NSObject *output, NSError *error))handler;
 
 /// Get Ingredient Substitutes by ID
 /// Search for substitutes for a given ingredient.
 ///
 /// @param _id The id of the ingredient you want substitutes for.
-/// 
+///
 ///  code:200 message:"Success",
 ///  code:401 message:"Unauthorized",
 ///  code:403 message:"Forbidden",
 ///  code:404 message:"Not Found"
 ///
 /// @return NSObject*
--(NSURLSessionTask*) getIngredientSubstitutesByIDWithId: (NSNumber*) _id
-    completionHandler: (void (^)(NSObject* output, NSError* error)) handler;
-
+- (NSURLSessionTask *)getIngredientSubstitutesByIDWithId:(NSNumber *)_id
+                                       completionHandler:(void (^)(NSObject *output, NSError *error))handler;
 
 /// Get Menu Item Information
 /// Get information about a certain menu item.
 ///
 /// @param _id The menu item id.
-/// 
+///
 ///  code:200 message:"Success",
 ///  code:401 message:"Unauthorized",
 ///  code:403 message:"Forbidden",
 ///  code:404 message:"Not Found"
 ///
 /// @return NSObject*
--(NSURLSessionTask*) getMenuItemInformationWithId: (NSNumber*) _id
-    completionHandler: (void (^)(NSObject* output, NSError* error)) handler;
-
+- (NSURLSessionTask *)getMenuItemInformationWithId:(NSNumber *)_id
+                                 completionHandler:(void (^)(NSObject *output, NSError *error))handler;
 
 /// Get Product Information
 /// Get information about a packaged food product.
 ///
 /// @param _id The id of the packaged food product.
-/// 
+///
 ///  code:200 message:"Success",
 ///  code:401 message:"Unauthorized",
 ///  code:403 message:"Forbidden",
 ///  code:404 message:"Not Found"
 ///
 /// @return NSObject*
--(NSURLSessionTask*) getProductInformationWithId: (NSNumber*) _id
-    completionHandler: (void (^)(NSObject* output, NSError* error)) handler;
-
+- (NSURLSessionTask *)getProductInformationWithId:(NSNumber *)_id
+                                completionHandler:(void (^)(NSObject *output, NSError *error))handler;
 
 /// Get Random Food Trivia
 /// Returns random food trivia.
 ///
-/// 
+///
 ///  code:200 message:"Success",
 ///  code:401 message:"Unauthorized",
 ///  code:403 message:"Forbidden",
 ///  code:404 message:"Not Found"
 ///
 /// @return NSObject*
--(NSURLSessionTask*) getRandomFoodTriviaWithCompletionHandler: 
-    (void (^)(NSObject* output, NSError* error)) handler;
-
+- (NSURLSessionTask *)getRandomFoodTriviaWithCompletionHandler:
+    (void (^)(NSObject *output, NSError *error))handler;
 
 /// Get Random Recipes
 /// Find random (popular) recipes.
@@ -463,161 +436,151 @@ extern NSInteger kOAIDefaultApiMissingParamErrorCode;
 /// @param limitLicense Whether the recipes should have an open license that allows for displaying with proper attribution. (optional)
 /// @param tags The tags (can be diets, meal types, cuisines, or intolerances) that the recipe must adhere to. (optional)
 /// @param number The number of random recipes to be returned (between 1 and 100). (optional)
-/// 
+///
 ///  code:200 message:"Success",
 ///  code:401 message:"Unauthorized",
 ///  code:403 message:"Forbidden",
 ///  code:404 message:"Not Found"
 ///
 /// @return NSObject*
--(NSURLSessionTask*) getRandomRecipesWithLimitLicense: (NSNumber*) limitLicense
-    tags: (NSString*) tags
-    number: (NSNumber*) number
-    completionHandler: (void (^)(NSObject* output, NSError* error)) handler;
-
+- (NSURLSessionTask *)getRandomRecipesWithLimitLicense:(NSNumber *)limitLicense
+                                                  tags:(NSString *)tags
+                                                number:(NSNumber *)number
+                                     completionHandler:(void (^)(NSObject *output, NSError *error))handler;
 
 /// Get Recipe Equipment by ID
 /// Get a recipe's equipment list.
 ///
 /// @param _id The recipe id.
-/// 
+///
 ///  code:200 message:"Success",
 ///  code:401 message:"Unauthorized",
 ///  code:403 message:"Forbidden",
 ///  code:404 message:"Not Found"
 ///
 /// @return NSObject*
--(NSURLSessionTask*) getRecipeEquipmentByIDWithId: (NSNumber*) _id
-    completionHandler: (void (^)(NSObject* output, NSError* error)) handler;
-
+- (NSURLSessionTask *)getRecipeEquipmentByIDWithId:(NSNumber *)_id
+                                 completionHandler:(void (^)(NSObject *output, NSError *error))handler;
 
 /// Get Recipe Information
 /// Get information about a recipe.
 ///
 /// @param _id The id of the recipe.
 /// @param includeNutrition Include nutrition data to the recipe information. Nutrition data is per serving. If you want the nutrition data for the entire recipe, just multiply by the number of servings. (optional)
-/// 
+///
 ///  code:200 message:"Success",
 ///  code:401 message:"Unauthorized",
 ///  code:403 message:"Forbidden",
 ///  code:404 message:"Not Found"
 ///
 /// @return NSObject*
--(NSURLSessionTask*) getRecipeInformationWithId: (NSNumber*) _id
-    includeNutrition: (NSNumber*) includeNutrition
-    completionHandler: (void (^)(NSObject* output, NSError* error)) handler;
-
+- (NSURLSessionTask *)getRecipeInformationWithId:(NSNumber *)_id
+                                includeNutrition:(NSNumber *)includeNutrition
+                               completionHandler:(void (^)(NSObject *output, NSError *error))handler;
 
 /// Get Recipe Information Bulk
 /// Get information about multiple recipes at once. That is equivalent of calling the Get Recipe Information endpoint multiple times but is faster.
 ///
 /// @param ids A comma-separated list of recipe ids.
 /// @param includeNutrition Include nutrition data to the recipe information. Nutrition data is per serving. If you want the nutrition data for the entire recipe, just multiply by the number of servings. (optional)
-/// 
+///
 ///  code:200 message:"Success",
 ///  code:401 message:"Unauthorized",
 ///  code:403 message:"Forbidden",
 ///  code:404 message:"Not Found"
 ///
 /// @return NSObject*
--(NSURLSessionTask*) getRecipeInformationBulkWithIds: (NSString*) ids
-    includeNutrition: (NSNumber*) includeNutrition
-    completionHandler: (void (^)(NSObject* output, NSError* error)) handler;
-
+- (NSURLSessionTask *)getRecipeInformationBulkWithIds:(NSString *)ids
+                                     includeNutrition:(NSNumber *)includeNutrition
+                                    completionHandler:(void (^)(NSObject *output, NSError *error))handler;
 
 /// Get Recipe Ingredients by ID
 /// Get a recipe's ingredient list.
 ///
 /// @param _id The recipe id.
-/// 
+///
 ///  code:200 message:"Success",
 ///  code:401 message:"Unauthorized",
 ///  code:403 message:"Forbidden",
 ///  code:404 message:"Not Found"
 ///
 /// @return NSObject*
--(NSURLSessionTask*) getRecipeIngredientsByIDWithId: (NSNumber*) _id
-    completionHandler: (void (^)(NSObject* output, NSError* error)) handler;
-
+- (NSURLSessionTask *)getRecipeIngredientsByIDWithId:(NSNumber *)_id
+                                   completionHandler:(void (^)(NSObject *output, NSError *error))handler;
 
 /// Get Recipe Nutrition by ID
 /// Get a recipe's nutrition widget data.
 ///
 /// @param _id The recipe id.
-/// 
+///
 ///  code:200 message:"Success",
 ///  code:401 message:"Unauthorized",
 ///  code:403 message:"Forbidden",
 ///  code:404 message:"Not Found"
 ///
 /// @return NSObject*
--(NSURLSessionTask*) getRecipeNutritionByIDWithId: (NSNumber*) _id
-    completionHandler: (void (^)(NSObject* output, NSError* error)) handler;
-
+- (NSURLSessionTask *)getRecipeNutritionByIDWithId:(NSNumber *)_id
+                                 completionHandler:(void (^)(NSObject *output, NSError *error))handler;
 
 /// Get Recipe Price Breakdown by ID
 /// Get a recipe's price breakdown data.
 ///
 /// @param _id The recipe id.
-/// 
+///
 ///  code:200 message:"Success",
 ///  code:401 message:"Unauthorized",
 ///  code:403 message:"Forbidden",
 ///  code:404 message:"Not Found"
 ///
 /// @return NSObject*
--(NSURLSessionTask*) getRecipePriceBreakdownByIDWithId: (NSNumber*) _id
-    completionHandler: (void (^)(NSObject* output, NSError* error)) handler;
-
+- (NSURLSessionTask *)getRecipePriceBreakdownByIDWithId:(NSNumber *)_id
+                                      completionHandler:(void (^)(NSObject *output, NSError *error))handler;
 
 /// Get Similar Recipes
 /// Find recipes which are similar to the given one.
 ///
 /// @param _id The id of the source recipe to which similar recipes should be found.
 /// @param number The number of random recipes to be returned (between 1 and 100). (optional)
-/// 
+///
 ///  code:200 message:"Success",
 ///  code:401 message:"Unauthorized",
 ///  code:403 message:"Forbidden",
 ///  code:404 message:"Not Found"
 ///
 /// @return NSObject*
--(NSURLSessionTask*) getSimilarRecipesWithId: (NSNumber*) _id
-    number: (NSNumber*) number
-    completionHandler: (void (^)(NSObject* output, NSError* error)) handler;
-
+- (NSURLSessionTask *)getSimilarRecipesWithId:(NSNumber *)_id
+                                       number:(NSNumber *)number
+                            completionHandler:(void (^)(NSObject *output, NSError *error))handler;
 
 /// Get Wine Description
 /// Get the description of a certain wine, e.g. \"malbec\", \"riesling\", or \"merlot\".
 ///
 /// @param wine The name of the wine that should be paired, e.g. \&quot;merlot\&quot;, \&quot;riesling\&quot;, or \&quot;malbec\&quot;.
-/// 
+///
 ///  code:200 message:"Success",
 ///  code:401 message:"Unauthorized",
 ///  code:403 message:"Forbidden",
 ///  code:404 message:"Not Found"
 ///
 /// @return NSObject*
--(NSURLSessionTask*) getWineDescriptionWithWine: (NSString*) wine
-    completionHandler: (void (^)(NSObject* output, NSError* error)) handler;
-
+- (NSURLSessionTask *)getWineDescriptionWithWine:(NSString *)wine
+                               completionHandler:(void (^)(NSObject *output, NSError *error))handler;
 
 /// Get Wine Pairing
 /// Find a wine that goes well with a food. Food can be a dish name (\"steak\"), an ingredient name (\"salmon\"), or a cuisine (\"italian\").
 ///
 /// @param food The food to get a pairing for. This can be a dish (\&quot;steak\&quot;), an ingredient (\&quot;salmon\&quot;), or a cuisine (\&quot;italian\&quot;).
 /// @param maxPrice The maximum price for the specific wine recommendation in USD. (optional)
-/// 
+///
 ///  code:200 message:"Success",
 ///  code:401 message:"Unauthorized",
 ///  code:403 message:"Forbidden",
 ///  code:404 message:"Not Found"
 ///
 /// @return NSObject*
--(NSURLSessionTask*) getWinePairingWithFood: (NSString*) food
-    maxPrice: (NSNumber*) maxPrice
-    completionHandler: (void (^)(NSObject* output, NSError* error)) handler;
-
+- (NSURLSessionTask *)getWinePairingWithFood:(NSString *)food
+                                    maxPrice:(NSNumber *)maxPrice
+                           completionHandler:(void (^)(NSObject *output, NSError *error))handler;
 
 /// Get Wine Recommendation
 /// Get a specific wine recommendation (concrete product) for a given wine, e.g. \"merlot\".
@@ -626,48 +589,45 @@ extern NSInteger kOAIDefaultApiMissingParamErrorCode;
 /// @param maxPrice The maximum price for the specific wine recommendation in USD. (optional)
 /// @param minRating The minimum rating of the recommended wine between 0 and 1. For example, 0.8 equals 4 out of 5 stars. (optional)
 /// @param number The number of wine recommendations expected (between 1 and 100). (optional)
-/// 
+///
 ///  code:200 message:"Success",
 ///  code:401 message:"Unauthorized",
 ///  code:403 message:"Forbidden",
 ///  code:404 message:"Not Found"
 ///
 /// @return NSObject*
--(NSURLSessionTask*) getWineRecommendationWithWine: (NSString*) wine
-    maxPrice: (NSNumber*) maxPrice
-    minRating: (NSNumber*) minRating
-    number: (NSNumber*) number
-    completionHandler: (void (^)(NSObject* output, NSError* error)) handler;
-
+- (NSURLSessionTask *)getWineRecommendationWithWine:(NSString *)wine
+                                           maxPrice:(NSNumber *)maxPrice
+                                          minRating:(NSNumber *)minRating
+                                             number:(NSNumber *)number
+                                  completionHandler:(void (^)(NSObject *output, NSError *error))handler;
 
 /// Guess Nutrition by Dish Name
 /// Guess the macro nutrients of a dish given its title.
 ///
 /// @param title The title of the dish.
-/// 
+///
 ///  code:200 message:"Success",
 ///  code:401 message:"Unauthorized",
 ///  code:403 message:"Forbidden",
 ///  code:404 message:"Not Found"
 ///
 /// @return NSObject*
--(NSURLSessionTask*) guessNutritionByDishNameWithTitle: (NSString*) title
-    completionHandler: (void (^)(NSObject* output, NSError* error)) handler;
-
+- (NSURLSessionTask *)guessNutritionByDishNameWithTitle:(NSString *)title
+                                      completionHandler:(void (^)(NSObject *output, NSError *error))handler;
 
 /// Map Ingredients to Grocery Products
 /// Map a set of ingredients to products you can buy in the grocery store.
 ///
-/// 
+///
 ///  code:200 message:"Success",
 ///  code:401 message:"Unauthorized",
 ///  code:403 message:"Forbidden",
 ///  code:404 message:"Not Found"
 ///
 /// @return NSObject*
--(NSURLSessionTask*) mapIngredientsToGroceryProductsWithBody: (NSObject*) body
-    completionHandler: (void (^)(NSObject* output, NSError* error)) handler;
-
+- (NSURLSessionTask *)mapIngredientsToGroceryProductsWithBody:(NSObject *)body
+                                            completionHandler:(void (^)(NSObject *output, NSError *error))handler;
 
 /// Parse Ingredients
 /// Extract an ingredient from plain text.
@@ -675,33 +635,31 @@ extern NSInteger kOAIDefaultApiMissingParamErrorCode;
 /// @param ingredientList The ingredient list of the recipe, one ingredient per line.
 /// @param servings The number of servings that you can make from the ingredients.
 /// @param includeNutrition Whether nutrition data should be added to correctly parsed ingredients. (optional)
-/// 
+///
 ///  code:200 message:"Success",
 ///  code:401 message:"Unauthorized",
 ///  code:403 message:"Forbidden",
 ///  code:404 message:"Not Found"
 ///
 /// @return NSObject*
--(NSURLSessionTask*) parseIngredientsWithIngredientList: (NSString*) ingredientList
-    servings: (NSNumber*) servings
-    includeNutrition: (NSNumber*) includeNutrition
-    completionHandler: (void (^)(NSObject* output, NSError* error)) handler;
-
+- (NSURLSessionTask *)parseIngredientsWithIngredientList:(NSString *)ingredientList
+                                                servings:(NSNumber *)servings
+                                        includeNutrition:(NSNumber *)includeNutrition
+                                       completionHandler:(void (^)(NSObject *output, NSError *error))handler;
 
 /// Quick Answer
 /// Answer a nutrition related natural language question.
 ///
 /// @param q The nutrition-related question.
-/// 
+///
 ///  code:200 message:"Success",
 ///  code:401 message:"Unauthorized",
 ///  code:403 message:"Forbidden",
 ///  code:404 message:"Not Found"
 ///
 /// @return NSObject*
--(NSURLSessionTask*) quickAnswerWithQ: (NSString*) q
-    completionHandler: (void (^)(NSObject* output, NSError* error)) handler;
-
+- (NSURLSessionTask *)quickAnswerWithQ:(NSString *)q
+                     completionHandler:(void (^)(NSObject *output, NSError *error))handler;
 
 /// Search Food Videos
 /// Find recipe and other food related videos.
@@ -716,25 +674,24 @@ extern NSInteger kOAIDefaultApiMissingParamErrorCode;
 /// @param maxLength Maximum video length in seconds. (optional)
 /// @param offset The number of results to skip (between 0 and 900). (optional)
 /// @param number The number of results to return (between 1 and 100). (optional)
-/// 
+///
 ///  code:200 message:"Success",
 ///  code:401 message:"Unauthorized",
 ///  code:403 message:"Forbidden",
 ///  code:404 message:"Not Found"
 ///
 /// @return NSObject*
--(NSURLSessionTask*) searchFoodVideosWithQuery: (NSString*) query
-    type: (NSString*) type
-    cuisine: (NSString*) cuisine
-    diet: (NSString*) diet
-    includeIngredients: (NSString*) includeIngredients
-    excludeIngredients: (NSString*) excludeIngredients
-    minLength: (NSNumber*) minLength
-    maxLength: (NSNumber*) maxLength
-    offset: (NSNumber*) offset
-    number: (NSNumber*) number
-    completionHandler: (void (^)(NSObject* output, NSError* error)) handler;
-
+- (NSURLSessionTask *)searchFoodVideosWithQuery:(NSString *)query
+                                           type:(NSString *)type
+                                        cuisine:(NSString *)cuisine
+                                           diet:(NSString *)diet
+                             includeIngredients:(NSString *)includeIngredients
+                             excludeIngredients:(NSString *)excludeIngredients
+                                      minLength:(NSNumber *)minLength
+                                      maxLength:(NSNumber *)maxLength
+                                         offset:(NSNumber *)offset
+                                         number:(NSNumber *)number
+                              completionHandler:(void (^)(NSObject *output, NSError *error))handler;
 
 /// Search Grocery Products
 /// Search packaged food products such as frozen pizza and snickers bars.
@@ -750,41 +707,39 @@ extern NSInteger kOAIDefaultApiMissingParamErrorCode;
 /// @param maxFat The maximum number of fat in grams the product can have. (optional)
 /// @param offset The offset number for paging (between 0 and 990). (optional)
 /// @param number The number of expected results (between 1 and 100). (optional)
-/// 
+///
 ///  code:200 message:"Success",
 ///  code:401 message:"Unauthorized",
 ///  code:403 message:"Forbidden",
 ///  code:404 message:"Not Found"
 ///
 /// @return NSObject*
--(NSURLSessionTask*) searchGroceryProductsWithQuery: (NSString*) query
-    minCalories: (NSNumber*) minCalories
-    maxCalories: (NSNumber*) maxCalories
-    minCarbs: (NSNumber*) minCarbs
-    maxCarbs: (NSNumber*) maxCarbs
-    minProtein: (NSNumber*) minProtein
-    maxProtein: (NSNumber*) maxProtein
-    minFat: (NSNumber*) minFat
-    maxFat: (NSNumber*) maxFat
-    offset: (NSNumber*) offset
-    number: (NSNumber*) number
-    completionHandler: (void (^)(NSObject* output, NSError* error)) handler;
-
+- (NSURLSessionTask *)searchGroceryProductsWithQuery:(NSString *)query
+                                         minCalories:(NSNumber *)minCalories
+                                         maxCalories:(NSNumber *)maxCalories
+                                            minCarbs:(NSNumber *)minCarbs
+                                            maxCarbs:(NSNumber *)maxCarbs
+                                          minProtein:(NSNumber *)minProtein
+                                          maxProtein:(NSNumber *)maxProtein
+                                              minFat:(NSNumber *)minFat
+                                              maxFat:(NSNumber *)maxFat
+                                              offset:(NSNumber *)offset
+                                              number:(NSNumber *)number
+                                   completionHandler:(void (^)(NSObject *output, NSError *error))handler;
 
 /// Search Grocery Products by UPC
 /// Get information about a food product given its UPC.
 ///
 /// @param upc The product&#39;s UPC.
-/// 
+///
 ///  code:200 message:"Success",
 ///  code:401 message:"Unauthorized",
 ///  code:403 message:"Forbidden",
 ///  code:404 message:"Not Found"
 ///
 /// @return NSObject*
--(NSURLSessionTask*) searchGroceryProductsByUPCWithUpc: (NSNumber*) upc
-    completionHandler: (void (^)(NSObject* output, NSError* error)) handler;
-
+- (NSURLSessionTask *)searchGroceryProductsByUPCWithUpc:(NSNumber *)upc
+                                      completionHandler:(void (^)(NSObject *output, NSError *error))handler;
 
 /// Search Menu Items
 /// Search over 115,000 menu items from over 800 fast food and chain restaurants such as McDonalds Big Mac or Starbucks Mocha.
@@ -800,26 +755,25 @@ extern NSInteger kOAIDefaultApiMissingParamErrorCode;
 /// @param maxFat The maximum number of fat in grams the menu item can have. (optional)
 /// @param offset The offset number for paging (between 0 and 990). (optional)
 /// @param number The number of expected results (between 1 and 10). (optional)
-/// 
+///
 ///  code:200 message:"Success",
 ///  code:401 message:"Unauthorized",
 ///  code:403 message:"Forbidden",
 ///  code:404 message:"Not Found"
 ///
 /// @return NSObject*
--(NSURLSessionTask*) searchMenuItemsWithQuery: (NSString*) query
-    minCalories: (NSNumber*) minCalories
-    maxCalories: (NSNumber*) maxCalories
-    minCarbs: (NSNumber*) minCarbs
-    maxCarbs: (NSNumber*) maxCarbs
-    minProtein: (NSNumber*) minProtein
-    maxProtein: (NSNumber*) maxProtein
-    minFat: (NSNumber*) minFat
-    maxFat: (NSNumber*) maxFat
-    offset: (NSNumber*) offset
-    number: (NSNumber*) number
-    completionHandler: (void (^)(NSObject* output, NSError* error)) handler;
-
+- (NSURLSessionTask *)searchMenuItemsWithQuery:(NSString *)query
+                                   minCalories:(NSNumber *)minCalories
+                                   maxCalories:(NSNumber *)maxCalories
+                                      minCarbs:(NSNumber *)minCarbs
+                                      maxCarbs:(NSNumber *)maxCarbs
+                                    minProtein:(NSNumber *)minProtein
+                                    maxProtein:(NSNumber *)maxProtein
+                                        minFat:(NSNumber *)minFat
+                                        maxFat:(NSNumber *)maxFat
+                                        offset:(NSNumber *)offset
+                                        number:(NSNumber *)number
+                             completionHandler:(void (^)(NSObject *output, NSError *error))handler;
 
 /// Search Recipes
 /// Our recipe API includes over 360,000 recipes as well as an open source recipe database. Consider using the \"Search Recipes Complex\" endpoint for much more flexibility.
@@ -833,24 +787,23 @@ extern NSInteger kOAIDefaultApiMissingParamErrorCode;
 /// @param number The number of results to return (between 1 and 100). (optional)
 /// @param limitLicense Whether the recipes should have an open license that allows for displaying with proper attribution. (optional)
 /// @param instructionsRequired Whether the recipes must have instructions. (optional)
-/// 
+///
 ///  code:200 message:"Success",
 ///  code:401 message:"Unauthorized",
 ///  code:403 message:"Forbidden",
 ///  code:404 message:"Not Found"
 ///
 /// @return NSObject*
--(NSURLSessionTask*) searchRecipesWithQuery: (NSString*) query
-    cuisine: (NSString*) cuisine
-    diet: (NSString*) diet
-    excludeIngredients: (NSString*) excludeIngredients
-    intolerances: (NSString*) intolerances
-    offset: (NSNumber*) offset
-    number: (NSNumber*) number
-    limitLicense: (NSNumber*) limitLicense
-    instructionsRequired: (NSNumber*) instructionsRequired
-    completionHandler: (void (^)(NSObject* output, NSError* error)) handler;
-
+- (NSURLSessionTask *)searchRecipesWithQuery:(NSString *)query
+                                     cuisine:(NSString *)cuisine
+                                        diet:(NSString *)diet
+                          excludeIngredients:(NSString *)excludeIngredients
+                                intolerances:(NSString *)intolerances
+                                      offset:(NSNumber *)offset
+                                      number:(NSNumber *)number
+                                limitLicense:(NSNumber *)limitLicense
+                        instructionsRequired:(NSNumber *)instructionsRequired
+                           completionHandler:(void (^)(NSObject *output, NSError *error))handler;
 
 /// Search Recipes by Ingredients
 /// Find recipes that use as many of the given ingredients as possible and have as little as possible missing ingredients. This is a \"what's in your fridge\" API endpoint.
@@ -860,20 +813,19 @@ extern NSInteger kOAIDefaultApiMissingParamErrorCode;
 /// @param limitLicense Whether the recipes should have an open license that allows for displaying with proper attribution. (optional)
 /// @param ranking Whether to maximize used ingredients (1) or minimize missing ingredients (2) first. (optional)
 /// @param ignorePantry Whether to ignore pantry ingredients such as water, salt, flour etc. (optional)
-/// 
+///
 ///  code:200 message:"Success",
 ///  code:401 message:"Unauthorized",
 ///  code:403 message:"Forbidden",
 ///  code:404 message:"Not Found"
 ///
 /// @return NSObject*
--(NSURLSessionTask*) searchRecipesByIngredientsWithIngredients: (NSString*) ingredients
-    number: (NSNumber*) number
-    limitLicense: (NSNumber*) limitLicense
-    ranking: (NSNumber*) ranking
-    ignorePantry: (NSNumber*) ignorePantry
-    completionHandler: (void (^)(NSObject* output, NSError* error)) handler;
-
+- (NSURLSessionTask *)searchRecipesByIngredientsWithIngredients:(NSString *)ingredients
+                                                         number:(NSNumber *)number
+                                                   limitLicense:(NSNumber *)limitLicense
+                                                        ranking:(NSNumber *)ranking
+                                                   ignorePantry:(NSNumber *)ignorePantry
+                                              completionHandler:(void (^)(NSObject *output, NSError *error))handler;
 
 /// Search Recipes by Nutrients
 /// Find a set of recipes that adhere to the given nutritional limits. All the returned recipes will have macro nutrients within the calories, protein, fat, and carbohydrate limits.
@@ -954,91 +906,90 @@ extern NSInteger kOAIDefaultApiMissingParamErrorCode;
 /// @param number The number of expected results (between 1 and 100). (optional)
 /// @param random If true, every request will give you a random set of recipes within the requested limits. (optional)
 /// @param limitLicense Whether the recipes should have an open license that allows for displaying with proper attribution. (optional)
-/// 
+///
 ///  code:200 message:"Success",
 ///  code:401 message:"Unauthorized",
 ///  code:403 message:"Forbidden",
 ///  code:404 message:"Not Found"
 ///
 /// @return NSObject*
--(NSURLSessionTask*) searchRecipesByNutrientsWithMinCarbs: (NSNumber*) minCarbs
-    maxCarbs: (NSNumber*) maxCarbs
-    minProtein: (NSNumber*) minProtein
-    maxProtein: (NSNumber*) maxProtein
-    minCalories: (NSNumber*) minCalories
-    maxCalories: (NSNumber*) maxCalories
-    minFat: (NSNumber*) minFat
-    maxFat: (NSNumber*) maxFat
-    minAlcohol: (NSNumber*) minAlcohol
-    maxAlcohol: (NSNumber*) maxAlcohol
-    minCaffeine: (NSNumber*) minCaffeine
-    maxCaffeine: (NSNumber*) maxCaffeine
-    minCopper: (NSNumber*) minCopper
-    maxCopper: (NSNumber*) maxCopper
-    minCalcium: (NSNumber*) minCalcium
-    maxCalcium: (NSNumber*) maxCalcium
-    minCholine: (NSNumber*) minCholine
-    maxCholine: (NSNumber*) maxCholine
-    minCholesterol: (NSNumber*) minCholesterol
-    maxCholesterol: (NSNumber*) maxCholesterol
-    minFluoride: (NSNumber*) minFluoride
-    maxFluoride: (NSNumber*) maxFluoride
-    minSaturatedFat: (NSNumber*) minSaturatedFat
-    maxSaturatedFat: (NSNumber*) maxSaturatedFat
-    minVitaminA: (NSNumber*) minVitaminA
-    maxVitaminA: (NSNumber*) maxVitaminA
-    minVitaminC: (NSNumber*) minVitaminC
-    maxVitaminC: (NSNumber*) maxVitaminC
-    minVitaminD: (NSNumber*) minVitaminD
-    maxVitaminD: (NSNumber*) maxVitaminD
-    minVitaminE: (NSNumber*) minVitaminE
-    maxVitaminE: (NSNumber*) maxVitaminE
-    minVitaminK: (NSNumber*) minVitaminK
-    maxVitaminK: (NSNumber*) maxVitaminK
-    minVitaminB1: (NSNumber*) minVitaminB1
-    maxVitaminB1: (NSNumber*) maxVitaminB1
-    minVitaminB2: (NSNumber*) minVitaminB2
-    maxVitaminB2: (NSNumber*) maxVitaminB2
-    minVitaminB5: (NSNumber*) minVitaminB5
-    maxVitaminB5: (NSNumber*) maxVitaminB5
-    minVitaminB3: (NSNumber*) minVitaminB3
-    maxVitaminB3: (NSNumber*) maxVitaminB3
-    minVitaminB6: (NSNumber*) minVitaminB6
-    maxVitaminB6: (NSNumber*) maxVitaminB6
-    minVitaminB12: (NSNumber*) minVitaminB12
-    maxVitaminB12: (NSNumber*) maxVitaminB12
-    minFiber: (NSNumber*) minFiber
-    maxFiber: (NSNumber*) maxFiber
-    minFolate: (NSNumber*) minFolate
-    maxFolate: (NSNumber*) maxFolate
-    minFolicAcid: (NSNumber*) minFolicAcid
-    maxFolicAcid: (NSNumber*) maxFolicAcid
-    minIodine: (NSNumber*) minIodine
-    maxIodine: (NSNumber*) maxIodine
-    minIron: (NSNumber*) minIron
-    maxIron: (NSNumber*) maxIron
-    minMagnesium: (NSNumber*) minMagnesium
-    maxMagnesium: (NSNumber*) maxMagnesium
-    minManganese: (NSNumber*) minManganese
-    maxManganese: (NSNumber*) maxManganese
-    minPhosphorus: (NSNumber*) minPhosphorus
-    maxPhosphorus: (NSNumber*) maxPhosphorus
-    minPotassium: (NSNumber*) minPotassium
-    maxPotassium: (NSNumber*) maxPotassium
-    minSelenium: (NSNumber*) minSelenium
-    maxSelenium: (NSNumber*) maxSelenium
-    minSodium: (NSNumber*) minSodium
-    maxSodium: (NSNumber*) maxSodium
-    minSugar: (NSNumber*) minSugar
-    maxSugar: (NSNumber*) maxSugar
-    minZinc: (NSNumber*) minZinc
-    maxZinc: (NSNumber*) maxZinc
-    offset: (NSNumber*) offset
-    number: (NSNumber*) number
-    random: (NSNumber*) random
-    limitLicense: (NSNumber*) limitLicense
-    completionHandler: (void (^)(NSObject* output, NSError* error)) handler;
-
+- (NSURLSessionTask *)searchRecipesByNutrientsWithMinCarbs:(NSNumber *)minCarbs
+                                                  maxCarbs:(NSNumber *)maxCarbs
+                                                minProtein:(NSNumber *)minProtein
+                                                maxProtein:(NSNumber *)maxProtein
+                                               minCalories:(NSNumber *)minCalories
+                                               maxCalories:(NSNumber *)maxCalories
+                                                    minFat:(NSNumber *)minFat
+                                                    maxFat:(NSNumber *)maxFat
+                                                minAlcohol:(NSNumber *)minAlcohol
+                                                maxAlcohol:(NSNumber *)maxAlcohol
+                                               minCaffeine:(NSNumber *)minCaffeine
+                                               maxCaffeine:(NSNumber *)maxCaffeine
+                                                 minCopper:(NSNumber *)minCopper
+                                                 maxCopper:(NSNumber *)maxCopper
+                                                minCalcium:(NSNumber *)minCalcium
+                                                maxCalcium:(NSNumber *)maxCalcium
+                                                minCholine:(NSNumber *)minCholine
+                                                maxCholine:(NSNumber *)maxCholine
+                                            minCholesterol:(NSNumber *)minCholesterol
+                                            maxCholesterol:(NSNumber *)maxCholesterol
+                                               minFluoride:(NSNumber *)minFluoride
+                                               maxFluoride:(NSNumber *)maxFluoride
+                                           minSaturatedFat:(NSNumber *)minSaturatedFat
+                                           maxSaturatedFat:(NSNumber *)maxSaturatedFat
+                                               minVitaminA:(NSNumber *)minVitaminA
+                                               maxVitaminA:(NSNumber *)maxVitaminA
+                                               minVitaminC:(NSNumber *)minVitaminC
+                                               maxVitaminC:(NSNumber *)maxVitaminC
+                                               minVitaminD:(NSNumber *)minVitaminD
+                                               maxVitaminD:(NSNumber *)maxVitaminD
+                                               minVitaminE:(NSNumber *)minVitaminE
+                                               maxVitaminE:(NSNumber *)maxVitaminE
+                                               minVitaminK:(NSNumber *)minVitaminK
+                                               maxVitaminK:(NSNumber *)maxVitaminK
+                                              minVitaminB1:(NSNumber *)minVitaminB1
+                                              maxVitaminB1:(NSNumber *)maxVitaminB1
+                                              minVitaminB2:(NSNumber *)minVitaminB2
+                                              maxVitaminB2:(NSNumber *)maxVitaminB2
+                                              minVitaminB5:(NSNumber *)minVitaminB5
+                                              maxVitaminB5:(NSNumber *)maxVitaminB5
+                                              minVitaminB3:(NSNumber *)minVitaminB3
+                                              maxVitaminB3:(NSNumber *)maxVitaminB3
+                                              minVitaminB6:(NSNumber *)minVitaminB6
+                                              maxVitaminB6:(NSNumber *)maxVitaminB6
+                                             minVitaminB12:(NSNumber *)minVitaminB12
+                                             maxVitaminB12:(NSNumber *)maxVitaminB12
+                                                  minFiber:(NSNumber *)minFiber
+                                                  maxFiber:(NSNumber *)maxFiber
+                                                 minFolate:(NSNumber *)minFolate
+                                                 maxFolate:(NSNumber *)maxFolate
+                                              minFolicAcid:(NSNumber *)minFolicAcid
+                                              maxFolicAcid:(NSNumber *)maxFolicAcid
+                                                 minIodine:(NSNumber *)minIodine
+                                                 maxIodine:(NSNumber *)maxIodine
+                                                   minIron:(NSNumber *)minIron
+                                                   maxIron:(NSNumber *)maxIron
+                                              minMagnesium:(NSNumber *)minMagnesium
+                                              maxMagnesium:(NSNumber *)maxMagnesium
+                                              minManganese:(NSNumber *)minManganese
+                                              maxManganese:(NSNumber *)maxManganese
+                                             minPhosphorus:(NSNumber *)minPhosphorus
+                                             maxPhosphorus:(NSNumber *)maxPhosphorus
+                                              minPotassium:(NSNumber *)minPotassium
+                                              maxPotassium:(NSNumber *)maxPotassium
+                                               minSelenium:(NSNumber *)minSelenium
+                                               maxSelenium:(NSNumber *)maxSelenium
+                                                 minSodium:(NSNumber *)minSodium
+                                                 maxSodium:(NSNumber *)maxSodium
+                                                  minSugar:(NSNumber *)minSugar
+                                                  maxSugar:(NSNumber *)maxSugar
+                                                   minZinc:(NSNumber *)minZinc
+                                                   maxZinc:(NSNumber *)maxZinc
+                                                    offset:(NSNumber *)offset
+                                                    number:(NSNumber *)number
+                                                    random:(NSNumber *)random
+                                              limitLicense:(NSNumber *)limitLicense
+                                         completionHandler:(void (^)(NSObject *output, NSError *error))handler;
 
 /// Search Recipes Complex
 /// Search through hundreds of thousands of recipes using advanced filtering and ranking. NOTE: Since this method combines searching by query, by ingredients, and by nutrients in one endpoint.
@@ -1135,154 +1086,150 @@ extern NSInteger kOAIDefaultApiMissingParamErrorCode;
 /// @param offset The offset number for paging (between 0 and 990). (optional)
 /// @param number The number of expected results (between 1 and 10). (optional)
 /// @param limitLicense Whether the recipes should have an open license that allows for displaying with proper attribution. (optional)
-/// 
+///
 ///  code:200 message:"Success",
 ///  code:401 message:"Unauthorized",
 ///  code:403 message:"Forbidden",
 ///  code:404 message:"Not Found"
 ///
 /// @return NSObject*
--(NSURLSessionTask*) searchRecipesComplexWithQuery: (NSString*) query
-    cuisine: (NSString*) cuisine
-    excludeCuisine: (NSString*) excludeCuisine
-    diet: (NSString*) diet
-    intolerances: (NSString*) intolerances
-    equipment: (NSString*) equipment
-    includeIngredients: (NSString*) includeIngredients
-    excludeIngredients: (NSString*) excludeIngredients
-    type: (NSString*) type
-    instructionsRequired: (NSNumber*) instructionsRequired
-    fillIngredients: (NSNumber*) fillIngredients
-    addRecipeInformation: (NSNumber*) addRecipeInformation
-    author: (NSString*) author
-    tags: (NSString*) tags
-    titleMatch: (NSString*) titleMatch
-    sort: (NSString*) sort
-    sortDirection: (NSString*) sortDirection
-    minCarbs: (NSNumber*) minCarbs
-    maxCarbs: (NSNumber*) maxCarbs
-    minProtein: (NSNumber*) minProtein
-    maxProtein: (NSNumber*) maxProtein
-    minCalories: (NSNumber*) minCalories
-    maxCalories: (NSNumber*) maxCalories
-    minFat: (NSNumber*) minFat
-    maxFat: (NSNumber*) maxFat
-    minAlcohol: (NSNumber*) minAlcohol
-    maxAlcohol: (NSNumber*) maxAlcohol
-    minCaffeine: (NSNumber*) minCaffeine
-    maxCaffeine: (NSNumber*) maxCaffeine
-    minCopper: (NSNumber*) minCopper
-    maxCopper: (NSNumber*) maxCopper
-    minCalcium: (NSNumber*) minCalcium
-    maxCalcium: (NSNumber*) maxCalcium
-    minCholine: (NSNumber*) minCholine
-    maxCholine: (NSNumber*) maxCholine
-    minCholesterol: (NSNumber*) minCholesterol
-    maxCholesterol: (NSNumber*) maxCholesterol
-    minFluoride: (NSNumber*) minFluoride
-    maxFluoride: (NSNumber*) maxFluoride
-    minSaturatedFat: (NSNumber*) minSaturatedFat
-    maxSaturatedFat: (NSNumber*) maxSaturatedFat
-    minVitaminA: (NSNumber*) minVitaminA
-    maxVitaminA: (NSNumber*) maxVitaminA
-    minVitaminC: (NSNumber*) minVitaminC
-    maxVitaminC: (NSNumber*) maxVitaminC
-    minVitaminD: (NSNumber*) minVitaminD
-    maxVitaminD: (NSNumber*) maxVitaminD
-    minVitaminE: (NSNumber*) minVitaminE
-    maxVitaminE: (NSNumber*) maxVitaminE
-    minVitaminK: (NSNumber*) minVitaminK
-    maxVitaminK: (NSNumber*) maxVitaminK
-    minVitaminB1: (NSNumber*) minVitaminB1
-    maxVitaminB1: (NSNumber*) maxVitaminB1
-    minVitaminB2: (NSNumber*) minVitaminB2
-    maxVitaminB2: (NSNumber*) maxVitaminB2
-    minVitaminB5: (NSNumber*) minVitaminB5
-    maxVitaminB5: (NSNumber*) maxVitaminB5
-    minVitaminB3: (NSNumber*) minVitaminB3
-    maxVitaminB3: (NSNumber*) maxVitaminB3
-    minVitaminB6: (NSNumber*) minVitaminB6
-    maxVitaminB6: (NSNumber*) maxVitaminB6
-    minVitaminB12: (NSNumber*) minVitaminB12
-    maxVitaminB12: (NSNumber*) maxVitaminB12
-    minFiber: (NSNumber*) minFiber
-    maxFiber: (NSNumber*) maxFiber
-    minFolate: (NSNumber*) minFolate
-    maxFolate: (NSNumber*) maxFolate
-    minFolicAcid: (NSNumber*) minFolicAcid
-    maxFolicAcid: (NSNumber*) maxFolicAcid
-    minIodine: (NSNumber*) minIodine
-    maxIodine: (NSNumber*) maxIodine
-    minIron: (NSNumber*) minIron
-    maxIron: (NSNumber*) maxIron
-    minMagnesium: (NSNumber*) minMagnesium
-    maxMagnesium: (NSNumber*) maxMagnesium
-    minManganese: (NSNumber*) minManganese
-    maxManganese: (NSNumber*) maxManganese
-    minPhosphorus: (NSNumber*) minPhosphorus
-    maxPhosphorus: (NSNumber*) maxPhosphorus
-    minPotassium: (NSNumber*) minPotassium
-    maxPotassium: (NSNumber*) maxPotassium
-    minSelenium: (NSNumber*) minSelenium
-    maxSelenium: (NSNumber*) maxSelenium
-    minSodium: (NSNumber*) minSodium
-    maxSodium: (NSNumber*) maxSodium
-    minSugar: (NSNumber*) minSugar
-    maxSugar: (NSNumber*) maxSugar
-    minZinc: (NSNumber*) minZinc
-    maxZinc: (NSNumber*) maxZinc
-    offset: (NSNumber*) offset
-    number: (NSNumber*) number
-    limitLicense: (NSNumber*) limitLicense
-    completionHandler: (void (^)(NSObject* output, NSError* error)) handler;
-
+- (NSURLSessionTask *)searchRecipesComplexWithQuery:(NSString *)query
+                                            cuisine:(NSString *)cuisine
+                                     excludeCuisine:(NSString *)excludeCuisine
+                                               diet:(NSString *)diet
+                                       intolerances:(NSString *)intolerances
+                                          equipment:(NSString *)equipment
+                                 includeIngredients:(NSString *)includeIngredients
+                                 excludeIngredients:(NSString *)excludeIngredients
+                                               type:(NSString *)type
+                               instructionsRequired:(NSNumber *)instructionsRequired
+                                    fillIngredients:(NSNumber *)fillIngredients
+                               addRecipeInformation:(NSNumber *)addRecipeInformation
+                                             author:(NSString *)author
+                                               tags:(NSString *)tags
+                                         titleMatch:(NSString *)titleMatch
+                                               sort:(NSString *)sort
+                                      sortDirection:(NSString *)sortDirection
+                                           minCarbs:(NSNumber *)minCarbs
+                                           maxCarbs:(NSNumber *)maxCarbs
+                                         minProtein:(NSNumber *)minProtein
+                                         maxProtein:(NSNumber *)maxProtein
+                                        minCalories:(NSNumber *)minCalories
+                                        maxCalories:(NSNumber *)maxCalories
+                                             minFat:(NSNumber *)minFat
+                                             maxFat:(NSNumber *)maxFat
+                                         minAlcohol:(NSNumber *)minAlcohol
+                                         maxAlcohol:(NSNumber *)maxAlcohol
+                                        minCaffeine:(NSNumber *)minCaffeine
+                                        maxCaffeine:(NSNumber *)maxCaffeine
+                                          minCopper:(NSNumber *)minCopper
+                                          maxCopper:(NSNumber *)maxCopper
+                                         minCalcium:(NSNumber *)minCalcium
+                                         maxCalcium:(NSNumber *)maxCalcium
+                                         minCholine:(NSNumber *)minCholine
+                                         maxCholine:(NSNumber *)maxCholine
+                                     minCholesterol:(NSNumber *)minCholesterol
+                                     maxCholesterol:(NSNumber *)maxCholesterol
+                                        minFluoride:(NSNumber *)minFluoride
+                                        maxFluoride:(NSNumber *)maxFluoride
+                                    minSaturatedFat:(NSNumber *)minSaturatedFat
+                                    maxSaturatedFat:(NSNumber *)maxSaturatedFat
+                                        minVitaminA:(NSNumber *)minVitaminA
+                                        maxVitaminA:(NSNumber *)maxVitaminA
+                                        minVitaminC:(NSNumber *)minVitaminC
+                                        maxVitaminC:(NSNumber *)maxVitaminC
+                                        minVitaminD:(NSNumber *)minVitaminD
+                                        maxVitaminD:(NSNumber *)maxVitaminD
+                                        minVitaminE:(NSNumber *)minVitaminE
+                                        maxVitaminE:(NSNumber *)maxVitaminE
+                                        minVitaminK:(NSNumber *)minVitaminK
+                                        maxVitaminK:(NSNumber *)maxVitaminK
+                                       minVitaminB1:(NSNumber *)minVitaminB1
+                                       maxVitaminB1:(NSNumber *)maxVitaminB1
+                                       minVitaminB2:(NSNumber *)minVitaminB2
+                                       maxVitaminB2:(NSNumber *)maxVitaminB2
+                                       minVitaminB5:(NSNumber *)minVitaminB5
+                                       maxVitaminB5:(NSNumber *)maxVitaminB5
+                                       minVitaminB3:(NSNumber *)minVitaminB3
+                                       maxVitaminB3:(NSNumber *)maxVitaminB3
+                                       minVitaminB6:(NSNumber *)minVitaminB6
+                                       maxVitaminB6:(NSNumber *)maxVitaminB6
+                                      minVitaminB12:(NSNumber *)minVitaminB12
+                                      maxVitaminB12:(NSNumber *)maxVitaminB12
+                                           minFiber:(NSNumber *)minFiber
+                                           maxFiber:(NSNumber *)maxFiber
+                                          minFolate:(NSNumber *)minFolate
+                                          maxFolate:(NSNumber *)maxFolate
+                                       minFolicAcid:(NSNumber *)minFolicAcid
+                                       maxFolicAcid:(NSNumber *)maxFolicAcid
+                                          minIodine:(NSNumber *)minIodine
+                                          maxIodine:(NSNumber *)maxIodine
+                                            minIron:(NSNumber *)minIron
+                                            maxIron:(NSNumber *)maxIron
+                                       minMagnesium:(NSNumber *)minMagnesium
+                                       maxMagnesium:(NSNumber *)maxMagnesium
+                                       minManganese:(NSNumber *)minManganese
+                                       maxManganese:(NSNumber *)maxManganese
+                                      minPhosphorus:(NSNumber *)minPhosphorus
+                                      maxPhosphorus:(NSNumber *)maxPhosphorus
+                                       minPotassium:(NSNumber *)minPotassium
+                                       maxPotassium:(NSNumber *)maxPotassium
+                                        minSelenium:(NSNumber *)minSelenium
+                                        maxSelenium:(NSNumber *)maxSelenium
+                                          minSodium:(NSNumber *)minSodium
+                                          maxSodium:(NSNumber *)maxSodium
+                                           minSugar:(NSNumber *)minSugar
+                                           maxSugar:(NSNumber *)maxSugar
+                                            minZinc:(NSNumber *)minZinc
+                                            maxZinc:(NSNumber *)maxZinc
+                                             offset:(NSNumber *)offset
+                                             number:(NSNumber *)number
+                                       limitLicense:(NSNumber *)limitLicense
+                                  completionHandler:(void (^)(NSObject *output, NSError *error))handler;
 
 /// Search Site Content
 /// Search spoonacular's site content. You'll be able to find everything that you could also find using the search suggests on spoonacular.com. This is a suggest API so you can send partial strings as queries.
 ///
 /// @param query The query to search for. You can also use partial queries such as \&quot;spagh\&quot; to already find spaghetti recipes, articles, grocery products, and other content.
-/// 
+///
 ///  code:200 message:"Success",
 ///  code:401 message:"Unauthorized",
 ///  code:403 message:"Forbidden",
 ///  code:404 message:"Not Found"
 ///
 /// @return NSObject*
--(NSURLSessionTask*) searchSiteContentWithQuery: (NSString*) query
-    completionHandler: (void (^)(NSObject* output, NSError* error)) handler;
-
+- (NSURLSessionTask *)searchSiteContentWithQuery:(NSString *)query
+                               completionHandler:(void (^)(NSObject *output, NSError *error))handler;
 
 /// Summarize Recipe
 /// Summarize the recipe in a short text.
 ///
 /// @param _id The recipe id.
-/// 
+///
 ///  code:200 message:"Success",
 ///  code:401 message:"Unauthorized",
 ///  code:403 message:"Forbidden",
 ///  code:404 message:"Not Found"
 ///
 /// @return NSObject*
--(NSURLSessionTask*) summarizeRecipeWithId: (NSNumber*) _id
-    completionHandler: (void (^)(NSObject* output, NSError* error)) handler;
-
+- (NSURLSessionTask *)summarizeRecipeWithId:(NSNumber *)_id
+                          completionHandler:(void (^)(NSObject *output, NSError *error))handler;
 
 /// Talk to Chatbot
 /// This endpoint can be used to have a conversation about food with the spoonacular chat bot. Use the \"Get Conversation Suggests\" endpoint to show your user what he or she can say.
 ///
 /// @param text The request / question / answer from the user to the chat bot.
 /// @param contextId An arbitrary globally unique id for your conversation. The conversation can contain states so you should pass your context id if you want the bot to be able to remember the conversation. (optional)
-/// 
+///
 ///  code:200 message:"Success",
 ///  code:401 message:"Unauthorized",
 ///  code:403 message:"Forbidden",
 ///  code:404 message:"Not Found"
 ///
 /// @return NSObject*
--(NSURLSessionTask*) talkToChatbotWithText: (NSString*) text
-    contextId: (NSString*) contextId
-    completionHandler: (void (^)(NSObject* output, NSError* error)) handler;
-
+- (NSURLSessionTask *)talkToChatbotWithText:(NSString *)text
+                                  contextId:(NSString *)contextId
+                          completionHandler:(void (^)(NSObject *output, NSError *error))handler;
 
 /// Visualize Equipment
 /// Visualize the equipment used to make a recipe.
@@ -1292,20 +1239,19 @@ extern NSInteger kOAIDefaultApiMissingParamErrorCode;
 /// @param view Either \\\&quot;grid\\\&quot; or \\\&quot;list\\\&quot; as visualization of the equipment. (optional)
 /// @param defaultCss Whether the default CSS should be added to the response. (optional)
 /// @param showBacklink Whether to show a backlink to spoonacular. If set false, this call counts against your quota. (optional)
-/// 
+///
 ///  code:200 message:"Success",
 ///  code:401 message:"Unauthorized",
 ///  code:403 message:"Forbidden",
 ///  code:404 message:"Not Found"
 ///
 /// @return NSString*
--(NSURLSessionTask*) visualizeEquipmentWithIngredientList: (NSString*) ingredientList
-    servings: (NSNumber*) servings
-    view: (NSString*) view
-    defaultCss: (NSNumber*) defaultCss
-    showBacklink: (NSNumber*) showBacklink
-    completionHandler: (void (^)(NSString* output, NSError* error)) handler;
-
+- (NSURLSessionTask *)visualizeEquipmentWithIngredientList:(NSString *)ingredientList
+                                                  servings:(NSNumber *)servings
+                                                      view:(NSString *)view
+                                                defaultCss:(NSNumber *)defaultCss
+                                              showBacklink:(NSNumber *)showBacklink
+                                         completionHandler:(void (^)(NSString *output, NSError *error))handler;
 
 /// Visualize Ingredients
 /// Visualize ingredients of a recipe.
@@ -1316,38 +1262,36 @@ extern NSInteger kOAIDefaultApiMissingParamErrorCode;
 /// @param view Either \\\&quot;grid\\\&quot; or \\\&quot;list\\\&quot; as visualization of the equipment. (optional)
 /// @param defaultCss Whether the default CSS should be added to the response. (optional)
 /// @param showBacklink Whether to show a backlink to spoonacular. If set false, this call counts against your quota. (optional)
-/// 
+///
 ///  code:200 message:"Success",
 ///  code:401 message:"Unauthorized",
 ///  code:403 message:"Forbidden",
 ///  code:404 message:"Not Found"
 ///
 /// @return NSString*
--(NSURLSessionTask*) visualizeIngredientsWithIngredientList: (NSString*) ingredientList
-    servings: (NSNumber*) servings
-    measure: (NSString*) measure
-    view: (NSString*) view
-    defaultCss: (NSNumber*) defaultCss
-    showBacklink: (NSNumber*) showBacklink
-    completionHandler: (void (^)(NSString* output, NSError* error)) handler;
-
+- (NSURLSessionTask *)visualizeIngredientsWithIngredientList:(NSString *)ingredientList
+                                                    servings:(NSNumber *)servings
+                                                     measure:(NSString *)measure
+                                                        view:(NSString *)view
+                                                  defaultCss:(NSNumber *)defaultCss
+                                                showBacklink:(NSNumber *)showBacklink
+                                           completionHandler:(void (^)(NSString *output, NSError *error))handler;
 
 /// Visualize Menu Item Nutrition by ID
 /// Visualize a menu items' nutrition data.
 ///
 /// @param _id The menu item id.
 /// @param defaultCss Whether the default CSS should be added to the response. (optional)
-/// 
+///
 ///  code:200 message:"Success",
 ///  code:401 message:"Unauthorized",
 ///  code:403 message:"Forbidden",
 ///  code:404 message:"Not Found"
 ///
 /// @return NSString*
--(NSURLSessionTask*) visualizeMenuItemNutritionByIDWithId: (NSNumber*) _id
-    defaultCss: (NSNumber*) defaultCss
-    completionHandler: (void (^)(NSString* output, NSError* error)) handler;
-
+- (NSURLSessionTask *)visualizeMenuItemNutritionByIDWithId:(NSNumber *)_id
+                                                defaultCss:(NSNumber *)defaultCss
+                                         completionHandler:(void (^)(NSString *output, NSError *error))handler;
 
 /// Visualize Price Breakdown
 /// Visualize the price breakdown of a recipe.
@@ -1357,71 +1301,67 @@ extern NSInteger kOAIDefaultApiMissingParamErrorCode;
 /// @param mode The mode in which the widget should be delivered. 1 &#x3D; separate views (compact), 2 &#x3D; all in one view (full). (optional)
 /// @param defaultCss Whether the default CSS should be added to the response. (optional)
 /// @param showBacklink Whether to show a backlink to spoonacular. If set false, this call counts against your quota. (optional)
-/// 
+///
 ///  code:200 message:"Success",
 ///  code:401 message:"Unauthorized",
 ///  code:403 message:"Forbidden",
 ///  code:404 message:"Not Found"
 ///
 /// @return NSString*
--(NSURLSessionTask*) visualizePriceBreakdownWithIngredientList: (NSString*) ingredientList
-    servings: (NSNumber*) servings
-    mode: (NSNumber*) mode
-    defaultCss: (NSNumber*) defaultCss
-    showBacklink: (NSNumber*) showBacklink
-    completionHandler: (void (^)(NSString* output, NSError* error)) handler;
-
+- (NSURLSessionTask *)visualizePriceBreakdownWithIngredientList:(NSString *)ingredientList
+                                                       servings:(NSNumber *)servings
+                                                           mode:(NSNumber *)mode
+                                                     defaultCss:(NSNumber *)defaultCss
+                                                   showBacklink:(NSNumber *)showBacklink
+                                              completionHandler:(void (^)(NSString *output, NSError *error))handler;
 
 /// Visualize Product Nutrition by ID
 /// Visualize a grocery product's nutritional information.
 ///
 /// @param _id The id of the product.
 /// @param defaultCss Whether the default CSS should be added to the response. (optional)
-/// 
+///
 ///  code:200 message:"Success",
 ///  code:401 message:"Unauthorized",
 ///  code:403 message:"Forbidden",
 ///  code:404 message:"Not Found"
 ///
 /// @return NSString*
--(NSURLSessionTask*) visualizeProductNutritionByIDWithId: (NSNumber*) _id
-    defaultCss: (NSNumber*) defaultCss
-    completionHandler: (void (^)(NSString* output, NSError* error)) handler;
-
+- (NSURLSessionTask *)visualizeProductNutritionByIDWithId:(NSNumber *)_id
+                                               defaultCss:(NSNumber *)defaultCss
+                                        completionHandler:(void (^)(NSString *output, NSError *error))handler;
 
 /// Visualize Recipe Equipment by ID
 /// Visualize a recipe's equipment list.
 ///
 /// @param _id The recipe id.
 /// @param defaultCss Whether the default CSS should be added to the response. (optional)
-/// 
+///
 ///  code:200 message:"Success",
 ///  code:401 message:"Unauthorized",
 ///  code:403 message:"Forbidden",
 ///  code:404 message:"Not Found"
 ///
 /// @return NSString*
--(NSURLSessionTask*) visualizeRecipeEquipmentByIDWithId: (NSNumber*) _id
-    defaultCss: (NSNumber*) defaultCss
-    completionHandler: (void (^)(NSString* output, NSError* error)) handler;
-
+- (NSURLSessionTask *)visualizeRecipeEquipmentByIDWithId:(NSNumber *)_id
+                                              defaultCss:(NSNumber *)defaultCss
+                                       completionHandler:(void (^)(NSString *output, NSError *error))handler;
 
 /// Visualize Recipe Ingredients by ID
 /// Visualize a recipe's ingredient list.
 ///
 /// @param _id The recipe id.
 /// @param defaultCss Whether the default CSS should be added to the response. (optional)
-/// 
+///
 ///  code:200 message:"Success",
 ///  code:401 message:"Unauthorized",
 ///  code:403 message:"Forbidden",
 ///  code:404 message:"Not Found"
 ///
 /// @return NSString*
--(NSURLSessionTask*) visualizeRecipeIngredientsByIDWithId: (NSNumber*) _id
-    defaultCss: (NSNumber*) defaultCss
-    completionHandler: (void (^)(NSString* output, NSError* error)) handler;
-
+- (NSURLSessionTask *)visualizeRecipeIngredientsByIDWithId:(NSNumber *)_id
+                                                defaultCss:(NSNumber *)defaultCss
+                                         completionHandler:(void (^)(NSString *output, NSError *error))handler;
 
 /// Visualize Recipe Nutrition
 /// Visualize a recipe's nutrition data.
@@ -1430,55 +1370,49 @@ extern NSInteger kOAIDefaultApiMissingParamErrorCode;
 /// @param servings The number of servings.
 /// @param defaultCss Whether the default CSS should be added to the response. (optional)
 /// @param showBacklink Whether to show a backlink to spoonacular. If set false, this call counts against your quota. (optional)
-/// 
+///
 ///  code:200 message:"Success",
 ///  code:401 message:"Unauthorized",
 ///  code:403 message:"Forbidden",
 ///  code:404 message:"Not Found"
 ///
 /// @return NSString*
--(NSURLSessionTask*) visualizeRecipeNutritionWithIngredientList: (NSString*) ingredientList
-    servings: (NSNumber*) servings
-    defaultCss: (NSNumber*) defaultCss
-    showBacklink: (NSNumber*) showBacklink
-    completionHandler: (void (^)(NSString* output, NSError* error)) handler;
-
+- (NSURLSessionTask *)visualizeRecipeNutritionWithIngredientList:(NSString *)ingredientList
+                                                        servings:(NSNumber *)servings
+                                                      defaultCss:(NSNumber *)defaultCss
+                                                    showBacklink:(NSNumber *)showBacklink
+                                               completionHandler:(void (^)(NSString *output, NSError *error))handler;
 
 /// Visualize Recipe Nutrition by ID
 /// Visualize a recipe's nutritional information.
 ///
 /// @param _id The id of the product.
 /// @param defaultCss Whether the default CSS should be added to the response. (optional)
-/// 
+///
 ///  code:200 message:"Success",
 ///  code:401 message:"Unauthorized",
 ///  code:403 message:"Forbidden",
 ///  code:404 message:"Not Found"
 ///
 /// @return NSString*
--(NSURLSessionTask*) visualizeRecipeNutritionByIDWithId: (NSNumber*) _id
-    defaultCss: (NSNumber*) defaultCss
-    completionHandler: (void (^)(NSString* output, NSError* error)) handler;
-
+- (NSURLSessionTask *)visualizeRecipeNutritionByIDWithId:(NSNumber *)_id
+                                              defaultCss:(NSNumber *)defaultCss
+                                       completionHandler:(void (^)(NSString *output, NSError *error))handler;
 
 /// Visualize Recipe Price Breakdown by ID
 /// Visualize a recipe's price breakdown.
 ///
 /// @param _id The recipe id.
 /// @param defaultCss Whether the default CSS should be added to the response. (optional)
-/// 
+///
 ///  code:200 message:"Success",
 ///  code:401 message:"Unauthorized",
 ///  code:403 message:"Forbidden",
 ///  code:404 message:"Not Found"
 ///
 /// @return NSString*
--(NSURLSessionTask*) visualizeRecipePriceBreakdownByIDWithId: (NSNumber*) _id
-    defaultCss: (NSNumber*) defaultCss
-    completionHandler: (void (^)(NSString* output, NSError* error)) handler;
-
-
-
-
+- (NSURLSessionTask *)visualizeRecipePriceBreakdownByIDWithId:(NSNumber *)_id
+                                                   defaultCss:(NSNumber *)defaultCss
+                                            completionHandler:(void (^)(NSString *output, NSError *error))handler;
 
 @end

@@ -12,10 +12,9 @@
 * Do not edit the class manually.
 */
 
-
 extern NSString * OAIPercentEscapedStringFromString(NSString *string);
 
-extern NSString * const kOAIApplicationJSONType;
+extern NSString *const kOAIApplicationJSONType;
 
 @protocol OAISanitizer <NSObject>
 
@@ -24,12 +23,12 @@ extern NSString * const kOAIApplicationJSONType;
  *
  * @param object The query/path/header/form/body param to be sanitized.
  */
-- (id) sanitizeForSerialization:(id) object;
+- (id)sanitizeForSerialization:(id)object;
 
 /**
  * Convert parameter to NSString
  */
-- (NSString *) parameterToString: (id) param;
+- (NSString *)parameterToString:(id)param;
 
 /**
  * Convert date to NSString
@@ -43,7 +42,7 @@ extern NSString * const kOAIApplicationJSONType;
  *
  * @return The Accept header
  */
--(NSString *) selectHeaderAccept:(NSArray *)accepts;
+- (NSString *)selectHeaderAccept:(NSArray *)accepts;
 
 /**
  * Detects Content-Type header from contentTypes NSArray
@@ -52,12 +51,10 @@ extern NSString * const kOAIApplicationJSONType;
  *
  * @return The Content-Type header
  */
--(NSString *) selectHeaderContentType:(NSArray *)contentTypes;
+- (NSString *)selectHeaderContentType:(NSArray *)contentTypes;
 
 @end
 
 @interface OAISanitizer : NSObject <OAISanitizer>
-
-
 
 @end

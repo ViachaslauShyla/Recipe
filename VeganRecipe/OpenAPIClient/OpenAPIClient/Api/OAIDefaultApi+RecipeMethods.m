@@ -5,50 +5,43 @@
 #import "CoreDataManager.h"
 #import "RecipeModel.h"
 
-
 @implementation OAIDefaultApi (RecipeMethods)
 
-- (void)initialSearchComplexRecipe: (void (^)(NSArray<RecipeModel *> *recipes, NSError* error)) handler {
-    NSDictionary* request = @{@"sort": @"popularity",
-                              @"diet": @"Vegan",
-                              @"offset": [NSNumber numberWithInteger:0]};
+- (void)initialSearchComplexRecipe:(void (^)(NSArray<RecipeModel *> *recipes, NSError *error))handler {
+    NSDictionary *request = @{ @"sort": @"popularity",
+                               @"diet": @"Vegan",
+                               @"offset": [NSNumber numberWithInteger:0] };
     [self searchRecipesComplexWithRequest:request complitionHandler:handler];
 }
 
-- (void)nextSearchComplexRecipe: (NSInteger) offset complitionHandler: (void (^)(NSArray<RecipeModel *> *recipes, NSError* error)) handler {
-    NSDictionary* request = @{@"sort": @"popularity",
-                              @"diet": @"Vegan",
-                              @"offset": [NSNumber numberWithInteger:offset]};
+- (void)nextSearchComplexRecipe:(NSInteger)offset complitionHandler:(void (^)(NSArray<RecipeModel *> *recipes, NSError *error))handler {
+    NSDictionary *request = @{ @"sort": @"popularity",
+                               @"diet": @"Vegan",
+                               @"offset": [NSNumber numberWithInteger:offset] };
     [self searchRecipesComplexWithRequest:request complitionHandler:handler];
 }
 
-- (void) fillFullRecipeInformational: (RecipeModel *) recipe complitionHandler: (void (^)(BOOL finish)) handler {
+- (void)fillFullRecipeInformational:(RecipeModel *)recipe complitionHandler:(void (^)(BOOL finish))handler {
     [self getRecipeInformationWithId:recipe.idRecipe includeNutrition:[NSNumber numberWithBool:NO] completionHandler:^(NSObject *output, NSError *error) {
-
         [recipe fillFullRecipe:(NSDictionary *)output];
-        
     }];
 }
 
-
-- (NSURLSessionDataTask *)downloadImageDataBy:(NSURL *) url
-                             downloadProgress:(void (^)(NSProgress *downloadProgress)) downloadProgressBlock
-                            completionHandler:(void (^)(NSData * _Nullable responseData, BOOL isCache,  NSError * _Nullable error)) completionHandler {
-
+- (NSURLSessionDataTask *)downloadImageDataBy:(NSURL *)url
+                             downloadProgress:(void (^)(NSProgress *downloadProgress))downloadProgressBlock
+                            completionHandler:(void (^)(NSData *_Nullable responseData, BOOL isCache,  NSError *_Nullable error))completionHandler {
     NSURLSessionDataTask *task = nil;
 
-    NSData *imageData = [CoreDataManager.shared imageDataForUrl: [NSString stringWithFormat:@"%@",url]];
+    NSData *imageData = [CoreDataManager.shared imageDataForUrl:[NSString stringWithFormat:@"%@", url]];
     if (imageData) {
         completionHandler(imageData, YES, nil);
     } else {
-
         NSURLRequest *request = [NSURLRequest requestWithURL:url];
         task = [self.apiClient dataTaskWithRequest:request
                                     uploadProgress:nil
                                   downloadProgress:downloadProgressBlock
-                                 completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
-
-            [CoreDataManager.shared saveImageDataFor:[NSString stringWithFormat:@"%@",url] data:responseObject];
+                                 completionHandler:^(NSURLResponse *_Nonnull response, id _Nullable responseObject, NSError *_Nullable error) {
+            [CoreDataManager.shared saveImageDataFor:[NSString stringWithFormat:@"%@", url] data:responseObject];
             completionHandler(responseObject, NO, error);
         }];
         [task resume];
@@ -56,8 +49,7 @@
     return task;
 }
 
-- (void)searchRecipesComplexWithRequest: (NSDictionary* )request complitionHandler: (void (^)(NSArray<RecipeModel *> *recipes, NSError* error)) handler {
-
+- (void)searchRecipesComplexWithRequest:(NSDictionary *)request complitionHandler:(void (^)(NSArray<RecipeModel *> *recipes, NSError *error))handler {
     [self searchRecipesComplexWithQuery:@"query"
                                 cuisine:request[@"cuisine"]
                          excludeCuisine:request[@"excludeCuisine"]
@@ -150,7 +142,7 @@
                                  offset:request[@"offset"]
                                  number:request[@"number"]
                            limitLicense:request[@"limitLicense"]
-                      completionHandler:^(NSObject* output, NSError *error) {
+                      completionHandler:^(NSObject *output, NSError *error) {
         if (error) {
             handler(nil, error);
         } else {

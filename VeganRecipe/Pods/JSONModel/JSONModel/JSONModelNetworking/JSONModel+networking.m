@@ -15,17 +15,17 @@ BOOL _isLoading;
 
 @dynamic isLoading;
 
--(BOOL)isLoading
+- (BOOL)isLoading
 {
     return _isLoading;
 }
 
--(void)setIsLoading:(BOOL)isLoading
+- (void)setIsLoading:(BOOL)isLoading
 {
     _isLoading = isLoading;
 }
 
--(instancetype)initFromURLWithString:(NSString *)urlString completion:(JSONModelBlock)completeBlock
+- (instancetype)initFromURLWithString:(NSString *)urlString completion:(JSONModelBlock)completeBlock
 {
     id placeholder = [super init];
     __block id blockSelf = self;

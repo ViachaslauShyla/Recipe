@@ -13,16 +13,14 @@
 * Do not edit the class manually.
 */
 
-
 @class OAIApiClient;
 
 @interface OAIDefaultConfiguration : NSObject <OAIConfiguration>
 
-
 /**
  * Default api logger
  */
-@property (nonatomic, strong) OAILogger * logger;
+@property (nonatomic, strong) OAILogger *logger;
 
 /**
  * Default base url
@@ -46,7 +44,7 @@
 /**
  * Username for HTTP Basic Authentication
  */
- @property (nonatomic) NSString *username;
+@property (nonatomic) NSString *username;
 
 /**
  * Password for HTTP Basic Authentication
@@ -71,7 +69,7 @@
 /**
  * Gets configuration singleton instance
  */
-+ (instancetype) sharedConfig;
++ (instancetype)sharedConfig;
 
 /**
  * SSL/TLS verification
@@ -99,14 +97,14 @@
  * @param identifier API key identifier (authentication schema).
  *
  */
-- (void) setApiKey:(NSString *)apiKey forApiKeyIdentifier:(NSString*)identifier;
+- (void)setApiKey:(NSString *)apiKey forApiKeyIdentifier:(NSString *)identifier;
 
 /**
  * Removes api key
  *
  * @param identifier API key identifier.
  */
-- (void) removeApiKey:(NSString *)identifier;
+- (void)removeApiKey:(NSString *)identifier;
 
 /**
  * Sets the prefix for API key
@@ -114,34 +112,34 @@
  * @param prefix API key prefix.
  * @param identifier   API key identifier.
  */
-- (void) setApiKeyPrefix:(NSString *)prefix forApiKeyPrefixIdentifier:(NSString *)identifier;
+- (void)setApiKeyPrefix:(NSString *)prefix forApiKeyPrefixIdentifier:(NSString *)identifier;
 
 /**
  * Removes api key prefix
  *
  * @param identifier API key identifier.
  */
-- (void) removeApiKeyPrefix:(NSString *)identifier;
+- (void)removeApiKeyPrefix:(NSString *)identifier;
 
 /**
  * Gets API key (with prefix if set)
  */
-- (NSString *) getApiKeyWithPrefix:(NSString *) key;
+- (NSString *)getApiKeyWithPrefix:(NSString *)key;
 
 /**
  * Gets Basic Auth token
  */
-- (NSString *) getBasicAuthToken;
+- (NSString *)getBasicAuthToken;
 
 /**
  * Gets OAuth access token
  */
-- (NSString *) getAccessToken;
+- (NSString *)getAccessToken;
 
 /**
  * Gets Authentication Settings
  */
-- (NSDictionary *) authSettings;
+- (NSDictionary *)authSettings;
 
 /**
 * Default headers for all services
@@ -153,7 +151,7 @@
 *
 * @param key Header name.
 */
--(void) removeDefaultHeaderForKey:(NSString*)key;
+- (void)removeDefaultHeaderForKey:(NSString *)key;
 
 /**
 * Sets the header for key
@@ -161,11 +159,11 @@
 * @param value         Value for header name
 * @param key           Header name
 */
--(void) setDefaultHeaderValue:(NSString*) value forKey:(NSString*)key;
+- (void)setDefaultHeaderValue:(NSString *)value forKey:(NSString *)key;
 
 /**
 * @param key Header key name.
 */
--(NSString*) defaultHeaderForKey:(NSString*)key;
+- (NSString *)defaultHeaderForKey:(NSString *)key;
 
 @end

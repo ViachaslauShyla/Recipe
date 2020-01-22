@@ -3,13 +3,13 @@
 @implementation CookTimeModel
 
 + (JSONKeyMapper *)keyMapper {
-    return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{ @"inReady": @"readyInMinutes", @"cooking":@"cookingMinutes", @"preparetion":@"preparationMinutes" }];
+    return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{ @"inReady": @"readyInMinutes", @"cooking": @"cookingMinutes", @"preparetion": @"preparationMinutes" }];
 }
 
 - (instancetype)initWithDictionary:(NSDictionary *)dict error:(NSError **)err {
     [self mergeFromDictionary:dict useKeyMapping:true error:err];
 
-    return  self;
+    return self;
 }
 
 @end
