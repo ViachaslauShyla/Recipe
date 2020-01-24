@@ -3,53 +3,39 @@
 #import "OAIDefaultApi.h"
 #import "OAIApiClient.h"
 #import "CoreDataManager.h"
-#import "RecipeModel.h"
 
 @implementation OAIDefaultApi (RecipeMethods)
 
-- (void)initialSearchComplexRecipe:(void (^)(NSArray<RecipeModel *> *recipes, NSError *error))handler {
+- (void)loadRecipes:(NSInteger)offset completionHandler:(void (^)(NSArray<Recipe *> *_Nonnull recipes, NSError *_Nullable error))handler {
     NSDictionary *request = @{ @"sort": @"popularity",
                                @"diet": @"Vegan",
-                               @"offset": [NSNumber numberWithInteger:0] };
-    [self searchRecipesComplexWithRequest:request complitionHandler:handler];
+                               @"offset": @(offset) };
+    [self searchRecipesComplexWithRequest:request completionHandler:handler];
 }
 
-- (void)nextSearchComplexRecipe:(NSInteger)offset complitionHandler:(void (^)(NSArray<RecipeModel *> *recipes, NSError *error))handler {
-    NSDictionary *request = @{ @"sort": @"popularity",
-                               @"diet": @"Vegan",
-                               @"offset": [NSNumber numberWithInteger:offset] };
-    [self searchRecipesComplexWithRequest:request complitionHandler:handler];
-}
-
-- (void)fillFullRecipeInformational:(RecipeModel *)recipe complitionHandler:(void (^)(BOOL finish))handler {
-    [self getRecipeInformationWithId:recipe.idRecipe includeNutrition:[NSNumber numberWithBool:NO] completionHandler:^(NSObject *output, NSError *error) {
-        [recipe fillFullRecipe:(NSDictionary *)output];
+- (NSURLSessionDataTask *)downloadImageFrom:(NSURL *)url progress:(nullable void (^)(NSProgress *progress))progressHandler completion:(void (^)(UIImage * _Nonnull image, BOOL isFromCache, NSError * _Nullable error))completionHandler {
+    NSData *cachedData = [CoreDataManager.shared imageDataForUrl:url.absoluteString];
+    UIImage *cachedImage = [UIImage imageWithData:cachedData] ?: [UIImage new];
+    NSURLSessionDataTask *task =
+        [self.apiClient dataTaskWithRequest:[NSURLRequest requestWithURL:url]
+                             uploadProgress:nil
+                           downloadProgress:progressHandler
+                          completionHandler:^(NSURLResponse *_Nonnull response, id _Nullable responseObject, NSError *_Nullable error) {
+        [CoreDataManager.shared saveImageDataFor:url.absoluteString data:responseObject];
+        UIImage *img = [UIImage imageWithData:(NSData *)response] ?: [UIImage new];
+        completionHandler(img, NO, error);
     }];
-}
 
-- (NSURLSessionDataTask *)downloadImageDataBy:(NSURL *)url
-                             downloadProgress:(void (^)(NSProgress *downloadProgress))downloadProgressBlock
-                            completionHandler:(void (^)(NSData *_Nullable responseData, BOOL isCache,  NSError *_Nullable error))completionHandler {
-    NSURLSessionDataTask *task = nil;
-
-    NSData *imageData = [CoreDataManager.shared imageDataForUrl:[NSString stringWithFormat:@"%@", url]];
-    if (imageData) {
-        completionHandler(imageData, YES, nil);
+    if (cachedData) {
+        completionHandler(cachedImage, YES, nil);
     } else {
-        NSURLRequest *request = [NSURLRequest requestWithURL:url];
-        task = [self.apiClient dataTaskWithRequest:request
-                                    uploadProgress:nil
-                                  downloadProgress:downloadProgressBlock
-                                 completionHandler:^(NSURLResponse *_Nonnull response, id _Nullable responseObject, NSError *_Nullable error) {
-            [CoreDataManager.shared saveImageDataFor:[NSString stringWithFormat:@"%@", url] data:responseObject];
-            completionHandler(responseObject, NO, error);
-        }];
         [task resume];
     }
+
     return task;
 }
 
-- (void)searchRecipesComplexWithRequest:(NSDictionary *)request complitionHandler:(void (^)(NSArray<RecipeModel *> *recipes, NSError *error))handler {
+- (void)searchRecipesComplexWithRequest:(NSDictionary *)request completionHandler:(void (^)(NSArray<Recipe *> *_Nonnull recipes, NSError *_Nullable error))handler {
     [self searchRecipesComplexWithQuery:@"query"
                                 cuisine:request[@"cuisine"]
                          excludeCuisine:request[@"excludeCuisine"]
@@ -143,13 +129,49 @@
                                  number:request[@"number"]
                            limitLicense:request[@"limitLicense"]
                       completionHandler:^(NSObject *output, NSError *error) {
+        if (!handler) {
+            return;
+        }
         if (error) {
-            handler(nil, error);
-        } else {
-            if ([output isKindOfClass:[NSArray<RecipeModel *> class]]) {
-                handler((NSArray<RecipeModel *> *)output, nil);
+            handler(@[], error);
+            return;
+        }
+
+        error = [NSError errorWithDomain:NSURLErrorDomain
+                                    code:-1
+                                userInfo:@{ NSLocalizedDescriptionKey: @"Responce is not a valid object. Aborting." }];
+        if (![output isKindOfClass:NSDictionary.class]) {
+            handler(@[], error);
+            return;
+        }
+
+        NSDictionary *od = (NSDictionary *)output;
+        NSMutableArray<NSNumber *> *recipesIDsList = [NSMutableArray new];
+        if ([od[@"results"] isKindOfClass:NSArray.class]) {
+            NSArray<NSDictionary *> *recipesDicts = od[@"results"];
+            for (NSDictionary *recipe in recipesDicts) {
+                BOOL isNotADict = ![recipe isKindOfClass:NSDictionary.class];
+                BOOL isMissedId = isNotADict ? YES : !recipe[@"id"];
+                if (isNotADict || isMissedId) {
+                    handler(@[], error);
+                    return;
+                }
+
+                [recipesIDsList addObject:recipe[@"id"]];
             }
         }
+
+        [self getRecipeInformationBulkWithIds:[recipesIDsList componentsJoinedByString:@","]
+                             includeNutrition:@(YES)
+                            completionHandler:^(NSObject *output, NSError *e) {
+            NSMutableArray<Recipe *> *recepisList = [Recipe arrayOfModelsFromDictionaries:(NSArray *)output error:&e];
+            if (e) {
+                handler(@[], e);
+                return;
+            }
+
+            handler(recepisList, nil);
+        }];
     }];
 }
 

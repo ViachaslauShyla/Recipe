@@ -1,22 +1,16 @@
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #import "OAIDefaultApi.h"
-@class RecipeModel;
+#import "Models.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface OAIDefaultApi (RecipeMethods)
 
-- (void)initialSearchComplexRecipe:(void (^)(NSArray<RecipeModel *> *recipes, NSError *error))handler;
+- (void)loadRecipes:(NSInteger)offset completionHandler:(void (^)(NSArray<Recipe *> * _Nonnull recipes, NSError * _Nullable error))handler;
 
-- (void)nextSearchComplexRecipe:(NSInteger)offset complitionHandler:(void (^)(NSArray<RecipeModel *> *recipes, NSError *error))handler;
-
-- (void)searchRecipesComplexWithRequest:(NSDictionary *)request complitionHandler:(void (^)(NSArray<RecipeModel *> *recipe, NSError *error))handler;
-
-- (void)fillFullRecipeInformational:(RecipeModel *)recipe complitionHandler:(void (^)(BOOL finish))handler;
-
-- (NSURLSessionDataTask *)downloadImageDataBy:(NSURL *)url
-                             downloadProgress:(void (^)(NSProgress *downloadProgress))downloadProgressBlock
-                            completionHandler:(void (^)(NSData *responseData, BOOL isCache,  NSError *error))completionHandler;
+- (NSURLSessionDataTask *)downloadImageFrom:(NSURL *)url
+                                   progress:(nullable void (^)(NSProgress *progress))progressHandler
+                                 completion:(void (^)(UIImage * _Nonnull image, BOOL isFromCache, NSError * _Nullable error))completionHandler;
 
 @end
 

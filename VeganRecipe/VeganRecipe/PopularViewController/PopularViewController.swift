@@ -158,7 +158,7 @@ extension PopularViewController: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.cellIdentifier, for: indexPath) as? PopularCollectionViewCell
 
         let recipe = viewModel.recipes[indexPath.row]
-        cell?.configureWith(title: recipe.title, imageUrl: recipe.imageUrl)
+        cell?.configureWith(title: recipe.title, imageUrl: recipe.imageURL)
         
         return cell!
     }

@@ -246,7 +246,7 @@ static NSString * OAI__fileNameForResponse(NSURLResponse *response)
                 error = serializationError;
             }
 
-            [CoreDataManager.shared saveIntoDataSourceFor:urlString data:response];
+            //[CoreDataManager.shared saveIntoDataSourceFor:urlString data:response];
             completionBlock(response, error);
         }];
     }

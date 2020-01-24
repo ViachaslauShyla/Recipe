@@ -76,6 +76,8 @@
 		9D2856D623D860CA0018D1A8 /* Cache+CoreDataClass.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D2856CE23D860CA0018D1A8 /* Cache+CoreDataClass.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9D2856D723D860CA0018D1A8 /* Cache+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D2856CF23D860CA0018D1A8 /* Cache+CoreDataClass.m */; };
 		9D2856D823D860CA0018D1A8 /* Cache+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D2856D023D860CA0018D1A8 /* Cache+CoreDataProperties.m */; };
+		9DA8DCB923D9D5BE00CB5FDF /* Models.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA8DCB623D9D4E900CB5FDF /* Models.m */; };
+		9DA8DCBA23D9D5C200CB5FDF /* Models.h in Headers */ = {isa = PBXBuildFile; fileRef = 9DA8DCB523D9D4E900CB5FDF /* Models.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A1FF33B1A9BAE0019018CDE073936E60 /* ISO8601-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB5037A66D30077A8C077F82E24F435 /* ISO8601-dummy.m */; };
 		A257E091B61186733C988BEAA5458136 /* OAIApi.h in Headers */ = {isa = PBXBuildFile; fileRef = 5E3C98320F5A3E837D3C9E6D1AC42F10 /* OAIApi.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A52DD788A5384665F425D6A2C7493AD0 /* JSONModelError.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E57A2A91BFCD1820897953CA2EFFA7E /* JSONModelError.m */; };
@@ -117,23 +119,9 @@
 		F442593E37B8F49398FDB1974EDF3FD6 /* JSONModel-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E33502EB8743DEDC2912E1D9FF70D032 /* JSONModel-dummy.m */; };
 		F4FED6C37367BC46B92BB3FE18D233B8 /* UIWebView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A44B9D0714EADAD500C336F02780E89 /* UIWebView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F653B2EACD348C9BF37C4CB99B08C00B /* OAIResponseDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 662C2A31B74C72CA8B07F8C8C62C915D /* OAIResponseDeserializer.m */; };
-		F902901B23A2E263001EDD90 /* Measures.h in Headers */ = {isa = PBXBuildFile; fileRef = F902901923A2E263001EDD90 /* Measures.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F902901C23A2E263001EDD90 /* Measures.m in Sources */ = {isa = PBXBuildFile; fileRef = F902901A23A2E263001EDD90 /* Measures.m */; };
-		F9FB36A82357A4CA00D03604 /* EquipmentModel.h in Headers */ = {isa = PBXBuildFile; fileRef = F9FB36A62357A4CA00D03604 /* EquipmentModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F9FB36A92357A4CA00D03604 /* EquipmentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F9FB36A72357A4CA00D03604 /* EquipmentModel.m */; };
-		F9FB36AC2357A62400D03604 /* IngredientModel.h in Headers */ = {isa = PBXBuildFile; fileRef = F9FB36AA2357A62400D03604 /* IngredientModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F9FB36AD2357A62400D03604 /* IngredientModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F9FB36AB2357A62400D03604 /* IngredientModel.m */; };
-		F9FB36B02357ABE400D03604 /* CookTimeModel.h in Headers */ = {isa = PBXBuildFile; fileRef = F9FB36AE2357ABE400D03604 /* CookTimeModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F9FB36B12357ABE400D03604 /* CookTimeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F9FB36AF2357ABE400D03604 /* CookTimeModel.m */; };
-		F9FB36B42357AC6400D03604 /* NutritionModel.h in Headers */ = {isa = PBXBuildFile; fileRef = F9FB36B22357AC6400D03604 /* NutritionModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F9FB36B52357AC6400D03604 /* NutritionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F9FB36B32357AC6400D03604 /* NutritionModel.m */; };
-		F9FBDDD82355C6AB0095C5BD /* RecipeModel.h in Headers */ = {isa = PBXBuildFile; fileRef = F9FBDDD62355C6AB0095C5BD /* RecipeModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F9FBDDD92355C6AB0095C5BD /* RecipeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F9FBDDD72355C6AB0095C5BD /* RecipeModel.m */; };
 		F9FC980723472CD8000B76C5 /* CoreDataManager.h in Headers */ = {isa = PBXBuildFile; fileRef = F9FC980523472CD8000B76C5 /* CoreDataManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F9FC980823472CD8000B76C5 /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F9FC980623472CD8000B76C5 /* CoreDataManager.m */; };
 		F9FC981323476F76000B76C5 /* Model.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = F9FC981223476F5F000B76C5 /* Model.xcdatamodeld */; };
-		F9FDDEA423565E0100A0153A /* StepsModel.h in Headers */ = {isa = PBXBuildFile; fileRef = F9FDDEA223565E0100A0153A /* StepsModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F9FDDEA523565E0100A0153A /* StepsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F9FDDEA323565E0100A0153A /* StepsModel.m */; };
 		F9FDE7C8238C618F001F6162 /* OAIDefaultApi+RecipeMethods.h in Headers */ = {isa = PBXBuildFile; fileRef = F9FDE7C6238C618F001F6162 /* OAIDefaultApi+RecipeMethods.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F9FDE7C9238C618F001F6162 /* OAIDefaultApi+RecipeMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = F9FDE7C7238C618F001F6162 /* OAIDefaultApi+RecipeMethods.m */; };
 		FD42569341073F898AAA9394594DFC6A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA2DFB6C50277B6ABF268771377AFA36 /* SystemConfiguration.framework */; };
@@ -284,6 +272,8 @@
 		9D2856D023D860CA0018D1A8 /* Cache+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Cache+CoreDataProperties.m"; sourceTree = "<group>"; };
 		9D80A572759C5BA9A0F5631F0E40E7DA /* Pods-VeganRecipe-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-VeganRecipe-umbrella.h"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9DA8DCB523D9D4E900CB5FDF /* Models.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Models.h; sourceTree = "<group>"; };
+		9DA8DCB623D9D4E900CB5FDF /* Models.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Models.m; sourceTree = "<group>"; };
 		9E264E82458672AD78E4FA638D818EE4 /* AFURLSessionManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLSessionManager.h; path = AFNetworking/AFURLSessionManager.h; sourceTree = "<group>"; };
 		A1063D1B2AD088EE6C8780F4EB66E284 /* UIActivityIndicatorView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIActivityIndicatorView+AFNetworking.h"; path = "UIKit+AFNetworking/UIActivityIndicatorView+AFNetworking.h"; sourceTree = "<group>"; };
 		A1E39A6E07738A14565AA2516D1D3A4F /* JSONModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JSONModel.m; path = JSONModel/JSONModel/JSONModel.m; sourceTree = "<group>"; };
@@ -326,24 +316,10 @@
 		F2FF9DC90529505F13651100808A247B /* OAIConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = OAIConfiguration.h; sourceTree = "<group>"; };
 		F4D4A10BDB113B13CD104956E744606A /* AFImageDownloader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFImageDownloader.m; path = "UIKit+AFNetworking/AFImageDownloader.m"; sourceTree = "<group>"; };
 		F5CC51AE6AAFCEAE08B74ED5CA5AB982 /* JSONModelLib.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSONModelLib.h; path = JSONModel/JSONModelLib.h; sourceTree = "<group>"; };
-		F902901923A2E263001EDD90 /* Measures.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Measures.h; sourceTree = "<group>"; };
-		F902901A23A2E263001EDD90 /* Measures.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Measures.m; sourceTree = "<group>"; };
 		F946E4562A775B9991E77DD650F21DAE /* OpenAPIClient.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = OpenAPIClient.modulemap; sourceTree = "<group>"; };
-		F9FB36A62357A4CA00D03604 /* EquipmentModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EquipmentModel.h; sourceTree = "<group>"; };
-		F9FB36A72357A4CA00D03604 /* EquipmentModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EquipmentModel.m; sourceTree = "<group>"; };
-		F9FB36AA2357A62400D03604 /* IngredientModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IngredientModel.h; sourceTree = "<group>"; };
-		F9FB36AB2357A62400D03604 /* IngredientModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IngredientModel.m; sourceTree = "<group>"; };
-		F9FB36AE2357ABE400D03604 /* CookTimeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CookTimeModel.h; sourceTree = "<group>"; };
-		F9FB36AF2357ABE400D03604 /* CookTimeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CookTimeModel.m; sourceTree = "<group>"; };
-		F9FB36B22357AC6400D03604 /* NutritionModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NutritionModel.h; sourceTree = "<group>"; };
-		F9FB36B32357AC6400D03604 /* NutritionModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NutritionModel.m; sourceTree = "<group>"; };
-		F9FBDDD62355C6AB0095C5BD /* RecipeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecipeModel.h; sourceTree = "<group>"; };
-		F9FBDDD72355C6AB0095C5BD /* RecipeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecipeModel.m; sourceTree = "<group>"; };
 		F9FC980523472CD8000B76C5 /* CoreDataManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataManager.h; sourceTree = "<group>"; };
 		F9FC980623472CD8000B76C5 /* CoreDataManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreDataManager.m; sourceTree = "<group>"; };
 		F9FC981123476F5F000B76C5 /* Model1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model1.xcdatamodel; sourceTree = "<group>"; };
-		F9FDDEA223565E0100A0153A /* StepsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StepsModel.h; sourceTree = "<group>"; };
-		F9FDDEA323565E0100A0153A /* StepsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StepsModel.m; sourceTree = "<group>"; };
 		F9FDE7C6238C618F001F6162 /* OAIDefaultApi+RecipeMethods.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OAIDefaultApi+RecipeMethods.h"; sourceTree = "<group>"; };
 		F9FDE7C7238C618F001F6162 /* OAIDefaultApi+RecipeMethods.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "OAIDefaultApi+RecipeMethods.m"; sourceTree = "<group>"; };
 		FAB5037A66D30077A8C077F82E24F435 /* ISO8601-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ISO8601-dummy.m"; sourceTree = "<group>"; };
@@ -491,26 +467,14 @@
 			path = "../Pods/Target Support Files/OpenAPIClient";
 			sourceTree = "<group>";
 		};
-		455713540468BC362B3CDC846F895F17 /* Model */ = {
+		455713540468BC362B3CDC846F895F17 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				F9FBDDD62355C6AB0095C5BD /* RecipeModel.h */,
-				F9FBDDD72355C6AB0095C5BD /* RecipeModel.m */,
-				F9FDDEA223565E0100A0153A /* StepsModel.h */,
-				F9FDDEA323565E0100A0153A /* StepsModel.m */,
-				F9FB36A62357A4CA00D03604 /* EquipmentModel.h */,
-				F9FB36A72357A4CA00D03604 /* EquipmentModel.m */,
-				F9FB36AA2357A62400D03604 /* IngredientModel.h */,
-				F9FB36AB2357A62400D03604 /* IngredientModel.m */,
-				F902901923A2E263001EDD90 /* Measures.h */,
-				F902901A23A2E263001EDD90 /* Measures.m */,
-				F9FB36AE2357ABE400D03604 /* CookTimeModel.h */,
-				F9FB36AF2357ABE400D03604 /* CookTimeModel.m */,
-				F9FB36B22357AC6400D03604 /* NutritionModel.h */,
-				F9FB36B32357AC6400D03604 /* NutritionModel.m */,
+				9DA8DCB523D9D4E900CB5FDF /* Models.h */,
+				9DA8DCB623D9D4E900CB5FDF /* Models.m */,
 			);
-			name = Model;
-			path = OpenAPIClient/Model;
+			name = Models;
+			path = OpenAPIClient/Models;
 			sourceTree = "<group>";
 		};
 		525DC11D0D7A83A9CC1E3F72D0BA484A /* Pods-VeganRecipe */ = {
@@ -683,7 +647,7 @@
 				FC9B57DCB88F16E78B786AA1143C21A5 /* Api */,
 				1B34B36967EEC37D3E0F03007C027815 /* Core */,
 				F9FB482A23583FE300AEF78A /* CoreDataManager */,
-				455713540468BC362B3CDC846F895F17 /* Model */,
+				455713540468BC362B3CDC846F895F17 /* Models */,
 				F564C7241B2D3E7DAAE48CECFFC3A96D /* Pod */,
 				33C5DB0B7B6C659C33EBE750DBF939CE /* Support Files */,
 			);
@@ -803,25 +767,19 @@
 				A257E091B61186733C988BEAA5458136 /* OAIApi.h in Headers */,
 				9D2856D623D860CA0018D1A8 /* Cache+CoreDataClass.h in Headers */,
 				82B1BD39BCAC9EC892620BD5B13968F4 /* OAIApiClient.h in Headers */,
-				F9FB36B42357AC6400D03604 /* NutritionModel.h in Headers */,
 				9D2856D123D860CA0018D1A8 /* ImageData+CoreDataProperties.h in Headers */,
 				A768E1C4E56F6FFF8FFE1918974101E4 /* OAIBasicAuthTokenProvider.h in Headers */,
 				9D2856D223D860CA0018D1A8 /* ImageData+CoreDataClass.h in Headers */,
 				46158B76D03BE905B0224234CAC5580F /* OAIConfiguration.h in Headers */,
 				ADBD35C9571CFCBF71CFC2298B31A0CA /* OAIDefaultApi.h in Headers */,
 				CAC7DEB6D71C4CA0CA0283F21E4C6E0D /* OAIDefaultConfiguration.h in Headers */,
-				F9FB36A82357A4CA00D03604 /* EquipmentModel.h in Headers */,
 				F9FC980723472CD8000B76C5 /* CoreDataManager.h in Headers */,
-				F9FDDEA423565E0100A0153A /* StepsModel.h in Headers */,
-				F9FBDDD82355C6AB0095C5BD /* RecipeModel.h in Headers */,
 				3F0C6EC06C70AB8DEDCB2A81D9DF4B84 /* OAIJSONRequestSerializer.h in Headers */,
-				F9FB36AC2357A62400D03604 /* IngredientModel.h in Headers */,
 				1D00642C4CBB99F43766C46290F25D59 /* OAILogger.h in Headers */,
 				9151FBCF97D1513CEC3671B0A1F5E11B /* OAIObject.h in Headers */,
-				F9FB36B02357ABE400D03604 /* CookTimeModel.h in Headers */,
+				9DA8DCBA23D9D5C200CB5FDF /* Models.h in Headers */,
 				6824FAFE45B61EE13E348F1199DCE9A6 /* OAIQueryParamCollection.h in Headers */,
 				55AF8FB3094D874EDED23813832A8EC3 /* OAIResponseDeserializer.h in Headers */,
-				F902901B23A2E263001EDD90 /* Measures.h in Headers */,
 				F9FDE7C8238C618F001F6162 /* OAIDefaultApi+RecipeMethods.h in Headers */,
 				6FC8F1E1284378E54CB5E6D005E09FBC /* OAISanitizer.h in Headers */,
 				5D150165D19144D7F28FC974D9CCFBD4 /* OpenAPIClient-umbrella.h in Headers */,
@@ -1103,30 +1061,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F9FB36B52357AC6400D03604 /* NutritionModel.m in Sources */,
+				9DA8DCB923D9D5BE00CB5FDF /* Models.m in Sources */,
 				9D2856D423D860CA0018D1A8 /* ImageData+CoreDataProperties.m in Sources */,
 				10FE31C2798429BDC5BE135C043BC916 /* JSONValueTransformer+ISO8601.m in Sources */,
-				F9FBDDD92355C6AB0095C5BD /* RecipeModel.m in Sources */,
 				69BB69B2A58CC8B52AFFB9DA1A4A617A /* OAIApiClient.m in Sources */,
 				ECE7A9D8EE472AA77E1882CE370FD059 /* OAIBasicAuthTokenProvider.m in Sources */,
 				5BE804F967080AE4F4FBBE08D56C706B /* OAIDefaultApi.m in Sources */,
 				102760D7988569ECADC45703ABAB983B /* OAIDefaultConfiguration.m in Sources */,
 				9D2856D723D860CA0018D1A8 /* Cache+CoreDataClass.m in Sources */,
 				9D2856D323D860CA0018D1A8 /* ImageData+CoreDataClass.m in Sources */,
-				F9FB36A92357A4CA00D03604 /* EquipmentModel.m in Sources */,
-				F9FB36AD2357A62400D03604 /* IngredientModel.m in Sources */,
 				F9FC980823472CD8000B76C5 /* CoreDataManager.m in Sources */,
 				743378B337C7EA4F258E9D7EE759FEE3 /* OAIJSONRequestSerializer.m in Sources */,
 				D84270CDE3F3D72CA9763B8AB1AAA1DB /* OAILogger.m in Sources */,
 				D791CD1E7085DFA31CCB7CE476DE13CB /* OAIObject.m in Sources */,
 				F9FDE7C9238C618F001F6162 /* OAIDefaultApi+RecipeMethods.m in Sources */,
 				9D2856D823D860CA0018D1A8 /* Cache+CoreDataProperties.m in Sources */,
-				F902901C23A2E263001EDD90 /* Measures.m in Sources */,
-				F9FB36B12357ABE400D03604 /* CookTimeModel.m in Sources */,
 				5898B7C6F21E66BED173CB2619150D15 /* OAIQueryParamCollection.m in Sources */,
 				F653B2EACD348C9BF37C4CB99B08C00B /* OAIResponseDeserializer.m in Sources */,
 				49AAFAE94B0FBB368E9950697AE41903 /* OAISanitizer.m in Sources */,
-				F9FDDEA523565E0100A0153A /* StepsModel.m in Sources */,
 				0033C3DA9D43F4DD9433C044E003122C /* OpenAPIClient-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1534,7 +1486,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;

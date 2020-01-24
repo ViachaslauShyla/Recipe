@@ -1,26 +1,25 @@
 import Foundation
 
 extension UIImageView {
-
-    func showImageBy(_ urlImage: URL) {
-        let api = OAIDefaultApi()
-
-        let defaultImageView = DefaultImageView(frame: self.frame)
-        self.addSubview(defaultImageView)
-        
-      //  if let url = URL(string: urlImage) {
-            api.downloadImageData(by: urlImage, downloadProgress: { progress in
-                defaultImageView.update(with: progress)
-            }) { [weak self] data, isCache, error in
-
-                if let image = UIImage(data: data) {
-                    defaultImageView.removeFromSuperview()
-                    self?.image = image
-                }
-            }
-        //}
-    }
-
+    private static var sessions = [UIImageView : (URLSessionDataTask, DefaultImageView)]()
     
+    func showImageBy(_ urlImage: URL?) {
+        UIImageView.sessions[self]?.0.cancel()
+        UIImageView.sessions[self]?.1.removeFromSuperview()
+        UIImageView.sessions.removeValue(forKey: self)
 
+        guard let url = urlImage else { return }
+
+        var tuple: (URLSessionDataTask, DefaultImageView)
+        let progressView = DefaultImageView(frame: self.bounds)
+        tuple.1 = progressView
+        tuple.0 = OAIDefaultApi().downloadImage(from: url, progress: { progressView.update(with: $0) }) { (img, isFromCache, e) in
+            self.image = img
+            UIImageView.sessions[self]?.1.removeFromSuperview()
+            UIImageView.sessions.removeValue(forKey: self)
+        }
+
+        UIImageView.sessions[self] = tuple
+        self.addSubview(progressView)
+    }
 }

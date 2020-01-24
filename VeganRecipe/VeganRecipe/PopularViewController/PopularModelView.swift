@@ -1,7 +1,7 @@
 import Foundation
 
 protocol PopularModelViewProtocol {
-    var recipes: [RecipeModel] { get }
+    var recipes: [Recipe] { get }
     func showFirstRecipes(closure: @escaping () -> Void)
     func showMoreRescipes(closure: @escaping () -> Void)
 
@@ -9,10 +9,10 @@ protocol PopularModelViewProtocol {
 
 class PopularModelView: PopularModelViewProtocol {
 
-    private var recipesModel = [RecipeModel]()
+    private var recipesModel = [Recipe]()
     private let api: OAIDefaultApi
 
-    var recipes: [RecipeModel] {
+    var recipes: [Recipe] {
         return recipesModel
     }
 
@@ -21,14 +21,14 @@ class PopularModelView: PopularModelViewProtocol {
     }
 
     func showFirstRecipes(closure: @escaping () -> Void) {
-        api.initialSearchComplexRecipe { recipes, error in
-            self.recipesModel = recipes
+        api.loadRecipes(0) { recipes, error in
+            self.recipesModel += recipes
             closure()
         }
     }
 
     func showMoreRescipes(closure: @escaping () -> Void) {
-        api.nextSearchComplexRecipe(recipesModel.count) { recipes, error in
+        api.loadRecipes(recipesModel.count) { recipes, error in
             self.recipesModel += recipes
             closure()
         }
